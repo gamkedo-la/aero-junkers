@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CylinderShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.5, 5, 0.5 )
+
+[node name="Checkpoint" type="Area"]
+transform = Transform( 1, -1.13545e-10, -1.16415e-10, 1.13118e-10, 1, -1.16415e-10, 1.16415e-10, 1.16415e-10, 1, -0.015, 0, -30 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -5, 0, 0.5, -2.18557e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="CheckpointPost_L" type="MeshInstance" parent="."]
+transform = Transform( 1, 2.98428e-12, 0, 2.2969e-10, 1, -2.32831e-10, 0, 0, 1, -4.99912, 2.00219, 0.0015316 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CheckpointPost_R" type="MeshInstance" parent="."]
+transform = Transform( 1, 2.98428e-12, 0, 3.46105e-10, 1, -3.49246e-10, 0, 0, 1, 5.00087, 1.99781, -0.00328636 )
+mesh = SubResource( 2 )
+material/0 = null
