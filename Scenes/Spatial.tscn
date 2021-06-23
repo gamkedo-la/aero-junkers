@@ -1,16 +1,34 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://AeroJunkers/Placeholder_AeroJunker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AeroJunkers/AeroJunker.tscn" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0509804, 0.207843, 0, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 100, 100 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.000439007, 0.000481988, 0.000438803, 1, 0, 0, 0 )
 
-[node name="Ground" type="CSGBox" parent="."]
-width = 200.0
-depth = 200.0
-
-[node name="PlaceHolder_AeroJunker" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.999999, -2.66027e-11, -2.91038e-11, 2.54943e-11, 0.999998, -2.91038e-11, 2.91038e-11, 2.91038e-11, 0.999999, -0.0238653, 3.94787, 0.018404 )
-
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.148553, 0.120432, 0.981544, 0.979506, -0.118596, 0.162796, 0.136013, 0.985612, -0.100346, 0, 13.3238, 0 )
+transform = Transform( -0.924318, 0.120432, 0.362121, 0.348767, -0.118596, 0.929675, 0.154909, 0.985612, 0.0676177, 0, 10, 0 )
+shadow_enabled = true
+
+[node name="AeroJunker" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, -3.39291e-08, 1.92609e-07, -6.03464e-10, 0.999999, -1.10886e-08, -1.73721e-07, 6.60657e-09, 1, 0.000875796, 2, -0.000878091 )
+
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
+shape = SubResource( 3 )
