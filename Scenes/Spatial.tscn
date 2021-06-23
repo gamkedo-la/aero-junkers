@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://AeroJunkers/AeroJunker.tscn" type="PackedScene" id=1]
 
@@ -12,6 +12,11 @@ size = Vector2( 100, 100 )
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
 
+[sub_resource type="CylinderShape" id=5]
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.5, 5, 0.5 )
+
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.000439007, 0.000481988, 0.000438803, 1, 0, 0, 0 )
 
@@ -21,6 +26,8 @@ shadow_enabled = true
 
 [node name="AeroJunker" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, -3.39291e-08, 1.92609e-07, -6.03464e-10, 0.999999, -1.10886e-08, -1.73721e-07, 6.60657e-09, 1, 0.000875796, 2, -0.000878091 )
+collision_layer = 2
+collision_mask = 4
 
 [node name="Ground" type="StaticBody" parent="."]
 
@@ -32,3 +39,24 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
 shape = SubResource( 3 )
+
+[node name="Checkpoint" type="Area" parent="."]
+transform = Transform( 1, -1.13545e-10, -1.16415e-10, 1.13118e-10, 1, -1.16415e-10, 1.16415e-10, 1.16415e-10, 1, -0.015, 0, -30 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoint"]
+transform = Transform( 5, 0, 0, 0, -2.18557e-08, -5, 0, 0.5, -2.18557e-07, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="CheckpointPost_L" type="MeshInstance" parent="Checkpoint"]
+transform = Transform( 1, 2.98428e-12, 0, 2.2969e-10, 1, -2.32831e-10, 0, 0, 1, -4.99912, 2.00219, 0.0015316 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="CheckpointPost_R" type="MeshInstance" parent="Checkpoint"]
+transform = Transform( 1, 2.98428e-12, 0, 3.46105e-10, 1, -3.49246e-10, 0, 0, 1, 5.00087, 1.99781, -0.00328636 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[connection signal="body_entered" from="Checkpoint" to="AeroJunker" method="_on_Checkpoint_body_entered"]

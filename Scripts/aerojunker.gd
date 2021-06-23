@@ -29,3 +29,6 @@ func turnLeft(_delta):
 	
 func turnRight(_delta):
 	rotate_y(-0.2)
+
+func _on_Checkpoint_body_entered(_body):
+	print("Checkpoint Entered")
