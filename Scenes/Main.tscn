@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
-[ext_resource path="res://AeroJunkers/AeroJunker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/AeroJunker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -38,10 +38,23 @@ material/0 = null
 transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
 shape = SubResource( 3 )
 
+[node name="Ground2" type="StaticBody" parent="."]
+transform = Transform( 1, -2.30017e-10, -2.32831e-10, 2.29534e-10, 0.999999, -2.32831e-10, 2.32831e-10, 2.32831e-10, 1, -51, 1, -75 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground2"]
+transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground2"]
+transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
 [node name="Checkpoint" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, -2.00799e-10, -2.03727e-10, 2.00473e-10, 1, -2.03727e-10, 2.03727e-10, 2.03727e-10, 1, -0.015, 0, -15 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, -1.71681e-10, -1.74623e-10, 1.71369e-10, 1, -1.74623e-10, 1.74623e-10, 1.74623e-10, 1, -0.0149999, -1.3737e-07, -11 )
+transform = Transform( 1, -4.04555e-10, -4.07454e-10, 4.04228e-10, 0.999999, -4.07454e-10, 4.07454e-10, 4.07454e-10, 1, -50, 1, -75 )
 
 [connection signal="body_entered" from="Checkpoint" to="AeroJunker" method="_on_Checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoint2" to="AeroJunker" method="_on_Checkpoint_body_entered"]

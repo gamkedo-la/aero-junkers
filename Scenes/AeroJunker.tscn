@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/aerojunker.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/RayCast_L_Engine.gd" type="Script" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -32,6 +33,11 @@ transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -1.39877e-0
 transform = Transform( 0.5, 0, 0, 0, -8.74228e-08, 0.5, 0, -2, -2.18557e-08, -2, 0, -3.49692e-07 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="RayCast_L_Engine" type="RayCast" parent="MeshInstance_L_Engine"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape_L_Engine" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, -8.74228e-08, 0.5, 0, -2, -2.18557e-08, -2, 0, -3.49692e-07 )
