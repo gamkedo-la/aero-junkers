@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/AeroJunker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Checkpoint_circle.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0509804, 0.207843, 0, 1 )
@@ -68,10 +69,11 @@ transform = Transform( 0.999999, -6.08509e-10, -6.1118e-10, 7.53403e-10, 0.99999
 use_collision = true
 collision_mask = 2
 
+[node name="Checkpoint4" parent="." instance=ExtResource( 4 )]
+
 [node name="CSGSphere" type="CSGSphere" parent="."]
 transform = Transform( 0.999999, -6.08537e-10, -6.40284e-10, 6.95181e-10, 0.999997, -6.98492e-10, 6.40284e-10, 6.1118e-10, 0.999999, -9, 1.99999, -53 )
 use_collision = true
 collision_mask = 2
 
-[connection signal="body_entered" from="Checkpoint" to="AeroJunker" method="_on_Checkpoint_body_entered"]
-[connection signal="body_entered" from="Checkpoint2" to="AeroJunker" method="_on_Checkpoint_body_entered"]
+[editable path="AeroJunker"]
