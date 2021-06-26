@@ -56,5 +56,22 @@ transform = Transform( 1, -2.00799e-10, -2.03727e-10, 2.00473e-10, 1, -2.03727e-
 [node name="Checkpoint2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, -4.04555e-10, -4.07454e-10, 4.04228e-10, 0.999999, -4.07454e-10, 4.07454e-10, 4.07454e-10, 1, -50, 1, -75 )
 
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 0.999998, -8.4141e-10, -8.44011e-10, 1.36458e-09, 0.999997, -1.36788e-09, 8.44011e-10, 8.44011e-10, 0.999998, -35, 2.99999, -55 )
+use_collision = true
+collision_mask = 2
+height = 4.0
+sides = 32
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.999999, -6.08509e-10, -6.1118e-10, 7.53403e-10, 0.999997, -7.567e-10, 6.1118e-10, 6.1118e-10, 0.999999, -36, 0.999991, -7.00001 )
+use_collision = true
+collision_mask = 2
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 0.999999, -6.08537e-10, -6.40284e-10, 6.95181e-10, 0.999997, -6.98492e-10, 6.40284e-10, 6.1118e-10, 0.999999, -9, 1.99999, -53 )
+use_collision = true
+collision_mask = 2
+
 [connection signal="body_entered" from="Checkpoint" to="AeroJunker" method="_on_Checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoint2" to="AeroJunker" method="_on_Checkpoint_body_entered"]
