@@ -29,6 +29,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 4, -5.49846e-10, -2.32831e-09, 2.19961e-09, 1, -2.21189e-09, 2.32831e-09, 5.52973e-10, 4, 6, -2, -26 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
@@ -40,7 +41,7 @@ transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-
 shape = SubResource( 3 )
 
 [node name="Ground2" type="StaticBody" parent="."]
-transform = Transform( 1, -2.30017e-10, -2.32831e-10, 2.29534e-10, 0.999999, -2.32831e-10, 2.32831e-10, 2.32831e-10, 1, -51, 1, -75 )
+transform = Transform( 0.999999, -6.95863e-10, -6.98492e-10, 6.95294e-10, 0.999997, -6.98492e-10, 6.98492e-10, 6.98492e-10, 0.999999, -45, 0.999994, -101 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground2"]
 transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )

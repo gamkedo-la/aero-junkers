@@ -2,6 +2,7 @@ extends KinematicBody
 
 var speed = 50
 var velocity = Vector3.ZERO
+var target_altitude = Vector3.UP * 3
 
 var l_engine_height = 0
 
@@ -13,12 +14,14 @@ func _ready():
 func _physics_process(delta):
 	velocity = Vector3.ZERO
 	get_input(delta)
+	moveToTargetAltitude(delta)
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
-	l_engine_height = $MeshInstance_L_Engine/RayCast_L_Engine.get_distance_to_collision(delta)
+	#Debug
+	$RayCast_L_Engine/MeshInstance.global_transform.origin.y = $RayCast_L_Engine.get_collision_point().y
+#	l_engine_height = $RayCast_L_Engine.get_distance_to_collision(delta)
 	
 func _process(_delta):
-#	print(l_engine_height)
 	pass
 
 func get_input(delta):
@@ -30,10 +33,13 @@ func get_input(delta):
 		moveForward(delta)
 	if Input.is_action_pressed("reverse"):
 		moveBackward(delta)
-
+	if Input.is_action_pressed("increase_altitude"):
+		increaseAltitude(delta)
+	if Input.is_action_pressed("decrease_altitude"):
+		decreaseAltitude(delta)
+		
 func moveForward(_delta):
-	if $MeshInstance_L_Engine/RayCast_L_Engine.is_colliding():
-		velocity -= transform.basis.z * speed
+	velocity -= transform.basis.z * speed
 
 func moveBackward(_delta):
 	velocity += transform.basis.z * speed
@@ -43,6 +49,15 @@ func turnLeft(_delta):
 
 func turnRight(_delta):
 	rotate_y(-0.2)
+	
+func increaseAltitude(_delta):
+	velocity += transform.basis.y * (speed/2)
+	
+func decreaseAltitude(_delta):
+	velocity -= transform.basis.y * (speed/2)
+	
+func moveToTargetAltitude(_delta):
+	transform.origin.y = ($RayCast_L_Engine.get_collision_point() + target_altitude).y
 
 func _player_reached_checkpoint():
 	print("Player Reached Checkpoint")
