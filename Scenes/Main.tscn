@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/AeroJunker.tscn" type="PackedScene" id=2]
@@ -14,6 +14,9 @@ size = Vector2( 100, 100 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.215686, 0.176471, 0.176471, 1 )
 
 [node name="Main" type="Spatial"]
 transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.000439007, 0.000481988, 0.000438803, 1, 0, 0, 0 )
@@ -35,6 +38,7 @@ far = 200.0
 transform = Transform( 0.999999, -4.33715e-10, -4.36557e-10, 4.33303e-10, 0.999999, -4.36557e-10, 4.36557e-10, 4.36557e-10, 0.999999, -4.05255, -1.03203, -106.998 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.866024, 0.000278195, 0.499999, -0.000160813, 0.999998, -0.000277848, -0.499999, 0.000160212, 0.866025, 188.947, -0.117499, -109.091 )
 
 [node name="Checkpoint3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999998, -9.28722e-10, 1.67056e-08, 1.11494e-09, 0.999996, -1.07684e-09, 9.52859e-08, 9.60426e-10, 0.999998, 223.517, 3.91395, -2.95135 )
@@ -43,7 +47,7 @@ transform = Transform( 0.999998, -9.28722e-10, 1.67056e-08, 1.11494e-09, 0.99999
 transform = Transform( 7.36618e-08, -9.57174e-07, -0.999999, 0.000877071, 0.999998, -9.42535e-07, 0.999999, -0.00087707, 1.73808e-07, 90.5174, 0.00634809, 74.7983 )
 
 [node name="Checkpoint5" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.5, 0.000276888, -0.866025, 0.00103729, 0.999999, -0.000279135, 0.866024, -0.00103789, -0.5, 100.888, -0.132464, -231.048 )
+transform = Transform( -0.707106, 0.00043738, -0.707106, 0.00105825, 0.999998, -0.000439673, 0.707105, -0.0010592, -0.707106, 160.908, -1.13989, -188.077 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 10, -5.78908e-10, -5.58794e-09, 5.96515e-09, 1, -6.0536e-09, 6.51926e-09, 5.82077e-10, 10, 6, -2, -26 )
@@ -277,6 +281,12 @@ polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 
 depth = 1.911
 material = ExtResource( 3 )
 
+[node name="CSGPolygon36" type="CSGPolygon" parent="Placeholder Walls"]
+transform = Transform( 7.84477, -0.707478, 0.0394209, -0.00150646, 0.0048844, 11.0998, -7.85295, -0.706742, 0.0372505, 222.348, 18.8204, -186.999 )
+polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
+depth = 1.911
+material = ExtResource( 3 )
+
 [node name="CSGPolygon30" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578836, -1, 0.0590848, 0.000507123, 0.00532305, 11.0998, -11.1, 0.000521585, 0.000476174, 292.416, 18.8521, -45.033 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
@@ -364,7 +374,7 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere6" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( 2.87289, -0.00495796, -10.7218, 0.00445597, 2.29998, 0.00494833, 10.7218, -0.00444523, 2.87289, -13.4073, -2.07058, -174.146 )
+transform = Transform( 2.87288, -0.00495796, -10.7218, 0.00445597, 2.29998, 0.00494832, 10.7218, -0.00444523, 2.87288, -13.4073, -2.07058, -174.146 )
 use_collision = true
 material = ExtResource( 3 )
 
@@ -453,7 +463,47 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere13" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 144.502, -3.12142, -132.389 )
+transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 123.525, -3.09071, -83.3791 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere31" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 147.52, -8.1043, -90.3884 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere32" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -9.98998, 0.0131806, -17.3032, 0.028374, 37.4397, -0.0132425, 17.3032, -0.0284021, -9.98997, 178.523, -8.11481, -83.4033 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere33" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379035, 67.3913, -0.0273502, 12.1122, -0.0379616, -6.99297, 159.49, -8.13632, -151.394 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere34" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379035, 67.3913, -0.0273502, 12.1122, -0.0379616, -6.99297, 192.481, -8.15868, -169.41 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere38" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -11.1888, 0.0259147, -19.3796, 0.0429318, 67.3912, -0.0260085, 19.3795, -0.042987, -11.1887, 218.481, -8.1705, -170.422 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere35" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379034, 67.3913, -0.0273501, 12.1122, -0.0379616, -6.99296, 197.494, -8.14901, -142.412 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere36" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379034, 67.3913, -0.0273501, 12.1122, -0.0379616, -6.99296, 155.504, -6.12271, -124.393 )
+use_collision = true
+material = ExtResource( 3 )
+
+[node name="CSGSphere37" type="CSGSphere" parent="Placeholder Mounds"]
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379034, 67.3913, -0.0273501, 12.1122, -0.0379616, -6.99296, 214.506, -6.14681, -120.421 )
 use_collision = true
 material = ExtResource( 3 )
 
@@ -468,32 +518,32 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere16" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -2.69926, -0.493088, 14.1363, -0.653048, 4.14014, -0.00149446, 2.71549, 0.505966, 14.1196, 86.4948, -4.70463, -134.915 )
+transform = Transform( -2.69926, -0.493088, 14.1363, -0.653048, 4.14014, -0.00149447, 2.71549, 0.505966, 14.1196, 87.4947, -4.70506, -134.916 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere17" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( 7.84888, 0.000445561, 7.84888, -0.00644595, 0.999997, -0.000431609, -7.84887, 0.00644501, 7.84888, 74.7092, -0.996055, 83.5371 )
+transform = Transform( 7.84887, 0.000445561, 7.84888, -0.00644595, 0.999997, -0.000431608, -7.84887, 0.00644501, 7.84887, 74.7087, -1.99605, 83.5375 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere18" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( 14.128, 0.000889623, 14.128, -0.0115151, 1.99999, -0.00086471, -14.128, 0.0115132, 14.128, 62.6821, -0.996681, 70.1082 )
+transform = Transform( 14.128, 0.000889623, 14.128, -0.0115151, 1.99999, -0.000864707, -14.128, 0.0115132, 14.128, 62.6816, -1.99668, 70.1086 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere19" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -5.54999, -0.000781442, -9.61286, 0.00765893, 2.29998, 0.000764857, 9.61287, -0.00765723, -5.54999, 96.4935, -1.02065, 49.249 )
+transform = Transform( -5.54999, -0.000781441, -9.61285, 0.00765892, 2.29998, 0.000764855, 9.61287, -0.00765723, -5.54999, 96.493, -2.02065, 49.2494 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere20" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -9.98999, -0.00234404, -17.3032, 0.0128486, 1.99998, 0.00231621, 17.3032, -0.0128436, -9.98998, 123.617, -1.0192, 79.6077 )
+transform = Transform( -9.98999, -0.00234404, -17.3032, 0.0128486, 1.99998, 0.00231621, 17.3031, -0.0128436, -9.98997, 123.617, -2.0192, 79.6081 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere21" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 82.6237, -2.98323, 120.641 )
+transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 82.6233, -3.98323, 120.641 )
 use_collision = true
 material = ExtResource( 3 )
 
@@ -518,8 +568,14 @@ use_collision = true
 collision_mask = 2
 
 [node name="CSGBox" type="CSGBox" parent="Placeholder Structures"]
-transform = Transform( 1, -9.09495e-12, -1.16415e-10, -4.65661e-10, 1, -4.76837e-07, -1.45519e-11, -1.86265e-09, 1, -6.98492e-10, -9.53674e-07, -1.19209e-07 )
+transform = Transform( 0.865891, 0.0212687, 1.35273, -1.23276, 1.02363, 1.49774, -0.268972, 0.00516688, 1.3275, 8.20308, 25.2107, 4.14888 )
 use_collision = true
+height = 2.228
+
+[node name="CSGBox8" type="CSGBox" parent="Placeholder Structures"]
+transform = Transform( -0.321638, -0.0751501, 6.24622, 6.03736, -0.0616524, 2.20293, 0.0122081, 0.0572666, 0.205249, 4.10358, 17.0963, 3.73155 )
+use_collision = true
+material = SubResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Placeholder Structures"]
 transform = Transform( -0.999999, 0.000140767, -0.000617624, 0.00523831, 0.876285, -8.22895, -7.87199e-05, -0.0282078, -0.876286, 36.7215, 2.77468, -0.0501504 )
