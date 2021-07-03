@@ -58,23 +58,30 @@ transform = Transform( 1, -2.00799e-10, -2.03727e-10, 2.00473e-10, 1, -2.03727e-
 [node name="Checkpoint2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, -4.04555e-10, -4.07454e-10, 4.04228e-10, 0.999999, -4.07454e-10, 4.07454e-10, 4.07454e-10, 1, -50, 1, -75 )
 
-[node name="CSGCylinder" type="CSGCylinder" parent="."]
-transform = Transform( 0.999998, -8.4141e-10, -8.44011e-10, 1.36458e-09, 0.999997, -1.36788e-09, 8.44011e-10, 8.44011e-10, 0.999998, -35, 2.99999, -55 )
-use_collision = true
-collision_mask = 2
-height = 4.0
-sides = 32
-
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 0.999999, -6.08509e-10, -6.1118e-10, 7.53403e-10, 0.999997, -7.567e-10, 6.1118e-10, 6.1118e-10, 0.999999, -36, 0.999991, -7.00001 )
-use_collision = true
-collision_mask = 2
-
 [node name="Checkpoint4" parent="." instance=ExtResource( 4 )]
 
 [node name="CSGSphere" type="CSGSphere" parent="."]
-transform = Transform( 0.999999, -6.08537e-10, -6.40284e-10, 6.95181e-10, 0.999997, -6.98492e-10, 6.40284e-10, 6.1118e-10, 0.999999, -9, 1.99999, -53 )
+transform = Transform( 11.1, -0.00442438, 1.93948e-06, -0.00442445, 1, 0.00443397, 1.946e-06, 0.00443404, 11.1, -30.0458, 0.971023, -95.9859 )
 use_collision = true
-collision_mask = 2
+
+[node name="CSGSphere2" type="CSGSphere" parent="."]
+transform = Transform( 19.98, -0.00787627, 3.44962e-06, -0.00787639, 2, 0.00789333, 3.47011e-06, 0.00789347, 19.98, -29.0545, 0.962686, -113.986 )
+use_collision = true
+
+[node name="CSGSphere3" type="CSGSphere" parent="."]
+transform = Transform( -3.8841, 0.00354635, 0.0115008, 0.00354641, 4.19999, 0.00692246, 0.0115006, 0.0069226, 19.98, -71.0516, -0.0158349, -106.966 )
+use_collision = true
+
+[node name="CSGSphere4" type="CSGSphere" parent="."]
+transform = Transform( -3.8841, 0.00354635, 0.0115008, 0.00354641, 4.19999, 0.00692246, 0.0115006, 0.0069226, 19.98, -80.0516, -0.0118904, -106.961 )
+use_collision = true
+
+[node name="CSGSphere5" type="CSGSphere" parent="."]
+transform = Transform( -3.8841, 0.00354635, 0.0115008, 0.00354641, 4.19999, 0.00692245, 0.0115006, 0.0069226, 19.98, -90.0516, -0.0075076, -106.956 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 6.1, -4.65661e-10, -5.58794e-09, 2.0957e-09, 0.965925, -4.42063, 2.32831e-09, 0.258819, 16.498, 0.00433771, -3.85975, -35.0352 )
+use_collision = true
 
 [editable path="AeroJunker"]

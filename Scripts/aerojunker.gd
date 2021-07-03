@@ -1,6 +1,7 @@
 extends KinematicBody
 
 var speed = 50
+var altitude_adjust_speed = speed/3
 var velocity = Vector3.ZERO
 var target_altitude = Vector3.UP * 3
 
@@ -56,8 +57,9 @@ func increaseAltitude(_delta):
 func decreaseAltitude(_delta):
 	velocity -= transform.basis.y * (speed/2)
 	
-func moveToTargetAltitude(_delta):
-	transform.origin.y = ($RayCast_L_Engine.get_collision_point() + target_altitude).y
+func moveToTargetAltitude(delta):
+	var target_position_y = ($RayCast_L_Engine.get_collision_point() + target_altitude).y
+	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta * altitude_adjust_speed
 
 func _player_reached_checkpoint():
 	print("Player Reached Checkpoint")
