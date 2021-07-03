@@ -32,10 +32,10 @@ func _physics_process(delta):
 func get_input(delta):
 	if Input.is_action_pressed("turn_left"):
 #		turn_direction = -1
-		rotate_y(0.2)
+		rotate_y(0.02)
 	if Input.is_action_pressed("turn_right"):
 #		turn_direction = 1
-		rotate_y(-0.2)
+		rotate_y(-0.02)
 	if Input.is_action_pressed("accelerate"):
 		acceleration_direction = -1
 	if Input.is_action_pressed("reverse"):
