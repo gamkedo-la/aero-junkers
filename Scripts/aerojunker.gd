@@ -12,7 +12,6 @@ var velocity = Vector3.ZERO
 var target_altitude = Vector3.UP * 3
 
 # Follow Cam Variables
-onready var followcam_pos: Position3D = $CamTargRear
 onready var followcam: Camera = $ChaseCam
 onready var campos_node: Spatial = $CameraPositions
 var camera_positions = []
