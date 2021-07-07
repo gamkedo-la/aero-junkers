@@ -22,6 +22,9 @@ var base_length = 5 #used as a "wheel base" length
 var max_turning_angle = 15
 var current_turning_angle = 0
 
+enum TURN_DIRECTION {LEFT, RIGHT}
+const MAX_ENGINE_ROTATION_ANGLE = 23
+
 func _ready():
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
@@ -52,9 +55,11 @@ func get_input(delta):
 	if Input.is_action_pressed("turn_left"):
 #		turn_direction = -1
 		rotate_y(0.02)
+		calculate_turn_engines(0.02, TURN_DIRECTION.LEFT)
 	if Input.is_action_pressed("turn_right"):
 #		turn_direction = 1
 		rotate_y(-0.02)
+		calculate_turn_engines(-0.02, TURN_DIRECTION.RIGHT)
 	if Input.is_action_pressed("accelerate"):
 		acceleration_direction = -1
 	if Input.is_action_pressed("reverse"):
@@ -63,10 +68,12 @@ func get_input(delta):
 		acceleration_direction = 0
 	if Input.is_action_just_released("reverse"):
 		acceleration_direction = 0
-#	if Input.is_action_just_released("turn_left"):
+	if Input.is_action_just_released("turn_left"):
 #		turn_direction = 0
-#	if Input.is_action_just_released("turn_right"):
+		reset_engine_rotation()
+	if Input.is_action_just_released("turn_right"):
 #		turn_direction = 0
+		reset_engine_rotation()
 
 	# Camera Input
 	if Input.is_action_just_pressed("cam_toggle"):
@@ -96,7 +103,21 @@ func calculate_turning(delta):
 	
 	velocity = new_heading * velocity
 	#rotation = new_heading.angle()
-		
+
+func calculate_turn_engines(radians, direction):
+	if (direction == TURN_DIRECTION.RIGHT && $MeshInstance_R_Engine.rotation_degrees.y > -MAX_ENGINE_ROTATION_ANGLE):
+		rotate_engines_y(radians)
+	elif (direction == TURN_DIRECTION.LEFT && $MeshInstance_R_Engine.rotation_degrees.y < MAX_ENGINE_ROTATION_ANGLE):
+		rotate_engines_y(radians)
+
+func rotate_engines_y(radians):
+	$MeshInstance_L_Engine.rotate_y(radians)
+	$MeshInstance_R_Engine.rotate_y(radians)
+
+func reset_engine_rotation():
+	$MeshInstance_R_Engine.rotation_degrees.y = 0.0
+	$MeshInstance_L_Engine.rotation_degrees.y = 0.0
+	
 func apply_acceleration(delta):
 	acceleration.z += ((max_speed * acceleration_direction) - acceleration.z) * delta
 	velocity = acceleration * delta
