@@ -112,11 +112,15 @@ func calculate_turn_engines(radians, direction):
 
 func rotate_engines_y(radians):
 	$MeshInstance_L_Engine.rotate_y(radians)
+	$CollisionShape_L_Engine.rotate_y(radians)
 	$MeshInstance_R_Engine.rotate_y(radians)
+	$CollisionShape_R_Engine.rotate_y(radians)
 
 func reset_engine_rotation():
 	$MeshInstance_R_Engine.rotation_degrees.y = 0.0
 	$MeshInstance_L_Engine.rotation_degrees.y = 0.0
+	$CollisionShape_R_Engine.rotation_degrees.y = 0.0
+	$CollisionShape_L_Engine.rotation_degrees.y = 0.0
 	
 func apply_acceleration(delta):
 	acceleration.z += ((max_speed * acceleration_direction) - acceleration.z) * delta
