@@ -5,10 +5,6 @@
 [ext_resource path="res://Scripts/chaseCam.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sound FX/Engine Running SFX Loop.wav" type="AudioStream" id=4]
 
-[sub_resource type="SphereMesh" id=9]
-radius = 0.5
-height = 1.0
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
 
@@ -18,6 +14,10 @@ radial_segments = 16
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 0, 1, 1, 0.382683, 1, 0.92388, 0.707107, 1, 0.707107, 0.92388, 1, 0.382683, 1, 1, 6.12303e-17, 0.92388, 1, -0.382683, 0.707107, 1, -0.707107, 0.382683, 1, -0.92388, 1.22461e-16, 1, -1, -0.382683, 1, -0.92388, -0.707107, 1, -0.707107, -0.92388, 1, -0.382683, -1, 1, -1.83691e-16, -0.92388, 1, 0.382683, -0.707107, 1, 0.707107, -0.382683, 1, 0.92388, -2.44921e-16, 1, 1, 0, 0.6, 1, 0.382683, 0.6, 0.92388, 0.707107, 0.6, 0.707107, 0.92388, 0.6, 0.382683, 1, 0.6, 6.12303e-17, 0.92388, 0.6, -0.382683, 0.707107, 0.6, -0.707107, 0.382683, 0.6, -0.92388, 1.22461e-16, 0.6, -1, -0.382683, 0.6, -0.92388, -0.707107, 0.6, -0.707107, -0.92388, 0.6, -0.382683, -1, 0.6, -1.83691e-16, -0.92388, 0.6, 0.382683, -0.707107, 0.6, 0.707107, -0.382683, 0.6, 0.92388, -2.44921e-16, 0.6, 1, 0, 0.2, 1, 0.382683, 0.2, 0.92388, 0.707107, 0.2, 0.707107, 0.92388, 0.2, 0.382683, 1, 0.2, 6.12303e-17, 0.92388, 0.2, -0.382683, 0.707107, 0.2, -0.707107, 0.382683, 0.2, -0.92388, 1.22461e-16, 0.2, -1, -0.382683, 0.2, -0.92388, -0.707107, 0.2, -0.707107, -0.92388, 0.2, -0.382683, -1, 0.2, -1.83691e-16, -0.92388, 0.2, 0.382683, -0.707107, 0.2, 0.707107, -0.382683, 0.2, 0.92388, -2.44921e-16, 0.2, 1, 0, -0.2, 1, 0.382683, -0.2, 0.92388, 0.707107, -0.2, 0.707107, 0.92388, -0.2, 0.382683, 1, -0.2, 6.12303e-17, 0.92388, -0.2, -0.382683, 0.707107, -0.2, -0.707107, 0.382683, -0.2, -0.92388, 1.22461e-16, -0.2, -1, -0.382683, -0.2, -0.92388, -0.707107, -0.2, -0.707107, -0.92388, -0.2, -0.382683, -1, -0.2, -1.83691e-16, -0.92388, -0.2, 0.382683, -0.707107, -0.2, 0.707107, -0.382683, -0.2, 0.92388, -2.44921e-16, -0.2, 1, 0, -0.6, 1, 0.382683, -0.6, 0.92388, 0.707107, -0.6, 0.707107, 0.92388, -0.6, 0.382683, 1, -0.6, 6.12303e-17, 0.92388, -0.6, -0.382683, 0.707107, -0.6, -0.707107, 0.382683, -0.6, -0.92388, 1.22461e-16, -0.6, -1, -0.382683, -0.6, -0.92388, -0.707107, -0.6, -0.707107, -0.92388, -0.6, -0.382683, -1, -0.6, -1.83691e-16, -0.92388, -0.6, 0.382683, -0.707107, -0.6, 0.707107, -0.382683, -0.6, 0.92388, -2.44921e-16, -0.6, 1, 0, -1, 1, 0.382683, -1, 0.92388, 0.707107, -1, 0.707107, 0.92388, -1, 0.382683, 1, -1, 6.12303e-17, 0.92388, -1, -0.382683, 0.707107, -1, -0.707107, 0.382683, -1, -0.92388, 1.22461e-16, -1, -1, -0.382683, -1, -0.92388, -0.707107, -1, -0.707107, -0.92388, -1, -0.382683, -1, -1, -1.83691e-16, -0.92388, -1, 0.382683, -0.707107, -1, 0.707107, -0.382683, -1, 0.92388, -2.44921e-16, -1, 1, 0, 1, 0, 0, 1, 1, 0.382683, 1, 0.92388, 0.707107, 1, 0.707107, 0.92388, 1, 0.382683, 1, 1, 6.12303e-17, 0.92388, 1, -0.382683, 0.707107, 1, -0.707107, 0.382683, 1, -0.92388, 1.22461e-16, 1, -1, -0.382683, 1, -0.92388, -0.707107, 1, -0.707107, -0.92388, 1, -0.382683, -1, 1, -1.83691e-16, -0.92388, 1, 0.382683, -0.707107, 1, 0.707107, -0.382683, 1, 0.92388, -2.44921e-16, 1, 1, 0, -1, 0, 0, -1, 1, 0.382683, -1, 0.92388, 0.707107, -1, 0.707107, 0.92388, -1, 0.382683, 1, -1, 6.12303e-17, 0.92388, -1, -0.382683, 0.707107, -1, -0.707107, 0.382683, -1, -0.92388, 1.22461e-16, -1, -1, -0.382683, -1, -0.92388, -0.707107, -1, -0.707107, -0.92388, -1, -0.382683, -1, -1, -1.83691e-16, -0.92388, -1, 0.382683, -0.707107, -1, 0.707107, -0.382683, -1, 0.92388, -2.44921e-16, -1, 1 )
+
+[sub_resource type="SphereMesh" id=9]
+radius = 0.5
+height = 1.0
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -37,6 +37,26 @@ albedo_color = Color( 1, 0, 0, 1 )
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
+[node name="ChaseCam" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.996195, 0.087156, 0, -0.087156, 0.996195, -1.39877e-06, 1.9001, 7.75882 )
+fov = 85.0
+far = 200.0
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = 1.721
+autoplay = true
+
+[node name="MeshInstance_L_Engine" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape_L_Engine" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
+shape = SubResource( 3 )
+
 [node name="RayCast_L_Engine" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
 enabled = true
@@ -48,6 +68,15 @@ visible = false
 mesh = SubResource( 9 )
 material/0 = null
 
+[node name="MeshInstance_R_Engine" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape_R_Engine" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
+shape = SubResource( 3 )
+
 [node name="RayCast_R_Engine" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
 enabled = true
@@ -58,30 +87,6 @@ script = ExtResource( 2 )
 visible = false
 mesh = SubResource( 9 )
 material/0 = null
-
-[node name="ChaseCam" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.996195, 0.087156, 0, -0.087156, 0.996195, -1.39877e-06, 1.9001, 7.75882 )
-fov = 85.0
-far = 200.0
-script = ExtResource( 3 )
-
-[node name="MeshInstance_L_Engine" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="CollisionShape_L_Engine" type="CollisionShape" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
-shape = SubResource( 3 )
-
-[node name="MeshInstance_R_Engine" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="CollisionShape_R_Engine" type="CollisionShape" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
-shape = SubResource( 3 )
 
 [node name="MeshInstance_Cockpit" type="MeshInstance" parent="."]
 transform = Transform( 0.6, 0, -3.49692e-08, 0, 0.2, 0, -3.49692e-08, 0, 0.8, -8.7423e-07, 0, 5 )
@@ -120,7 +125,3 @@ transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 5
 
 [node name="05_LookRight" type="Position3D" parent="CameraPositions"]
 transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -5, 1, 0 )
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 4 )
-autoplay = true

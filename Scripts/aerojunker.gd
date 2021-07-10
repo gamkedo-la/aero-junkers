@@ -48,6 +48,9 @@ func _physics_process(delta):
 	maintainAltitude(delta)
 
 
+func _process(delta):
+	$AudioStreamPlayer3D.unit_db = min((velocity.length() * 0.5), 15)
+
 func get_input(_delta):
 	#Button Pressed
 	if Input.is_action_pressed("turn_left"):
