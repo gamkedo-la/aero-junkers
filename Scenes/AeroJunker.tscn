@@ -43,7 +43,7 @@ fov = 85.0
 far = 200.0
 script = ExtResource( 3 )
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="EngineRunningSFX" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
 unit_db = 1.721
 autoplay = true
