@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/aerojunker.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/RayCast_L_Engine.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/chaseCam.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sound FX/Engine Running SFX Loop.wav" type="AudioStream" id=4]
 
 [sub_resource type="SphereMesh" id=9]
 radius = 0.5
@@ -119,3 +120,7 @@ transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 5
 
 [node name="05_LookRight" type="Position3D" parent="CameraPositions"]
 transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -5, 1, 0 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
