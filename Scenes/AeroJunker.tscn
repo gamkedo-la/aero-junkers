@@ -1,8 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/aerojunker.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/RayCast_L_Engine.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/chaseCam.gd" type="Script" id=3]
+
+[sub_resource type="SphereMesh" id=9]
+radius = 0.5
+height = 1.0
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -33,9 +37,26 @@ transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="RayCast_L_Engine" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, -50, 0 )
 script = ExtResource( 2 )
+
+[node name="GroundIndicator" type="MeshInstance" parent="RayCast_L_Engine"]
+visible = false
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="RayCast_R_Engine" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -50, 0 )
+script = ExtResource( 2 )
+
+[node name="GroundIndicator" type="MeshInstance" parent="RayCast_R_Engine"]
+visible = false
+mesh = SubResource( 9 )
+material/0 = null
 
 [node name="ChaseCam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.996195, 0.087156, 0, -0.087156, 0.996195, -1.39877e-06, 1.9001, 7.75882 )
@@ -78,6 +99,7 @@ material/0 = SubResource( 8 )
 
 [node name="Cockpit_Pos" type="MeshInstance" parent="."]
 transform = Transform( 0.2, -8.7423e-08, 2.18556e-08, 3.49692e-08, 0.5, 3.93402e-07, -8.74228e-09, -3.93402e-07, 0.5, 2.18556e-07, 3.93402e-06, 5 )
+visible = false
 mesh = SubResource( 7 )
 material/0 = SubResource( 8 )
 
