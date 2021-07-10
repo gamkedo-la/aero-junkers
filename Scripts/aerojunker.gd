@@ -5,7 +5,7 @@ signal switch_cam
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var max_speed: float = 4000.0 #units/second
+var max_speed: float = 10000.0 #units/second
 var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
@@ -49,7 +49,7 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	$AudioStreamPlayer3D.unit_db = min((velocity.length() * 0.5), 15)
+	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 
 func get_input(_delta):
 	#Button Pressed
