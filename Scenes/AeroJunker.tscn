@@ -34,7 +34,7 @@ script = ExtResource( 1 )
 
 [node name="RayCast_L_Engine" type="RayCast" parent="."]
 enabled = true
-cast_to = Vector3( 0, -20, 0 )
+cast_to = Vector3( 0, -50, 0 )
 script = ExtResource( 2 )
 
 [node name="ChaseCam" type="Camera" parent="."]

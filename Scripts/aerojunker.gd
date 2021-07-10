@@ -3,12 +3,15 @@ extends KinematicBody
 
 signal switch_cam
 
+var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
+
 var max_speed: float = 4000.0 #units/second
-var altitude_adjust_speed: float = 5.0 #units/second
 var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
 var target_altitude: Vector3 = Vector3.UP * 3
+var verticle_bob_amplitude: float = 2
+var verticle_bob_period: float = 200.0
 
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
@@ -36,15 +39,16 @@ func _init_follow_cam() -> void:
 func _physics_process(delta):
 	get_input(delta)
 	apply_acceleration(delta)
+	apply_gravity(delta)
 	
 	#change velocity from global to local orientation
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
-	moveToTargetAltitude(delta)
+	maintainAltitude(delta)
 
 
-func get_input(delta):
+func get_input(_delta):
 	#Button Pressed
 	if Input.is_action_pressed("turn_left"):
 		rotate_y(0.02)
@@ -101,9 +105,15 @@ func apply_acceleration(delta) -> void:
 	velocity = acceleration * delta
 
 
-func moveToTargetAltitude(delta) -> void:
-	var target_position_y = ($RayCast_L_Engine.get_collision_point() + target_altitude).y
-	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta * altitude_adjust_speed
+func apply_gravity(_delta) -> void:
+	if transform.origin.y > $RayCast_L_Engine.get_collision_point().y + target_altitude.y + verticle_bob_amplitude:
+		velocity += gravity
+
+
+func maintainAltitude(delta) -> void:
+	var altitude_oscillation_modifier: float = sin(OS.get_ticks_msec()/verticle_bob_period) * verticle_bob_amplitude
+	var target_position_y: float = $RayCast_L_Engine.get_collision_point().y + target_altitude.y + altitude_oscillation_modifier
+	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta
 
 
 func _toggle_camera_up() -> void:

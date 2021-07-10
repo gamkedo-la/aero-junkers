@@ -48,6 +48,7 @@ transform = Transform( -0.707106, 0.00043738, -0.707106, 0.00105825, 0.999998, -
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 10, -5.78908e-10, -5.58794e-09, 5.96515e-09, 1, -6.0536e-09, 6.51926e-09, 5.82077e-10, 10, 6, -2, -26 )
+collision_mask = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 transform = Transform( 442.26, -0.0193387, -0.203972, -1.9339, 1.00009, 0.0794763, -0.20397, 0.000794777, 18.9001, 0, 0, 0 )
