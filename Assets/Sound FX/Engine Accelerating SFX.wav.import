@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Engine Accelerating SFX.wav-6449551f77514b304895be927351a460.sample"
+
+[deps]
+
+source_file="res://Assets/Sound FX/Engine Accelerating SFX.wav"
+dest_files=[ "res://.import/Engine Accelerating SFX.wav-6449551f77514b304895be927351a460.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
