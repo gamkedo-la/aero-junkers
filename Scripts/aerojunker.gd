@@ -56,9 +56,6 @@ func _physics_process(delta):
 				print('health: %d'	% health)
 			else:
 				print('aerojunker is dead')
-	
-	
-	maintainAltitude(delta)
 
 
 func _process(delta):
