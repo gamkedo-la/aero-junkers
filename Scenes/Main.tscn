@@ -29,7 +29,7 @@ shadow_enabled = true
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, -3.39291e-08, 1.92609e-07, -6.03464e-10, 0.999999, -1.10886e-08, -1.73721e-07, 6.60657e-09, 1, 0.000875796, 2, -0.000878091 )
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 
 [node name="Checkpoint1" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999999, -4.33715e-10, -4.36557e-10, 4.33303e-10, 0.999999, -4.36557e-10, 4.36557e-10, 4.36557e-10, 0.999999, -4.05255, -1.03203, -106.998 )
@@ -58,7 +58,9 @@ material/0 = null
 transform = Transform( 1, -2.62048e-11, -2.91038e-11, 2.58069e-11, 1, -2.91038e-11, 2.91038e-11, 2.91038e-11, 1, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="Placeholder Walls" type="CSGCombiner" parent="."]
+[node name="Placeholder Walls" type="CSGCombiner" parent="." groups=[
+"environment",
+]]
 use_collision = true
 collision_mask = 2
 
@@ -356,7 +358,9 @@ polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 
 depth = 1.911
 material = ExtResource( 3 )
 
-[node name="Placeholder Mounds" type="CSGCombiner" parent="."]
+[node name="Placeholder Mounds" type="CSGCombiner" parent="." groups=[
+"environment",
+]]
 use_collision = true
 collision_mask = 2
 
