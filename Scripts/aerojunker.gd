@@ -52,7 +52,10 @@ func _physics_process(delta):
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("environment"):
 			health -= 10
-			print('health: %d'	% health)
+			if (health > 0):
+				print('health: %d'	% health)
+			else:
+				print('aerojunker is dead')
 	
 	
 	maintainAltitude(delta)
