@@ -12,7 +12,7 @@ var velocity: Vector3 = Vector3.ZERO
 var target_altitude: Vector3 = Vector3.UP * 3
 var verticle_bob_amplitude: float = 2
 var verticle_bob_period: float = 200.0
-var health = 100
+var health = 100.0
 
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
@@ -23,6 +23,7 @@ var cur_camera_idx:int = 0
 
 enum TURN_DIRECTION {LEFT, RIGHT}
 const MAX_ENGINE_ROTATION_ANGLE = 23
+const ENVIRONMENT_DAMAGE = 0.1
 
 func _ready():
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
@@ -46,16 +47,10 @@ func _physics_process(delta):
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	detect_collision(delta)
 	maintainAltitude(delta)
 	
-	for index in range(get_slide_count()):
-		var collision = get_slide_collision(index)
-		if collision.collider.is_in_group("environment"):
-			health -= 10
-			if (health > 0):
-				print('health: %d'	% health)
-			else:
-				print('aerojunker is dead')
+
 
 
 func _process(delta):
@@ -143,6 +138,16 @@ func maintainAltitude(delta) -> void:
 	var altitude_oscillation_modifier: float = sin(OS.get_ticks_msec()/verticle_bob_period) * verticle_bob_amplitude
 	var target_position_y: float = $RayCast_L_Engine.get_collision_point().y + target_altitude.y + altitude_oscillation_modifier
 	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta
+	
+func detect_collision(delta) -> void:
+	for index in range(get_slide_count()):
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("environment"):
+			health -= ENVIRONMENT_DAMAGE
+			if (health > 0):
+				print('health: %f'	% health)
+			else:
+				print('aerojunker is dead')
 
 
 func _toggle_camera_up() -> void:
