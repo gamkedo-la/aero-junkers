@@ -3,14 +3,6 @@ extends KinematicBody
 
 signal switch_cam
 
-var max_speed = 4000 #units/second
-var altitude_adjust_speed = 5 #units/second
-var acceleration = Vector3.ZERO
-var acceleration_direction = 0
-var turn_direction = 0
-var velocity = Vector3.ZERO
-var target_altitude = Vector3.UP * 3
-var health = 100
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var max_speed: float = 10000.0 #units/second
@@ -20,6 +12,7 @@ var velocity: Vector3 = Vector3.ZERO
 var target_altitude: Vector3 = Vector3.UP * 3
 var verticle_bob_amplitude: float = 2
 var verticle_bob_period: float = 200.0
+var health = 100
 
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
@@ -53,7 +46,7 @@ func _physics_process(delta):
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
-	moveToTargetAltitude(delta)
+	maintainAltitude(delta)
 	
 	for index in range(get_slide_count()):
 		var collision = get_slide_collision(index)
