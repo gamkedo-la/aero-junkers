@@ -564,7 +564,9 @@ transform = Transform( -2.69926, -0.493088, 14.1363, -0.653048, 4.14014, -0.0014
 use_collision = true
 material = ExtResource( 3 )
 
-[node name="Placeholder Structures" type="CSGCombiner" parent="."]
+[node name="Placeholder Structures" type="CSGCombiner" parent="." groups=[
+"environment",
+]]
 transform = Transform( 6.1, -5.09317e-10, -5.58794e-09, 2.32956e-09, 0.965925, -4.42063, 2.56114e-09, 0.258819, 16.498, 0.00433771, -3.85975, -35.0352 )
 use_collision = true
 collision_mask = 2
