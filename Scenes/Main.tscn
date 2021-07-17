@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/AeroJunker.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Materials/dark_brown.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Materials/dark_brown.tres" type="Material" id=3]
 [ext_resource path="res://Scenes/Checkpoint_circle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/rock_1.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.301961, 0.286275, 0.156863, 1 )
@@ -385,11 +386,6 @@ transform = Transform( 5.1712, -0.00986179, -19.2992, 0.00708331, 1.99999, 0.009
 use_collision = true
 material = ExtResource( 3 )
 
-[node name="CSGSphere8" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( 5.1712, -0.00390425, -19.2992, 0.0130412, 15.5999, 0.00387584, 19.2992, -0.0130325, 5.1712, 27.2659, -4.06193, -113.857 )
-use_collision = true
-material = ExtResource( 3 )
-
 [node name="CSGSphere3" type="CSGSphere" parent="Placeholder Mounds"]
 transform = Transform( 0.011347, 0.0107766, 19.98, -0.336616, 4.18415, -0.0104304, 3.86948, 0.364269, -0.011652, -15.5474, -4.20227, -93.4537 )
 use_collision = true
@@ -563,6 +559,12 @@ material = ExtResource( 3 )
 transform = Transform( -2.69926, -0.493088, 14.1363, -0.653048, 4.14014, -0.00149446, 2.71549, 0.505966, 14.1196, 24.6168, -4.56644, 118.115 )
 use_collision = true
 material = ExtResource( 3 )
+
+[node name="rock2" parent="Placeholder Mounds" instance=ExtResource( 5 )]
+transform = Transform( 10.89, 0.00144558, -6.39819e-07, 0.00144563, 14.19, -0.00144874, -6.22123e-07, -0.00144874, 10.89, 52.962, -2.05701, -77.0246 )
+
+[node name="rock" parent="Placeholder Mounds" instance=ExtResource( 5 )]
+transform = Transform( 10.89, 0.00144558, -6.4075e-07, 0.00144563, 14.19, -0.00144874, -6.23055e-07, -0.00144874, 10.89, 26.9465, -1.0601, -110.013 )
 
 [node name="Placeholder Structures" type="CSGCombiner" parent="." groups=[
 "environment",
