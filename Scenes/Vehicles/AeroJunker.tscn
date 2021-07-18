@@ -39,7 +39,7 @@ script = ExtResource( 1 )
 [node name="ChaseCam" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.996195, 0.087156, 0, -0.087156, 0.996195, -1.39877e-06, 1.9001, 7.75882 )
 fov = 85.0
-far = 200.0
+far = 300.0
 script = ExtResource( 3 )
 
 [node name="EngineRunningSFX" type="AudioStreamPlayer3D" parent="."]

@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AeroJunkers"
-run/main_scene="res://Scenes/Tracks/Main.tscn"
+run/main_scene="res://Scenes/Tracks/Track1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
