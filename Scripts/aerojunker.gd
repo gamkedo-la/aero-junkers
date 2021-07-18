@@ -52,9 +52,9 @@ func _physics_process(delta):
 	
 
 
-
 func _process(delta):
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
+
 
 func get_input(_delta):
 	#Button Pressed
@@ -66,12 +66,15 @@ func get_input(_delta):
 		calculate_turn_engines(-0.02, TURN_DIRECTION.RIGHT)
 	if Input.is_action_pressed("accelerate"):
 		acceleration_direction = -1
+		if !$EngineAcceleratingSFX.playing:
+			$EngineAcceleratingSFX.play()
 	if Input.is_action_pressed("reverse"):
 		acceleration_direction = 1
 		
 	#Button Released
 	if Input.is_action_just_released("accelerate"):
 		acceleration_direction = 0
+		$EngineAcceleratingSFX.stop()
 	if Input.is_action_just_released("reverse"):
 		acceleration_direction = 0
 	if Input.is_action_just_released("turn_left"):
@@ -137,6 +140,7 @@ func maintainAltitude(delta) -> void:
 	var altitude_oscillation_modifier: float = sin(OS.get_ticks_msec()/verticle_bob_period) * verticle_bob_amplitude
 	var target_position_y: float = $RayCast_L_Engine.get_collision_point().y + target_altitude.y + altitude_oscillation_modifier
 	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta
+	
 	
 func detect_collision(delta) -> void:
 	for index in range(get_slide_count()):
