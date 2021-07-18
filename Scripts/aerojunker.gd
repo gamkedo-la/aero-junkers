@@ -105,8 +105,7 @@ func rotate_engines_y(radians) -> void:
 	$MeshInstance_R_Engine.rotate_z(radians * 0.6)
 	$CollisionShape_R_Engine.rotate_z(radians * 0.6)
 	
-	$MeshInstance_Cockpit.rotate_z(radians)
-	$CollisionShape_Cockpit.rotate_z(radians)
+	$Cockpit.rotate_z(radians)
 
 
 func reset_engine_rotation() -> void:
@@ -117,11 +116,11 @@ func reset_engine_rotation() -> void:
 	
 	$MeshInstance_R_Engine.rotation_degrees = Vector3.ZERO
 	$MeshInstance_L_Engine.rotation_degrees = Vector3.ZERO
-	$MeshInstance_Cockpit.rotation_degrees = Vector3.ZERO
+	$Cockpit.rotation_degrees = Vector3.ZERO
 	
 	$CollisionShape_R_Engine.rotation_degrees = Vector3.ZERO
 	$CollisionShape_L_Engine.rotation_degrees = Vector3.ZERO
-	$CollisionShape_Cockpit.rotation_degrees = Vector3.ZERO
+	$Cockpit.rotation_degrees = Vector3.ZERO
 
 
 func apply_acceleration(delta) -> void:
