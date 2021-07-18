@@ -2,16 +2,16 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/rock.gltf-6de1b7de614b2b83547d7a6856be4c15.scn"
+path="res://.import/rock3.glb-b15a5d40bc382117b35a824eabe736e8.scn"
 
 [deps]
 
-source_file="res://Assets/Models/rock.gltf"
-dest_files=[ "res://.import/rock.gltf-6de1b7de614b2b83547d7a6856be4c15.scn" ]
+source_file="res://Assets/Models/rock3.glb"
+dest_files=[ "res://.import/rock3.glb-b15a5d40bc382117b35a824eabe736e8.scn" ]
 
 [params]
 
-nodes/root_type="MeshInstance"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
