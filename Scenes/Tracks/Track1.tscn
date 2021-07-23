@@ -41,7 +41,9 @@ transform = Transform( 0.5, 4.40459e-11, 0.866025, 1.13118e-10, 1, -1.16415e-10,
 [node name="Checkpoint7" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.258819, 8.30607e-11, 0.965926, 1.13118e-10, 1, -1.16415e-10, -0.965926, 1.39806e-10, 0.258819, 81.985, 2, 414 )
 
-[node name="Rocks" parent="." instance=ExtResource( 4 )]
+[node name="Rocks" parent="." groups=[
+"environment",
+] instance=ExtResource( 4 )]
 transform = Transform( 7.2, 0, 0, 0, 5.472, 0, 0, 0, 7.2, 174, 0, 440 )
 
 [node name="rock3" parent="Rocks" instance=ExtResource( 5 )]
