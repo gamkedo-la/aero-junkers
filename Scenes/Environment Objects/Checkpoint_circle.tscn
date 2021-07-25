@@ -9,6 +9,10 @@ albedo_color = Color( 0.0784314, 1, 0, 1 )
 
 [node name="CSGTorus" type="CSGTorus" parent="." index="3"]
 transform = Transform( 2.4, 0, -1.22453e-17, 3.25259e-20, -4.37114e-08, -2.4, 0, 1, -1.04907e-07, 0, 0, 0 )
+visible = false
 use_collision = true
 collision_mask = 2
 material = SubResource( 1 )
+
+[node name="checkpoint" parent="." index="4"]
+transform = Transform( -5.5732e-08, 2.93199e-10, 1.275, -4.20375e-12, 1.275, -2.92655e-10, -1.275, -3.65928e-12, -5.5732e-08, 13, 0, -1.5134e-09 )

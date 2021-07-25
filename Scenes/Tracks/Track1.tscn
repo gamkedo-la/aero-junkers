@@ -22,25 +22,25 @@ collision_mask = 2
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 76, 1, 412 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.38278e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, -4.38278e-08, 256.985, 0, 449 )
+transform = Transform( -4.38278e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, -4.38278e-08, 256.985, -1, 449 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.965926, 7.95456e-11, -0.258819, 1.13118e-10, 1, -1.16415e-10, 0.258819, -1.41836e-10, -0.965926, 330.985, 23, 299 )
+transform = Transform( -0.866026, 4.01253e-11, -0.5, 1.13118e-10, 1, -1.16415e-10, 0.5, -1.57591e-10, -0.866026, 330.985, 22, 300 )
 
 [node name="Checkpoint3" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.5, -4.40459e-11, -0.866025, 1.13118e-10, 1, -1.16415e-10, 0.866025, -1.5654e-10, -0.5, 281.985, 1, 210 )
+transform = Transform( -0.5, -4.40459e-11, -0.866025, 1.13118e-10, 1, -1.16415e-10, 0.866025, -1.5654e-10, -0.5, 281.985, -1, 210 )
 
 [node name="Checkpoint4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 5.96046e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, 5.96046e-08, -74.015, 1, 176 )
+transform = Transform( 5.96046e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, 5.96046e-08, -74.015, 0, 176 )
 
 [node name="Checkpoint5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.866025, -1.5654e-10, -0.5, 1.13118e-10, 1, -1.16415e-10, 0.5, 4.40459e-11, 0.866025, -144.015, 1, 328 )
+transform = Transform( 0.866025, -1.5654e-10, -0.5, 1.13118e-10, 1, -1.16415e-10, 0.5, 4.40459e-11, 0.866025, -144.015, -1, 328 )
 
 [node name="Checkpoint6" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.5, 4.40459e-11, 0.866025, 1.13118e-10, 1, -1.16415e-10, -0.866025, 1.5654e-10, 0.5, -118.015, 30, 443 )
+transform = Transform( 0.5, 4.40459e-11, 0.866025, 1.13118e-10, 1, -1.16415e-10, -0.866025, 1.5654e-10, 0.5, -118.015, 26, 443 )
 
 [node name="Checkpoint7" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.258819, 8.30607e-11, 0.965926, 1.13118e-10, 1, -1.16415e-10, -0.965926, 1.39806e-10, 0.258819, 81.985, 2, 414 )
+transform = Transform( 0.258819, 8.30607e-11, 0.965926, 1.13118e-10, 1, -1.16415e-10, -0.965926, 1.39806e-10, 0.258819, 81.985, -1, 414 )
 
 [node name="Cacti" type="Spatial" parent="."]
 
