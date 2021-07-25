@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrains/terrain1.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Environment Objects/rock2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Environment Objects/rock3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Environment Objects/rock1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Environment Objects/Cactus1.tscn" type="PackedScene" id=7]
 
 [node name="Spatial" type="Spatial"]
 
@@ -40,6 +41,20 @@ transform = Transform( 0.5, 4.40459e-11, 0.866025, 1.13118e-10, 1, -1.16415e-10,
 
 [node name="Checkpoint7" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.258819, 8.30607e-11, 0.965926, 1.13118e-10, 1, -1.16415e-10, -0.965926, 1.39806e-10, 0.258819, 81.985, 2, 414 )
+
+[node name="Cacti" type="Spatial" parent="."]
+
+[node name="Cactus1" parent="Cacti" instance=ExtResource( 7 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 173, 0, 445 )
+
+[node name="Cactus2" parent="Cacti" instance=ExtResource( 7 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 177, 0, 411 )
+
+[node name="Cactus3" parent="Cacti" instance=ExtResource( 7 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 103.224, 0, 398.102 )
+
+[node name="Cactus4" parent="Cacti" instance=ExtResource( 7 )]
+transform = Transform( 0.565685, 0, -0.565686, 0, 0.8, 0, 0.565686, 0, 0.565685, 104.776, 0, 403.898 )
 
 [node name="Rocks" parent="." groups=[
 "environment",
