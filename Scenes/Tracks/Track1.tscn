@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrains/terrain1.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Scenes/Environment Objects/rock3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Environment Objects/rock1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment Objects/Cactus1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 8 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -144,5 +150,125 @@ transform = Transform( 1.32455e-07, 0, 1.15278, 0, 1.51681, 0, -1.15278, 0, 1.32
 
 [node name="rock28" parent="Rocks" instance=ExtResource( 6 )]
 transform = Transform( -3.94746e-15, -1.32455e-07, 1.15278, 1.51681, -6.6302e-08, 0, 5.03895e-08, 1.15278, 1.32455e-07, -14.4087, -0.182748, -9.87233 )
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenVB" type="VBoxContainer" parent="GameUI/MarginContainer"]
+margin_right = 984.0
+margin_bottom = 560.0
+
+[node name="TopBar" type="HBoxContainer" parent="GameUI/MarginContainer/ScreenVB"]
+margin_right = 984.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/TopBar"]
+margin_right = 325.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUI/MarginContainer/ScreenVB/TopBar/Left"]
+margin_right = 325.0
+margin_bottom = 66.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "1/20
+"
+text = "1/20
+"
+fit_content_height = true
+scroll_active = false
+
+[node name="Mid" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/TopBar"]
+margin_left = 329.0
+margin_right = 654.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUI/MarginContainer/ScreenVB/TopBar/Mid"]
+margin_right = 325.0
+margin_bottom = 66.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]2:00 [/center]
+"
+text = "2:00 
+"
+fit_content_height = true
+scroll_active = false
+
+[node name="Right" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/TopBar"]
+margin_left = 658.0
+margin_right = 984.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="MidBar" type="HBoxContainer" parent="GameUI/MarginContainer/ScreenVB"]
+margin_top = 188.0
+margin_right = 984.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/MidBar"]
+margin_right = 325.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="Mid" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/MidBar"]
+margin_left = 329.0
+margin_right = 654.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="Right" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/MidBar"]
+margin_left = 658.0
+margin_right = 984.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="BotBar" type="HBoxContainer" parent="GameUI/MarginContainer/ScreenVB"]
+margin_top = 376.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
+margin_right = 341.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="ProgressBar" type="TextureProgress" parent="GameUI/MarginContainer/ScreenVB/BotBar/Left"]
+margin_top = 84.0
+margin_right = 341.0
+margin_bottom = 184.0
+value = 100.0
+texture_progress = ExtResource( 9 )
+
+[node name="Mid" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
+margin_left = 345.0
+margin_right = 662.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+
+[node name="Right" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
+margin_left = 666.0
+margin_right = 984.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
 
 [editable path="terrain1"]
