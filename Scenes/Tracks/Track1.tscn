@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrains/terrain1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Environment Objects/Cactus1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/UI/Speedometer.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -246,27 +247,53 @@ margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Left" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
-margin_right = 341.0
+[node name="Speedometer" type="Control" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
+margin_right = 325.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
-alignment = 2
+script = ExtResource( 10 )
 
-[node name="ProgressBar" type="TextureProgress" parent="GameUI/MarginContainer/ScreenVB/BotBar/Left"]
-margin_top = 84.0
+[node name="Stage1" type="TextureProgress" parent="GameUI/MarginContainer/ScreenVB/BotBar/Speedometer"]
+self_modulate = Color( 0, 0.427451, 1, 1 )
+margin_top = 100.0
 margin_right = 341.0
-margin_bottom = 184.0
-value = 100.0
+margin_bottom = 200.0
+step = 0.1
+value = 10.0
+texture_progress = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage2" type="TextureProgress" parent="GameUI/MarginContainer/ScreenVB/BotBar/Speedometer"]
+self_modulate = Color( 0.447059, 0, 1, 1 )
+margin_left = 2.0
+margin_top = 100.0
+margin_right = 343.0
+margin_bottom = 200.0
+step = 0.1
 texture_progress = ExtResource( 9 )
 
+[node name="Stage3" type="TextureProgress" parent="GameUI/MarginContainer/ScreenVB/BotBar/Speedometer"]
+self_modulate = Color( 1, 0, 0.176471, 1 )
+margin_left = 4.0
+margin_top = 100.0
+margin_right = 345.0
+margin_bottom = 200.0
+step = 0.1
+texture_progress = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Mid" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
-margin_left = 345.0
-margin_right = 662.0
+margin_left = 329.0
+margin_right = 654.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 
 [node name="Right" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
-margin_left = 666.0
+margin_left = 658.0
 margin_right = 984.0
 margin_bottom = 184.0
 size_flags_horizontal = 3

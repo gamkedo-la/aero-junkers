@@ -13,6 +13,7 @@ var target_altitude: Vector3 = Vector3.UP * 3
 var verticle_bob_amplitude: float = 2
 var verticle_bob_period: float = 200.0
 var health = 100.0
+var test_max_speed: float = 0
 
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
@@ -29,7 +30,13 @@ func _ready():
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
 	_init_follow_cam()
-
+	
+	# We can likely come up witha better way to pre-calculate *actual* max speed, but for right now, the 
+	# Junker tends to max out at around velocity.length() = 165ish
+	# The max will auto-adjust if the max is exceeded, and the speedometer will update accordingly
+	test_max_speed = 165
+	AeroSingleton.aero_max_speed = 165
+	
 
 func _init_follow_cam() -> void:
 	camera_positions = campos_node.get_children()
@@ -47,6 +54,13 @@ func _physics_process(delta):
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+	
+	if velocity.length() > test_max_speed:
+		test_max_speed = velocity.length()		
+	AeroSingleton.aero_max_speed = test_max_speed
+	AeroSingleton.aero_speed = velocity.length()
+#	print_debug("velocity: ", velocity, "velocity.length()", velocity.length())
 	detect_collision(delta)
 	maintainAltitude(delta)
 	
