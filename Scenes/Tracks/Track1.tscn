@@ -27,9 +27,10 @@ collision_mask = 2
 
 [node name="AeroJunker" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 76, 1, 412 )
+checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
 
 [node name="Checkpoint" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.38278e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, -4.38278e-08, 256.985, -1, 449 )
+transform = Transform( -2.98023e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, -2.98023e-08, 256.985, -1, 449 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.866026, 4.01253e-11, -0.5, 1.13118e-10, 1, -1.16415e-10, 0.5, -1.57591e-10, -0.866026, 330.985, 22, 300 )

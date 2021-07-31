@@ -26,6 +26,8 @@ enum TURN_DIRECTION {LEFT, RIGHT}
 const MAX_ENGINE_ROTATION_ANGLE = 23
 const ENVIRONMENT_DAMAGE = 0.1
 
+export(Array) var checkpoints
+
 func _ready():
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
@@ -54,7 +56,6 @@ func _physics_process(delta):
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
-	
 	
 	if velocity.length() > test_max_speed:
 		test_max_speed = velocity.length()		
@@ -154,8 +155,8 @@ func maintainAltitude(delta) -> void:
 	var altitude_oscillation_modifier: float = sin(OS.get_ticks_msec()/verticle_bob_period) * verticle_bob_amplitude
 	var target_position_y: float = $RayCast_L_Engine.get_collision_point().y + target_altitude.y + altitude_oscillation_modifier
 	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta
-	
-	
+
+
 func detect_collision(delta) -> void:
 	for index in range(get_slide_count()):
 		var collision = get_slide_collision(index)
