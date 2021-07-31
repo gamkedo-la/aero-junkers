@@ -163,9 +163,9 @@ func detect_collision(delta) -> void:
 		if collision.collider.is_in_group("environment"):
 			health -= ENVIRONMENT_DAMAGE
 			if (health > 0):
-				print('health: %f'	% health)
+				print_debug('health: %f'	% health)
 			else:
-				print('aerojunker is dead')
+				print_debug('aerojunker is dead')
 
 
 func _toggle_camera_up() -> void:
