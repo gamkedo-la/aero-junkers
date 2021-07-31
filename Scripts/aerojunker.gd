@@ -167,6 +167,10 @@ func detect_collision(delta) -> void:
 			else:
 				print_debug('aerojunker is dead')
 
+func play_engine_breaking_sound() -> void:
+	if !$EngineBreakingSFX.playing:
+		$EngineBreakingSFX.play()
+
 
 func _toggle_camera_up() -> void:
 	if cur_camera_idx < camera_positions.size() - 1:
