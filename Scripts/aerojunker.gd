@@ -49,7 +49,11 @@ func _init_follow_cam() -> void:
 
 
 func _physics_process(delta):
-	if not is_ai_controlled: get_input(delta)
+	if is_ai_controlled:
+		get_ai_input(delta)
+	else: 
+		get_input(delta)
+		
 	apply_acceleration(delta)
 	apply_gravity(delta)
 	
@@ -96,6 +100,11 @@ func get_input(_delta):
 	if Input.is_action_just_pressed("chase_cam"):
 		cur_camera_idx = 0
 		emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
+
+
+func get_ai_input(_delta):
+	accelerate()
+	turn_left()
 
 
 func turn_left():
