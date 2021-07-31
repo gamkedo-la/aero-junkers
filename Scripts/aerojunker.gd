@@ -73,18 +73,10 @@ func _process(delta):
 
 func get_input(_delta):
 	#Button Pressed
-	if Input.is_action_pressed("turn_left"):
-		rotate_y(0.02)
-		calculate_turn_engines(0.02, TURN_DIRECTION.LEFT)
-	if Input.is_action_pressed("turn_right"):
-		rotate_y(-0.02)
-		calculate_turn_engines(-0.02, TURN_DIRECTION.RIGHT)
-	if Input.is_action_pressed("accelerate"):
-		acceleration_direction = -1
-		if !$EngineAcceleratingSFX.playing:
-			$EngineAcceleratingSFX.play()
-	if Input.is_action_pressed("reverse"):
-		acceleration_direction = 1
+	if Input.is_action_pressed("turn_left"): turn_left()
+	if Input.is_action_pressed("turn_right"): turn_right()
+	if Input.is_action_pressed("accelerate"): accelerate()
+	if Input.is_action_pressed("reverse"): reverse()
 		
 	#Button Released
 	if Input.is_action_just_released("accelerate"):
@@ -105,6 +97,21 @@ func get_input(_delta):
 		cur_camera_idx = 0
 		emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
+
+func turn_left():
+	rotate_y(0.02)
+	calculate_turn_engines(0.02, TURN_DIRECTION.LEFT)
+	
+func turn_right():
+	rotate_y(-0.02)
+	calculate_turn_engines(-0.02, TURN_DIRECTION.RIGHT)
+	
+func accelerate():
+	acceleration_direction = -1
+	if !$EngineAcceleratingSFX.playing: $EngineAcceleratingSFX.play()
+	
+func reverse():
+	acceleration_direction = 1
 
 func calculate_turn_engines(radians, direction) -> void:
 	if (direction == TURN_DIRECTION.RIGHT && $MeshInstance_R_Engine.rotation_degrees.y > -MAX_ENGINE_ROTATION_ANGLE):
