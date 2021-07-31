@@ -1,7 +1,9 @@
 extends Node
 
 
+# warning-ignore:unused_signal
 signal aero_speed_changed(val)
+# warning-ignore:unused_signal
 signal aero_max_speed_changed(val)
 
 var aero_speed: float = 0 setget set_aero_speed

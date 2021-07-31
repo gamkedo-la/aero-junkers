@@ -1,6 +1,6 @@
 extends RayCast
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$GroundIndicator.global_transform.origin = get_collision_point()
 
 

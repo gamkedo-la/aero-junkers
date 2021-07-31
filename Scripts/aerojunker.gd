@@ -67,7 +67,7 @@ func _physics_process(delta):
 	maintainAltitude(delta)
 
 
-func _process(delta):
+func _process(_delta):
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 
 
@@ -165,7 +165,7 @@ func maintainAltitude(delta) -> void:
 	transform.origin.y = transform.origin.y + (target_position_y - transform.origin.y) * delta
 
 
-func detect_collision(delta) -> void:
+func detect_collision(_delta) -> void:
 	for index in range(get_slide_count()):
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("environment"):
