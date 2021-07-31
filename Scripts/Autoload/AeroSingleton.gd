@@ -12,6 +12,13 @@ var aero_max_speed: float = 165 setget set_aero_max_speed
 func _ready():
 	pass # Replace with function body.
 
+func _process(_delta):
+	if Input.is_action_pressed("cam_follow_aerojunker_1"): set_current_camera(get_node("/root/Spatial/AeroJunker/ChaseCam"))
+	if Input.is_action_pressed("cam_follow_aerojunker_2"): set_current_camera(get_node("/root/Spatial/AeroJunker2/ChaseCam"))
+	
+func set_current_camera(camera: Camera):
+	camera.make_current()
+
 func emit_signal_if_value_changed(signal_name, value, change_amount) -> void:
 	if change_amount != 0:
 		emit_signal(signal_name, value)
