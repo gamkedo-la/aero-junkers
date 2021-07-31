@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "AeroJunker",
 "language": "GDScript",
 "path": "res://Scripts/aerojunker.gd"
+}, {
+"base": "Area",
+"class": "Checkpoint",
+"language": "GDScript",
+"path": "res://Scripts/checkpoint.gd"
 } ]
 _global_script_class_icons={
-"AeroJunker": ""
+"AeroJunker": "",
+"Checkpoint": ""
 }
 
 [application]

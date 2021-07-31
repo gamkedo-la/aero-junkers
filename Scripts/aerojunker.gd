@@ -3,6 +3,9 @@ extends KinematicBody
 
 signal switch_cam
 
+export(bool) var is_ai_controlled: bool = false
+export(Array, NodePath) var checkpoints
+
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var max_speed: float = 10000.0 #units/second
@@ -26,8 +29,6 @@ enum TURN_DIRECTION {LEFT, RIGHT}
 const MAX_ENGINE_ROTATION_ANGLE = 23
 const ENVIRONMENT_DAMAGE = 0.1
 
-export(Array) var checkpoints
-
 func _ready():
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
@@ -48,7 +49,7 @@ func _init_follow_cam() -> void:
 
 
 func _physics_process(delta):
-	get_input(delta)
+	if not is_ai_controlled: get_input(delta)
 	apply_acceleration(delta)
 	apply_gravity(delta)
 	
@@ -64,7 +65,6 @@ func _physics_process(delta):
 #	print_debug("velocity: ", velocity, "velocity.length()", velocity.length())
 	detect_collision(delta)
 	maintainAltitude(delta)
-	
 
 
 func _process(delta):
