@@ -64,8 +64,11 @@ func _physics_process(delta):
 	
 	if velocity.length() > test_max_speed:
 		test_max_speed = velocity.length()		
-	AeroSingleton.aero_max_speed = test_max_speed
-	AeroSingleton.aero_speed = velocity.length()
+	
+	# If player aerojunker, update UI elements etc...
+	if not is_ai_controlled:
+		AeroSingleton.aero_max_speed = test_max_speed
+		AeroSingleton.aero_speed = velocity.length()
 #	print_debug("velocity: ", velocity, "velocity.length()", velocity.length())
 	detect_collision(delta)
 	maintainAltitude(delta)
