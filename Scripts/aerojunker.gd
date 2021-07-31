@@ -90,6 +90,7 @@ func get_input(_delta):
 	if Input.is_action_just_released("accelerate"):
 		acceleration_direction = 0
 		$EngineAcceleratingSFX.stop()
+		play_engine_breaking_sound()
 	if Input.is_action_just_released("reverse"):
 		acceleration_direction = 0
 	if Input.is_action_just_released("turn_left"):
@@ -182,3 +183,4 @@ func _toggle_camera_up() -> void:
 
 func _player_reached_checkpoint() -> void:
 	print("Player Reached Checkpoint")
+
