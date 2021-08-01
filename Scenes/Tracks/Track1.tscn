@@ -323,4 +323,13 @@ margin_right = 984.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 
+[node name="Viewport" type="Viewport" parent="GameUI/MarginContainer/ScreenVB/BotBar/Right"]
+size = Vector2( 100, 100 )
+
+[node name="MiniMapCamera" type="Camera" parent="GameUI/MarginContainer/ScreenVB/BotBar/Right/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 550, 0 )
+projection = 1
+size = 5.76
+far = 600.0
+
 [editable path="terrain1"]
