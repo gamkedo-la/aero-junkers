@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrains/terrain1.tscn" type="PackedScene" id=2]
@@ -11,11 +11,36 @@
 [ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/UI/Speedometer.gd" type="Script" id=10]
 
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/wall_rock_top.png-5f5fddf7963927f1de10a9d6d6bc8c9a.stex"
+
+[sub_resource type="PanoramaSky" id=4]
+panorama = SubResource( 5 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 1
+background_sky = SubResource( 4 )
+background_sky_orientation = Basis( -1, 0, 0, 0.5, 1, 0, 0, 0, -1 )
+background_sky_rotation = Vector3( 0, -3.14159, 0.463648 )
+background_sky_rotation_degrees = Vector3( 0, -180, 26.5651 )
+background_color = Color( 0.529412, 0.411765, 0.231373, 1 )
+ambient_light_color = Color( 0.8, 0.701961, 0.235294, 1 )
+fog_enabled = true
+fog_color = Color( 0.486275, 0.439216, 0.266667, 1 )
+fog_depth_begin = 50.0
+fog_depth_end = 200.0
+fog_depth_curve = 2.0
+glow_enabled = true
+
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 8 )
 
 [node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 4, 0 )
