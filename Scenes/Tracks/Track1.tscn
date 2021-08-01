@@ -10,20 +10,15 @@
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/UI/Speedometer.gd" type="Script" id=10]
-
-[sub_resource type="StreamTexture" id=5]
-flags = 4
-load_path = "res://.import/wall_rock_top.png-5f5fddf7963927f1de10a9d6d6bc8c9a.stex"
+[ext_resource path="res://Assets/Materials/sky_pink_grey.png" type="Texture" id=11]
 
 [sub_resource type="PanoramaSky" id=4]
-panorama = SubResource( 5 )
+panorama = ExtResource( 11 )
 
 [sub_resource type="Environment" id=3]
-background_mode = 1
+background_mode = 2
 background_sky = SubResource( 4 )
-background_sky_orientation = Basis( -1, 0, 0, 0.5, 1, 0, 0, 0, -1 )
-background_sky_rotation = Vector3( 0, -3.14159, 0.463648 )
-background_sky_rotation_degrees = Vector3( 0, -180, 26.5651 )
+background_sky_orientation = Basis( -1, 0, 0, 0, 1, 0, 0, 0, -1 )
 background_color = Color( 0.529412, 0.411765, 0.231373, 1 )
 ambient_light_color = Color( 0.8, 0.701961, 0.235294, 1 )
 fog_enabled = true
