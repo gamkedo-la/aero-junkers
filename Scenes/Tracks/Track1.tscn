@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrains/terrain1.tscn" type="PackedScene" id=2]
@@ -11,13 +11,15 @@
 [ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/UI/Speedometer.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Materials/sky_pink_grey.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Tracks/Minimap.gd" type="Script" id=12]
+[ext_resource path="res://default_env.tres" type="Environment" id=13]
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 11 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 1 )
 background_sky_orientation = Basis( -1, 0, 0, 0, 1, 0, 0, 0, -1 )
 background_color = Color( 0.529412, 0.411765, 0.231373, 1 )
 ambient_light_color = Color( 0.8, 0.701961, 0.235294, 1 )
@@ -28,14 +30,14 @@ fog_depth_end = 200.0
 fog_depth_curve = 2.0
 glow_enabled = true
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 8 )
 
 [node name="Spatial" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 4, 0 )
@@ -208,7 +210,7 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="GameUI/MarginContainer/ScreenVB/TopBar/Left"]
 margin_right = 325.0
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "1/20
 "
@@ -226,7 +228,7 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="GameUI/MarginContainer/ScreenVB/TopBar/Mid"]
 margin_right = 325.0
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]2:00 [/center]
 "
@@ -317,19 +319,25 @@ margin_right = 654.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 
-[node name="Right" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
+[node name="Minimap" type="VBoxContainer" parent="GameUI/MarginContainer/ScreenVB/BotBar"]
 margin_left = 658.0
 margin_right = 984.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
+script = ExtResource( 12 )
 
-[node name="Viewport" type="Viewport" parent="GameUI/MarginContainer/ScreenVB/BotBar/Right"]
-size = Vector2( 100, 100 )
+[node name="Viewport" type="Viewport" parent="GameUI/MarginContainer/ScreenVB/BotBar/Minimap"]
+size = Vector2( 200, 200 )
 
-[node name="MiniMapCamera" type="Camera" parent="GameUI/MarginContainer/ScreenVB/BotBar/Right/Viewport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 550, 0 )
-projection = 1
+[node name="MiniMapCamera" type="Camera" parent="GameUI/MarginContainer/ScreenVB/BotBar/Minimap/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 552, 0 )
+environment = ExtResource( 13 )
+fov = 116.6
 size = 5.76
-far = 600.0
+far = 1000.0
+
+[node name="MapTexture" type="TextureRect" parent="GameUI/MarginContainer/ScreenVB/BotBar/Minimap"]
+margin_right = 326.0
+margin_bottom = 200.0
 
 [editable path="terrain1"]
