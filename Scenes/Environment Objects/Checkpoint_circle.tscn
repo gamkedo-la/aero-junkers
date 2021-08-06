@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Environment Objects/Checkpoint.tscn" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 10.9624, 3.19725, 9.19969 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0784314, 1, 0, 1 )
 
 [node name="Checkpoint" instance=ExtResource( 1 )]
+collision_layer = 5
+collision_mask = 3
+
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1.25185, 4.36341e-11, 3.23373e-11, -3.2216e-11, -4.18016e-09, -0.967051, 4.36341e-10, 0.5, -2.19027e-07, -0.0200443, 9.16666, 1.02626 )
+shape = SubResource( 2 )
 
 [node name="CSGTorus" type="CSGTorus" parent="." index="3"]
 transform = Transform( 2.4, 0, -1.22453e-17, 3.25259e-20, -4.37114e-08, -2.4, 0, 1, -1.04907e-07, 0, 0, 0 )
 visible = false
-use_collision = true
 collision_mask = 2
 material = SubResource( 1 )
 

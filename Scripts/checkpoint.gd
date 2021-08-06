@@ -7,4 +7,5 @@ func _ready():
 
 
 func _checkpoint_entered(_body: Node) -> void:
+	print_debug("Checkpoint emitting signal")
 	CheckpointSingleton.emit_signal("checkpoint_reached")

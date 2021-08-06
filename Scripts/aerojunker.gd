@@ -202,5 +202,5 @@ func _toggle_camera_up() -> void:
 
 
 func _player_reached_checkpoint() -> void:
-	print("Player Reached Checkpoint")
+	print_debug("Player Reached Checkpoint")
 
