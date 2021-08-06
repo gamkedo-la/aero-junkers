@@ -35,6 +35,10 @@ config/icon="res://icon.png"
 CheckpointSingleton="*res://Scripts/checkpoint_singleton.gd"
 AeroSingleton="*res://Scripts/Autoload/AeroSingleton.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 accelerate={

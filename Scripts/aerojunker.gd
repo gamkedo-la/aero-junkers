@@ -5,6 +5,7 @@ signal switch_cam
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
+onready var nextCheckpoint = checkpoints[0]
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 

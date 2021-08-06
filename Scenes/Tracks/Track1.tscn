@@ -54,6 +54,7 @@ checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath(
 [node name="AeroJunker2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1.31135e-07, 0, -1, 0, 1, 0, 1, 0, 1.31135e-07, 74, 0, 417 )
 is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
 
 [node name="Checkpoint" parent="." instance=ExtResource( 3 )]
 transform = Transform( -2.98023e-08, -1.16415e-10, -1, 1.13118e-10, 1, -1.16415e-10, 1, -1.13545e-10, -2.98023e-08, 256.985, -1, 449 )
@@ -338,6 +339,5 @@ far = 1000.0
 
 [node name="MapTexture" type="TextureRect" parent="GameUI/MarginContainer/ScreenVB/BotBar/Minimap"]
 margin_right = 326.0
-margin_bottom = 200.0
 
 [editable path="terrain1"]
