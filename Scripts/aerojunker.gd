@@ -5,7 +5,8 @@ signal switch_cam
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
-onready var nextCheckpoint = checkpoints[0]
+onready var nextCheckpoint = get_node(checkpoints[0])
+var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -50,6 +51,8 @@ func _init_follow_cam() -> void:
 
 
 func _physics_process(delta):
+	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()
+	
 	if is_ai_controlled:
 		get_ai_input(delta)
 	else: 
@@ -114,17 +117,21 @@ func get_ai_input(_delta):
 func turn_left():
 	rotate_y(0.02)
 	calculate_turn_engines(0.02, TURN_DIRECTION.LEFT)
-	
+
+
 func turn_right():
 	rotate_y(-0.02)
 	calculate_turn_engines(-0.02, TURN_DIRECTION.RIGHT)
-	
+
+
 func accelerate():
 	acceleration_direction = -1
 	if !$EngineAcceleratingSFX.playing: $EngineAcceleratingSFX.play()
-	
+
+
 func reverse():
 	acceleration_direction = 1
+
 
 func calculate_turn_engines(radians, direction) -> void:
 	if (direction == TURN_DIRECTION.RIGHT && $MeshInstance_R_Engine.rotation_degrees.y > -MAX_ENGINE_ROTATION_ANGLE):
@@ -188,6 +195,7 @@ func detect_collision(_delta) -> void:
 			else:
 				print_debug('aerojunker is dead')
 
+
 func play_engine_breaking_sound() -> void:
 	if !$EngineBreakingSFX.playing:
 		$EngineBreakingSFX.play()
@@ -203,4 +211,3 @@ func _toggle_camera_up() -> void:
 
 func _player_reached_checkpoint() -> void:
 	print_debug("Player Reached Checkpoint")
-
