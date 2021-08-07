@@ -7,6 +7,7 @@ export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
 onready var nextCheckpoint = get_node(checkpoints[0])
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
+var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -14,6 +15,7 @@ var max_speed: float = 10000.0 #units/second
 var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
+var velocity2D: Vector2 = Vector2.ZERO
 var target_altitude: Vector3 = Vector3.UP * 3
 var verticle_bob_amplitude: float = 2
 var verticle_bob_period: float = 200.0
@@ -53,7 +55,9 @@ func _init_follow_cam() -> void:
 
 
 func _physics_process(delta):
-	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()
+	directionToNextCheckpoint2D.x = nextCheckpoint.transform.origin.x - transform.origin.x
+	directionToNextCheckpoint2D.y = nextCheckpoint.transform.origin.z - transform.origin.z
+	directionToNextCheckpoint2D = directionToNextCheckpoint2D.normalized()
 	
 	if is_ai_controlled:
 		get_ai_input(delta)
@@ -66,6 +70,8 @@ func _physics_process(delta):
 	#change velocity from global to local orientation
 	velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
+	velocity2D.x = velocity.x
+	velocity2D.y = velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
 	if velocity.length() > test_max_speed:
@@ -113,7 +119,12 @@ func get_input(_delta):
 
 func get_ai_input(_delta):
 	accelerate()
-	turn_left()
+	if rad2deg(velocity2D.normalized().angle_to(directionToNextCheckpoint2D)) > 10:
+		turn_right()
+	elif rad2deg(velocity2D.normalized().angle_to(directionToNextCheckpoint2D)) < -10:
+		turn_left()
+	else:
+		reset_engine_rotation()
 
 
 func turn_left():
