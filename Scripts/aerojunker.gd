@@ -42,6 +42,8 @@ func _ready():
 	test_max_speed = 165
 	AeroSingleton.aero_max_speed = 165
 	
+	DebugOverlay.draw.add_vector(self, "directionToNextCheckpoint", 5, 4, Color(0,1,0, 0.5))
+	
 
 func _init_follow_cam() -> void:
 	camera_positions = campos_node.get_children()
