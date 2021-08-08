@@ -5,7 +5,8 @@ signal switch_cam
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
-onready var nextCheckpoint = get_node(checkpoints[0])
+onready var nextCheckpointIndex = 0
+onready var nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 
@@ -55,6 +56,7 @@ func _init_follow_cam() -> void:
 
 
 func _physics_process(delta):
+	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()
 	directionToNextCheckpoint2D.x = nextCheckpoint.transform.origin.x - transform.origin.x
 	directionToNextCheckpoint2D.y = nextCheckpoint.transform.origin.z - transform.origin.z
 	directionToNextCheckpoint2D = directionToNextCheckpoint2D.normalized()
@@ -87,6 +89,7 @@ func _physics_process(delta):
 
 
 func _process(_delta):
+	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 
 
@@ -222,5 +225,9 @@ func _toggle_camera_up() -> void:
 	emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
 
-func _player_reached_checkpoint() -> void:
-	print_debug("Player Reached Checkpoint")
+func _player_reached_checkpoint(_checkpoint) -> void:
+	if _checkpoint == nextCheckpoint:
+		if nextCheckpointIndex >= checkpoints.size() - 1:
+			nextCheckpointIndex = 0
+		else:
+			nextCheckpointIndex = nextCheckpointIndex + 1
