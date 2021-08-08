@@ -5,14 +5,14 @@ signal switch_cam
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
-onready var nextCheckpointIndex = 0
-onready var nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
+var nextCheckpointIndex = 0
+var nextCheckpoint
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var max_speed: float = 10000.0 #units/second
+var max_speed: float = 5000.0 #units/second
 var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
@@ -35,6 +35,8 @@ const MAX_ENGINE_ROTATION_ANGLE = 23
 const ENVIRONMENT_DAMAGE = 0.1
 
 func _ready():
+	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
+	
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
 	_init_follow_cam()

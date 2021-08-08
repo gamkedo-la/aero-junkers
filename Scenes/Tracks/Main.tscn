@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=2]
@@ -18,10 +18,7 @@ size = Vector2( 100, 100 )
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.215686, 0.176471, 0.176471, 1 )
-
-[node name="Main" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.000439007, 0.000481988, 0.000438803, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
@@ -30,24 +27,52 @@ transform = Transform( -0.924318, 0.120432, 0.362121, 0.348767, -0.118596, 0.929
 shadow_enabled = true
 
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, -3.39291e-08, 1.92609e-07, -6.03464e-10, 0.999999, -1.10886e-08, -1.73721e-07, 6.60657e-09, 1, 0.000875796, 2, -0.000878091 )
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
 collision_layer = 2
 collision_mask = 5
+checkpoints = [ NodePath("../Checkpoint1"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
+
+[node name="AeroJunker2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 98.5079, 1.84328, -258.695 )
+collision_layer = 2
+collision_mask = 5
+is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint1"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
+
+[node name="AeroJunker3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 92.8558, 1.8501, -248.792 )
+collision_layer = 2
+collision_mask = 5
+is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint1"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
+
+[node name="AeroJunker4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 87.8961, 1.84327, -269.296 )
+collision_layer = 2
+collision_mask = 5
+is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint1"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
 
 [node name="Checkpoint1" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999999, -4.33715e-10, -4.36557e-10, 4.33303e-10, 0.999999, -4.36557e-10, 4.36557e-10, 4.36557e-10, 0.999999, -4.05255, -1.03203, -106.998 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.866024, 0.000278195, 0.499999, -0.000160813, 0.999998, -0.000277848, -0.499999, 0.000160212, 0.866025, 188.947, -0.117499, -109.091 )
+transform = Transform( 2.51137e-07, 0.000877069, 0.999998, -9.41363e-07, 0.999997, -0.000877071, -0.999998, -9.56265e-07, 6.88597e-07, 48.8858, -0.111867, -236.023 )
 
 [node name="Checkpoint3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.999998, -9.28722e-10, 1.67056e-08, 1.11494e-09, 0.999996, -1.07684e-09, 9.52859e-08, 9.60426e-10, 0.999998, 223.517, 3.91395, -2.95135 )
+transform = Transform( 0.707105, 0.000438733, 0.707105, -0.000182117, 0.999997, -0.00043834, -0.707105, 0.000181169, 0.707106, 164.916, -0.135502, -174.079 )
 
 [node name="Checkpoint4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 7.36618e-08, -9.57174e-07, -0.999999, 0.000877071, 0.999998, -9.42535e-07, 0.999999, -0.00087707, 1.73808e-07, 90.5174, 0.00634809, 74.7983 )
+transform = Transform( 0.965923, 0.000128551, 0.258818, -9.86953e-05, 0.999997, -0.000128338, -0.258818, 9.8419e-05, 0.965924, 178.937, -0.122331, -130.086 )
 
 [node name="Checkpoint5" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.707106, 0.00043738, -0.707106, 0.00105825, 0.999998, -0.000439673, 0.707105, -0.0010592, -0.707106, 160.908, -1.13989, -188.077 )
+transform = Transform( 0.999998, -1.01615e-09, 1.65892e-08, 1.23133e-09, 0.999996, -1.19326e-09, 9.54024e-08, 1.07684e-09, 0.999998, 226.495, -2.10491, -42.9501 )
+
+[node name="Checkpoint6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.999997, -1.3073e-09, 1.6269e-08, 1.52237e-09, 0.999994, -1.4843e-09, 9.56643e-08, 1.36788e-09, 0.999997, 223.523, -2.07815, 15.0513 )
+
+[node name="Checkpoint7" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.866024, 0.000597918, -0.5, 0.00103694, 0.999997, -0.000600165, 0.499999, -0.00103824, -0.866024, 59.5116, 0.0146691, 62.8132 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 10, -5.78908e-10, -5.58794e-09, 5.96515e-09, 1, -6.0536e-09, 6.51926e-09, 5.82077e-10, 10, 6, -2, -26 )
@@ -69,7 +94,7 @@ use_collision = true
 collision_mask = 2
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 0.00353995, -0.967072, -2.87716, -0.000183435, 0.254535, -10.7206, 11.1, -0.00451035, 0.000742505, 55.4118, -6.10219, -177.524 )
+transform = Transform( 0.00353995, -0.967072, -2.87716, -0.000183435, 0.254535, -10.7206, 11.1, -0.00451035, 0.000742504, 55.4118, -6.10219, -177.524 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 3 )
@@ -93,7 +118,7 @@ depth = 1.911
 material = ExtResource( 3 )
 
 [node name="CSGPolygon5" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 0.00353994, -0.967071, -2.87716, -0.000183443, 0.254534, -10.7206, 11.1, -0.00451035, 0.0007425, 55.4932, -6.02809, -8.52404 )
+transform = Transform( 0.00353994, -0.967071, -2.87716, -0.000183443, 0.254534, -10.7206, 11.1, -0.00451035, 0.000742499, 55.4932, -6.02809, -8.52404 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 3 )
@@ -230,12 +255,6 @@ polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 
 depth = 1.911
 material = ExtResource( 3 )
 
-[node name="CSGPolygon21" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( -2.87583, -0.833827, 5.41094, 0.00140763, 0.504687, 9.58267, -10.721, 0.223735, -1.45019, 319.502, 12.8533, -15.3112 )
-polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
-depth = 1.911
-material = ExtResource( 3 )
-
 [node name="CSGPolygon22" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -2.87583, -0.833827, 5.41094, 0.00140764, 0.504687, 9.58267, -10.721, 0.223735, -1.45019, 308.612, 12.8402, -55.8746 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
@@ -322,12 +341,6 @@ material = ExtResource( 3 )
 
 [node name="CSGPolygon35" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.7209, -0.223735, 1.45018, -0.00110456, 0.503953, 9.58739, -2.87583, -0.834268, 5.40252, 253.119, 12.9469, 131.618 )
-polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
-depth = 1.911
-material = ExtResource( 3 )
-
-[node name="CSGPolygon40" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 10.7232, 0.258316, -0.0143383, 0.00193883, 0.00434748, 11.0998, 2.86729, -0.966068, 0.0461173, 172.711, 19.0211, 220.503 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 3 )
@@ -485,12 +498,12 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere32" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -9.98998, 0.0131806, -17.3032, 0.028374, 37.4397, -0.0132425, 17.3032, -0.0284021, -9.98997, 178.523, -8.11481, -83.4033 )
+transform = Transform( -9.98998, 0.0131806, -17.3032, 0.028374, 37.4397, -0.0132425, 17.3032, -0.0284021, -9.98997, 168.526, -8.10735, -76.3985 )
 use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere33" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379035, 67.3913, -0.0273502, 12.1122, -0.0379616, -6.99297, 159.49, -8.13632, -151.394 )
+transform = Transform( -6.99297, 0.0272672, -12.1122, 0.0379035, 67.3913, -0.0273502, 12.1122, -0.0379616, -6.99297, 151.491, -8.1315, -148.39 )
 use_collision = true
 material = ExtResource( 3 )
 
@@ -582,14 +595,9 @@ use_collision = true
 collision_mask = 2
 
 [node name="CSGBox" type="CSGBox" parent="Placeholder Structures"]
-transform = Transform( 0.865891, 0.0212687, 1.35273, -1.23276, 1.02363, 1.49774, -0.268972, 0.00516688, 1.3275, 8.20308, 25.2107, 4.14888 )
+transform = Transform( 0.634568, 0.0354221, 2.25224, -1.54455, 1.01182, 0.744755, -0.337119, 0.00259934, 1.1638, 7.0557, 25.733, 4.26212 )
 use_collision = true
 height = 2.228
-
-[node name="CSGBox8" type="CSGBox" parent="Placeholder Structures"]
-transform = Transform( -0.321638, -0.0751501, 6.24622, 6.03736, -0.0616524, 2.20293, 0.0122081, 0.0572666, 0.205249, 4.10358, 17.0963, 3.73155 )
-use_collision = true
-material = SubResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Placeholder Structures"]
 transform = Transform( -0.999999, 0.000140767, -0.000617624, 0.00523831, 0.876285, -8.22895, -7.87199e-05, -0.0282078, -0.876286, 36.7215, 2.77468, -0.0501504 )
@@ -616,3 +624,6 @@ transform = Transform( 0.999995, -1.79491e-05, 0.00186123, 0.00105878, 0.966045,
 use_collision = true
 
 [editable path="AeroJunker"]
+[editable path="AeroJunker2"]
+[editable path="AeroJunker3"]
+[editable path="AeroJunker4"]
