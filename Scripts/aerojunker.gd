@@ -59,9 +59,7 @@ func _init_follow_cam() -> void:
 
 func _physics_process(delta):
 	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()
-	directionToNextCheckpoint2D.x = nextCheckpoint.transform.origin.x - transform.origin.x
-	directionToNextCheckpoint2D.y = nextCheckpoint.transform.origin.z - transform.origin.z
-	directionToNextCheckpoint2D = directionToNextCheckpoint2D.normalized()
+	directionToNextCheckpoint2D = vector2DtoTarget(nextCheckpoint)
 	
 	if is_ai_controlled:
 		get_ai_input(delta)
@@ -233,3 +231,13 @@ func _player_reached_checkpoint(_checkpoint) -> void:
 			nextCheckpointIndex = 0
 		else:
 			nextCheckpointIndex = nextCheckpointIndex + 1
+
+
+func vector2DtoTarget(target) -> Vector2:
+	var directionToTarget3D: Vector3 = Vector3.ZERO
+	var directionToTarget2D: Vector2 = Vector2.ZERO
+	
+	directionToTarget3D = (target.transform.origin - transform.origin).normalized()
+	directionToTarget2D.x = target.transform.origin.x - transform.origin.x
+	directionToTarget2D.y = target.transform.origin.z - transform.origin.z
+	return directionToTarget2D.normalized()
