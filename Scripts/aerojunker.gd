@@ -23,6 +23,13 @@ var verticle_bob_period: float = 200.0
 var health = 100.0
 var test_max_speed: float = 0
 
+const BOOST_SPEED_INCREMENT: float = 10000.0
+const BOOST_MAX_DURATION: float = 3.5 #seconds
+const BOOST_COOLDOWN_DURATION: float = 10.0 #seconds
+var boost_ready: bool = true
+var boost_activated: bool = false
+
+
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
 onready var campos_node: Spatial = $CameraPositions
@@ -99,6 +106,7 @@ func get_input(_delta):
 	if Input.is_action_pressed("turn_right"): turn_right()
 	if Input.is_action_pressed("accelerate"): accelerate()
 	if Input.is_action_pressed("reverse"): reverse()
+	if Input.is_action_pressed("boost"): boost()
 		
 	#Button Released
 	if Input.is_action_just_released("accelerate"):
@@ -186,9 +194,8 @@ func reset_engine_rotation() -> void:
 
 
 func apply_acceleration(delta) -> void:
-	acceleration.z += ((max_speed * acceleration_direction) - acceleration.z) * delta
+	acceleration.z += (((max_speed + calculate_boost())* acceleration_direction) - acceleration.z) * delta
 	velocity = acceleration * delta
-
 
 func apply_gravity(_delta) -> void:
 	if transform.origin.y > $RayCast_L_Engine.get_collision_point().y + target_altitude.y + verticle_bob_amplitude:
@@ -206,10 +213,6 @@ func detect_collision(_delta) -> void:
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("environment"):
 			health -= ENVIRONMENT_DAMAGE
-			if (health > 0):
-				print_debug('health: %f'	% health)
-			else:
-				print_debug('aerojunker is dead')
 
 
 func play_engine_breaking_sound() -> void:
@@ -241,3 +244,26 @@ func vector2DtoTarget(target) -> Vector2:
 	directionToTarget2D.x = target.transform.origin.x - transform.origin.x
 	directionToTarget2D.y = target.transform.origin.z - transform.origin.z
 	return directionToTarget2D.normalized()
+
+func calculate_boost() -> float:
+	if boost_activated:
+		return BOOST_SPEED_INCREMENT
+	else:
+		return 0.0
+
+func boost() -> void:
+	if !boost_activated && boost_ready:
+		$BoosterTimer.start(BOOST_MAX_DURATION)
+		boost_activated = true
+		boost_ready = false
+
+func _on_BoosterCooldownTimer_timeout():
+	$BoosterCooldownTimer.stop()
+	boost_ready = true
+	print_debug('boost ready')
+
+
+func _on_BoosterTimer_timeout():
+	$BoosterTimer.stop()
+	boost_activated = false
+	$BoosterCooldownTimer.start(BOOST_COOLDOWN_DURATION)

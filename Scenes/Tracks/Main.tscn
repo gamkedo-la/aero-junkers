@@ -34,6 +34,10 @@ collision_layer = 2
 collision_mask = 5
 checkpoints = [ NodePath("../Checkpoint1"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7") ]
 
+[node name="BoosterTimer" type="Timer" parent="AeroJunker"]
+
+[node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker"]
+
 [node name="AeroJunker2" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 98.5079, 1.84328, -258.695 )
 collision_layer = 2
@@ -636,6 +640,9 @@ use_collision = true
 transform = Transform( 0.999998, -8.70529e-10, -8.73115e-10, 8.69818e-10, 0.999996, -8.73115e-10, 8.73115e-10, 8.73115e-10, 0.999998, 107.347, -8.68143, -161.475 )
 mesh = ExtResource( 9 )
 material/0 = null
+
+[connection signal="timeout" from="AeroJunker/BoosterTimer" to="AeroJunker" method="_on_BoosterTimer_timeout"]
+[connection signal="timeout" from="AeroJunker/BoosterCooldownTimer" to="AeroJunker" method="_on_BoosterCooldownTimer_timeout"]
 
 [editable path="AeroJunker"]
 [editable path="AeroJunker2"]
