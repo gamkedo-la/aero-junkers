@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/UI/title_screen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Music/The Cockpit Song.mp3" type="AudioStream" id=2]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -11,6 +12,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 120.0
