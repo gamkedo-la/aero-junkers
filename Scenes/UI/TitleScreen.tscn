@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UI/title_screen.gd" type="Script" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.18921
+margin_right = -1.18921
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 120.0
+margin_right = 904.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleText" type="Label" parent="Menu"]
+margin_top = 137.0
+margin_right = 784.0
+margin_bottom = 151.0
+size_flags_vertical = 6
+text = "AeroJunkers"
+align = 1
+valign = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 292.0
+margin_right = 784.0
+margin_bottom = 360.0
+
+[node name="StartButton" type="Button" parent="Menu/Buttons"]
+margin_right = 784.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="Menu/Buttons"]
+margin_top = 24.0
+margin_right = 784.0
+margin_bottom = 44.0
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="Menu/Buttons"]
+margin_top = 48.0
+margin_right = 784.0
+margin_bottom = 68.0
+text = "Credits"
+
+[connection signal="pressed" from="Menu/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Menu/Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Menu/Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
