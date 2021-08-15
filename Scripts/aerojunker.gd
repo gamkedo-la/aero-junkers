@@ -2,6 +2,7 @@ class_name AeroJunker
 extends KinematicBody
 
 signal switch_cam
+signal new_lap
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
@@ -250,6 +251,7 @@ func _player_reached_finish_line(_checkpoint, aeroJunker) -> void:
 	if not self == aeroJunker:
 		return
 	currentLap += 1
+	emit_signal("new_lap", currentLap)
 	print_debug("Finish Line Reached")
 	print_debug(currentLap)
 

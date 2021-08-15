@@ -666,6 +666,7 @@ material/0 = null
 
 [node name="GameUI" parent="." instance=ExtResource( 10 )]
 
+[connection signal="new_lap" from="AeroJunker" to="GameUI" method="_on_AeroJunker_new_lap"]
 [connection signal="timeout" from="AeroJunker/BoosterTimer" to="AeroJunker" method="_on_BoosterTimer_timeout"]
 [connection signal="timeout" from="AeroJunker/BoosterCooldownTimer" to="AeroJunker" method="_on_BoosterCooldownTimer_timeout"]
 [connection signal="timeout" from="AeroJunker2/BoosterTimer" to="AeroJunker2" method="_on_BoosterTimer_timeout"]

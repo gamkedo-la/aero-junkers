@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Scenes/Tracks/Minimap.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/Speedometer.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Materials/speedometer.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI/game_ui.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 4 )
 
 [node name="GameUI" type="CanvasLayer"]
+script = ExtResource( 6 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -41,7 +43,7 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScreenVB/TopBar/Left"]
 margin_right = 325.0
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "1/20
 "
@@ -59,7 +61,7 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScreenVB/TopBar/Mid"]
 margin_right = 325.0
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]2:00 [/center]
 "
@@ -73,6 +75,18 @@ margin_left = 658.0
 margin_right = 984.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
+
+[node name="LapCounterLabel" type="RichTextLabel" parent="MarginContainer/ScreenVB/TopBar/Right"]
+margin_right = 326.0
+margin_bottom = 66.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[right]Lap 0/3 [/right]
+"
+text = "Lap 0/3 
+"
+fit_content_height = true
+scroll_active = false
 
 [node name="MidBar" type="HBoxContainer" parent="MarginContainer/ScreenVB"]
 margin_top = 188.0
