@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/DebugDraw3D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/DebugOverlay.gd" type="Script" id=2]
+
+[sub_resource type="InputEventAction" id=1]
+
+[sub_resource type="ShortCut" id=2]
+resource_local_to_scene = true
+resource_name = "CheckpointReset"
+shortcut = SubResource( 1 )
 
 [node name="DebugOverlay" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -13,3 +20,32 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckpointReset" type="Button" parent="MarginContainer"]
+margin_left = 389.0
+margin_right = 512.0
+margin_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+shortcut = SubResource( 2 )
+text = "Checkpoint Reset"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MarginContainer/CheckpointReset" to="." method="_on_CheckpointReset_pressed"]

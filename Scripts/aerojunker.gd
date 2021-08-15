@@ -7,6 +7,7 @@ export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
 var nextCheckpointIndex = 0
 var nextCheckpoint
+var previousCheckpoint = null
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 
@@ -29,6 +30,7 @@ const BOOST_COOLDOWN_DURATION: float = 10.0 #seconds
 var boost_ready: bool = true
 var boost_activated: bool = false
 
+var reset_to_last_checkpoint_in_porgress: bool = false
 
 # Follow Cam Variables
 onready var followcam: Camera = $ChaseCam
@@ -107,6 +109,7 @@ func get_input(_delta):
 	if Input.is_action_pressed("accelerate"): accelerate()
 	if Input.is_action_pressed("reverse"): reverse()
 	if Input.is_action_pressed("boost"): boost()
+	if Input.is_action_pressed("reset_to_last_checkpoint"): reset_to_last_checkpoint()
 		
 	#Button Released
 	if Input.is_action_just_released("accelerate"):
@@ -230,6 +233,8 @@ func _toggle_camera_up() -> void:
 
 func _player_reached_checkpoint(_checkpoint) -> void:
 	if _checkpoint == nextCheckpoint:
+		previousCheckpoint = nextCheckpoint
+		print("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
 		if nextCheckpointIndex >= checkpoints.size() - 1:
 			nextCheckpointIndex = 0
 		else:
@@ -237,6 +242,7 @@ func _player_reached_checkpoint(_checkpoint) -> void:
 
 
 func vector2DtoTarget(target) -> Vector2:
+# warning-ignore:unused_variable
 	var directionToTarget3D: Vector3 = Vector3.ZERO
 	var directionToTarget2D: Vector2 = Vector2.ZERO
 	
@@ -267,3 +273,9 @@ func _on_BoosterTimer_timeout():
 	$BoosterTimer.stop()
 	boost_activated = false
 	$BoosterCooldownTimer.start(BOOST_COOLDOWN_DURATION)
+	
+func reset_to_last_checkpoint():
+	if  not reset_to_last_checkpoint_in_porgress and previousCheckpoint != null :
+		reset_to_last_checkpoint_in_porgress = true
+		print("WIP: reset_to_last_checkpoint ", get_path(), " [", get_instance_id(), "]")
+		reset_to_last_checkpoint_in_porgress = false
