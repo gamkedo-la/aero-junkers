@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UI/end_screen.gd" type="Script" id=1]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.18921
+margin_right = -1.18921
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 120.0
+margin_right = 904.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultsText" type="Label" parent="Menu"]
+margin_top = 161.0
+margin_right = 784.0
+margin_bottom = 175.0
+size_flags_vertical = 6
+text = "(Race Results Here)"
+align = 1
+valign = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 340.0
+margin_right = 784.0
+margin_bottom = 360.0
+
+[node name="TitleScreenButton" type="Button" parent="Menu/Buttons"]
+margin_right = 784.0
+margin_bottom = 20.0
+text = "Return to Title Screen"
+
+[connection signal="pressed" from="Menu/Buttons/TitleScreenButton" to="." method="_on_TitleScreenButton_pressed"]
