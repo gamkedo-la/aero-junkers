@@ -10,6 +10,7 @@ var nextCheckpoint
 var previousCheckpoint = null
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
+var currentLap: int = 0
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -48,6 +49,8 @@ func _ready():
 	
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
+	if not CheckpointSingleton.is_connected("finish_line_reached", self, "_player_reached_finish_line"):
+		assert(CheckpointSingleton.connect("finish_line_reached", self, "_player_reached_finish_line") == OK)
 	_init_follow_cam()
 	
 	# We can likely come up witha better way to pre-calculate *actual* max speed, but for right now, the 
@@ -231,7 +234,9 @@ func _toggle_camera_up() -> void:
 	emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
 
-func _player_reached_checkpoint(_checkpoint) -> void:
+func _player_reached_checkpoint(_checkpoint, aeroJunker) -> void:
+	if not self == aeroJunker:
+		return
 	if _checkpoint == nextCheckpoint:
 		previousCheckpoint = nextCheckpoint
 		print("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
@@ -239,6 +244,14 @@ func _player_reached_checkpoint(_checkpoint) -> void:
 			nextCheckpointIndex = 0
 		else:
 			nextCheckpointIndex = nextCheckpointIndex + 1
+
+
+func _player_reached_finish_line(_checkpoint, aeroJunker) -> void:
+	if not self == aeroJunker:
+		return
+	currentLap += 1
+	print_debug("Finish Line Reached")
+	print_debug(currentLap)
 
 
 func vector2DtoTarget(target) -> Vector2:

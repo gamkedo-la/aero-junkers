@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/checkpoint.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Models/checkpoint.glb" type="PackedScene" id=2]
 
-[sub_resource type="CylinderShape" id=1]
-
-[sub_resource type="CubeMesh" id=2]
-size = Vector3( 0.5, 5, 0.5 )
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 0.5 )
 
 [node name="Checkpoint" type="Area"]
 transform = Transform( 1, -1.13545e-10, -1.16415e-10, 1.35742e-10, 1.2, -1.39698e-10, 1.16415e-10, 1.16415e-10, 1, 0, -1, 0 )
@@ -15,20 +13,8 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 5, 0, 0, 0, -2.18557e-08, -5, 0, 0.5, -2.18557e-07, 0, 0, 0 )
+transform = Transform( 5, -1.59595e-16, -8.10222e-17, -3.8851e-16, -2.18557e-08, -5, 1.60982e-15, 0.5, -2.18557e-07, 2.83862e-10, 2.5, -2.91037e-10 )
 shape = SubResource( 1 )
 
-[node name="CheckpointPost_L" type="MeshInstance" parent="."]
-transform = Transform( 1, 2.98428e-12, 0, 2.2969e-10, 1, -2.32831e-10, 0, 0, 1, -4.99912, 2.00219, 0.0015316 )
-visible = false
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="CheckpointPost_R" type="MeshInstance" parent="."]
-transform = Transform( 1, 2.98428e-12, 0, 3.46105e-10, 1, -3.49246e-10, 0, 0, 1, 5.00087, 1.99781, -0.00328636 )
-visible = false
-mesh = SubResource( 2 )
-material/0 = null
-
 [node name="checkpoint" parent="." instance=ExtResource( 2 )]
-transform = Transform( -2.18557e-08, 1.1498e-10, 0.5, -1.6485e-12, 0.5, -1.14767e-10, -0.5, -1.435e-12, -2.18557e-08, 5, -5.6559e-10, -5.82075e-10 )
+transform = Transform( -2.18557e-08, 1.1498e-10, 0.5, -1.6483e-12, 0.5, -1.14767e-10, -0.5, -1.43514e-12, -2.18557e-08, 5, 0, -5.82068e-10 )
