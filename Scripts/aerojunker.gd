@@ -113,7 +113,9 @@ func get_input(_delta):
 	if Input.is_action_pressed("accelerate"): accelerate()
 	if Input.is_action_pressed("reverse"): reverse()
 	if Input.is_action_pressed("boost"): boost()
-	if Input.is_action_pressed("reset_to_last_checkpoint"): reset_to_last_checkpoint()
+	
+	if not is_ai_controlled:
+		if Input.is_action_pressed("reset_to_previous_checkpoint"): reset_to_previous_checkpoint()
 		
 	#Button Released
 	if Input.is_action_just_released("accelerate"):
@@ -289,8 +291,16 @@ func _on_BoosterTimer_timeout():
 	boost_activated = false
 	$BoosterCooldownTimer.start(BOOST_COOLDOWN_DURATION)
 	
-func reset_to_last_checkpoint():
-	if  not reset_to_last_checkpoint_in_porgress and previousCheckpoint != null :
-		reset_to_last_checkpoint_in_porgress = true
-		print("WIP: reset_to_last_checkpoint ", get_path(), " [", get_instance_id(), "]")
-		reset_to_last_checkpoint_in_porgress = false
+func reset_to_previous_checkpoint():
+	if previousCheckpoint != null:
+		print("WIP: reset_to_previous_checkpoint [", get_instance_id(), "] :")
+		
+		var distance_to_previous_checkpoint := translation.distance_to(previousCheckpoint.global_transform.origin)
+		print('\t', "distance_to_previous_checkpoint [translation] = ", distance_to_previous_checkpoint, " [", get_instance_id(), "]")
+		
+		distance_to_previous_checkpoint = transform.origin.distance_to(previousCheckpoint.transform.origin)
+		print('\t', "distance_to_previous_checkpoint [transform] = ", distance_to_previous_checkpoint, " [", get_instance_id(), "]")
+		if distance_to_previous_checkpoint >= 1.0:
+			acceleration = Vector3.ZERO
+			velocity = Vector3.ZERO
+			transform.origin = previousCheckpoint.transform.origin
