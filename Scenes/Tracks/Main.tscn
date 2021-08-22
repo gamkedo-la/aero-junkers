@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Models/Boulder.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Scenes/UI/GameUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.301961, 0.286275, 0.156863, 1 )
@@ -126,283 +127,283 @@ collision_mask = 2
 transform = Transform( 0.00353995, -0.967072, -2.87716, -0.000183435, 0.254535, -10.7206, 11.1, -0.00451035, 0.000742504, 55.4118, -6.10219, -177.524 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon2" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00353995, -0.967072, -2.87716, -0.000183438, 0.254534, -10.7206, 11.1, -0.00451035, 0.000742503, 55.432, -6.08378, -135.524 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon3" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00353994, -0.967072, -2.87716, -0.00018344, 0.254534, -10.7206, 11.1, -0.00451035, 0.000742503, 55.4498, -6.06757, -98.5239 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon4" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00353994, -0.967071, -2.87716, -0.000183441, 0.254534, -10.7206, 11.1, -0.00451035, 0.000742502, 55.4734, -6.04607, -49.524 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon5" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00353994, -0.967071, -2.87716, -0.000183443, 0.254534, -10.7206, 11.1, -0.00451035, 0.000742499, 55.4932, -6.02809, -8.52404 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon46" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -5.55306, 0.839916, 2.48491, -0.00684159, 0.253534, -10.7236, -9.6111, -0.479894, -1.42809, 166.746, -6.0743, -2.89847 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon47" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -5.55306, 0.839916, 2.48491, -0.00684159, 0.253534, -10.7236, -9.61109, -0.479894, -1.42809, 145.728, -6.08107, -39.2613 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon51" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.7208, 0.246188, 0.734923, -0.011014, 0.254415, -10.721, -2.8763, 0.935254, 2.78032, 78.9756, -6.02299, 26.3925 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon52" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.7208, 0.246188, 0.734923, -0.011014, 0.254415, -10.721, -2.8763, 0.935254, 2.78032, 119.539, -6.04556, 15.5026 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon48" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -5.55306, 0.839916, 2.48491, -0.00684159, 0.253534, -10.7236, -9.61109, -0.479893, -1.42809, 127.213, -6.08705, -71.2953 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon49" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -5.55306, 0.839915, 2.48491, -0.00684159, 0.253534, -10.7236, -9.61109, -0.479893, -1.42809, 102.692, -6.09493, -113.719 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon50" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -5.55306, 0.839915, 2.48491, -0.00684159, 0.253534, -10.7236, -9.61109, -0.479893, -1.42809, 82.1754, -6.10154, -149.216 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon6" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00579054, 0.999995, 0.00442133, 0.010221, 0.00443025, 11.1, 11.1, -0.00534871, -0.0102213, -84.5772, 18.9591, -177.467 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon7" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00579054, 0.999994, 0.00442133, 0.010221, 0.00443025, 11.1, 11.1, -0.00534871, -0.0102213, -84.557, 18.9775, -135.467 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon8" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00579054, 0.999994, 0.00442133, 0.010221, 0.00443025, 11.1, 11.1, -0.0053487, -0.0102213, -84.5392, 18.9938, -98.4675 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon9" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00579054, 0.999994, 0.00442133, 0.010221, 0.00443025, 11.1, 11.1, -0.00534871, -0.0102213, -84.5155, 19.0153, -49.4675 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon10" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 0.00579054, 0.999993, 0.00442133, 0.010221, 0.00443025, 11.1, 11.1, -0.00534871, -0.0102213, -84.4958, 19.0333, -8.46756 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon11" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -7.84671, 0.6146, -3.9186, 0.0117384, 0.504212, 9.61262, 7.85102, 0.606689, -3.93081, 62.0937, 12.8249, -336.786 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon12" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -7.84671, 0.6146, -3.9186, 0.0117384, 0.504212, 9.61261, 7.85102, 0.606688, -3.93081, 32.4097, 12.8509, -307.073 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon13" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -7.84671, 0.6146, -3.9186, 0.0117384, 0.504212, 9.61261, 7.85102, 0.606688, -3.93081, 6.25951, 12.874, -280.898 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon14" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -7.84671, 0.614599, -3.9186, 0.0117384, 0.504212, 9.61261, 7.85102, 0.606688, -3.93081, -28.3721, 12.9043, -246.232 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon15" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -7.8467, 0.614599, -3.9186, 0.0117384, 0.504212, 9.61261, 7.85102, 0.606688, -3.93081, -57.3493, 12.9298, -217.227 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon16" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -9.61576, -0.499547, 0.0366061, 0.00715561, 0.0054839, 11.0998, -5.54498, 0.86629, -0.0491565, 254.865, 18.7909, -221.997 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon17" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -9.61576, -0.499547, 0.0366061, 0.0071556, 0.0054839, 11.0998, -5.54498, 0.86629, -0.0491564, 218.482, 18.7976, -242.98 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon18" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -9.61576, -0.499547, 0.0366061, 0.0071556, 0.0054839, 11.0998, -5.54498, 0.86629, -0.0491564, 186.43, 18.8035, -261.464 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon19" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -9.61575, -0.499547, 0.0366061, 0.0071556, 0.0054839, 11.0998, -5.54498, 0.866289, -0.0491564, 143.983, 18.8114, -285.944 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon20" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -9.61575, -0.499546, 0.0366061, 0.0071556, 0.00548389, 11.0998, -5.54498, 0.866289, -0.0491564, 108.466, 18.818, -306.427 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon22" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -2.87583, -0.833827, 5.41094, 0.00140764, 0.504687, 9.58267, -10.721, 0.223735, -1.45019, 308.612, 12.8402, -55.8746 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon23" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -2.87583, -0.833827, 5.41094, 0.00140763, 0.504686, 9.58267, -10.721, 0.223735, -1.45019, 299.018, 12.8288, -91.609 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon24" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -2.87583, -0.833826, 5.41094, 0.00140763, 0.504686, 9.58267, -10.721, 0.223735, -1.45019, 286.313, 12.8135, -138.934 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon25" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -2.87583, -0.833826, 5.41093, 0.00140764, 0.504686, 9.58266, -10.721, 0.223735, -1.45019, 275.683, 12.8009, -178.531 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon26" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578789, -1, 0.0590848, 0.000507127, 0.00532305, 11.0998, -11.1, 0.000521496, 0.000476175, 292.498, 18.9263, 123.967 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon27" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578884, -1, 0.0590848, 0.000507124, 0.00532305, 11.0998, -11.1, 0.000521556, 0.000476178, 292.477, 18.9078, 81.9669 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon28" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578694, -1, 0.0590848, 0.000507123, 0.00532305, 11.0998, -11.1, 0.000521466, 0.000476182, 292.46, 18.8916, 44.9669 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon29" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578836, -1, 0.0590848, 0.000507129, 0.00532305, 11.0998, -11.1, 0.000521555, 0.000476177, 292.436, 18.8701, -4.0331 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon36" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 7.84477, -0.707478, 0.0394209, -0.00150646, 0.0048844, 11.0998, -7.85295, -0.706742, 0.0372505, 222.348, 18.8204, -186.999 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon30" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( -0.00578836, -1, 0.0590848, 0.000507123, 0.00532305, 11.0998, -11.1, 0.000521585, 0.000476174, 292.416, 18.8521, -45.033 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon31" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.721, -0.223735, 1.45018, -0.00110458, 0.503954, 9.5874, -2.87583, -0.834269, 5.40253, 89.8994, 13.0376, 175.437 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon32" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.721, -0.223735, 1.45018, -0.00110457, 0.503954, 9.5874, -2.87583, -0.834268, 5.40252, 130.463, 13.015, 164.547 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon33" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.721, -0.223735, 1.45018, -0.00110457, 0.503954, 9.5874, -2.87583, -0.834268, 5.40252, 166.197, 12.9952, 154.954 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon34" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.721, -0.223735, 1.45018, -0.00110457, 0.503954, 9.58739, -2.87583, -0.834268, 5.40252, 213.522, 12.9688, 142.248 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon35" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 10.7209, -0.223735, 1.45018, -0.00110456, 0.503953, 9.58739, -2.87583, -0.834268, 5.40252, 253.119, 12.9469, 131.618 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon41" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 5.55263, 0.747885, -4.84406, 0.00664144, 0.503705, 9.58901, 9.61133, -0.432414, 2.79187, -76.4726, 13.0413, 17.9187 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon42" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 7.85102, 0.610549, -3.95518, 0.00485991, 0.503687, 9.58913, 7.8467, -0.611197, 3.95141, -43.6039, 13.0451, 59.367 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon43" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 7.85102, 0.610549, -3.95518, 0.00485991, 0.503686, 9.58912, 7.8467, -0.611196, 3.95141, -17.4287, 13.0452, 85.5172 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon44" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 7.85101, 0.610548, -3.95518, 0.00485991, 0.503686, 9.58912, 7.8467, -0.611196, 3.95141, 17.2366, 13.0451, 120.149 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="CSGPolygon45" type="CSGPolygon" parent="Placeholder Walls"]
 transform = Transform( 7.85101, 0.610548, -3.95517, 0.00485991, 0.503686, 9.58911, 7.84669, -0.611196, 3.95141, 46.2415, 13.0452, 149.126 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
-material = ExtResource( 3 )
+material = ExtResource( 12 )
 
 [node name="Placeholder Mounds" type="CSGCombiner" parent="." groups=[
 "environment",
