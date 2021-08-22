@@ -222,6 +222,8 @@ func detect_collision(_delta) -> void:
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("environment"):
 			health -= ENVIRONMENT_DAMAGE
+			$MeshInstance_L_Engine/Sparks_L_Engine/SparkParticles.emitting = true
+			$MeshInstance_R_Engine/Sparks_R_Engine/SparkParticles.emitting = true
 
 
 func play_engine_breaking_sound() -> void:

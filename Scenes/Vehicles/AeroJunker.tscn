@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/aerojunker.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/RayCast_L_Engine.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Environment Objects/cockpit1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sound FX/Engine Accelerating SFX.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sound FX/engine_breaking.wav" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Particles Effects/Sparks.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -62,6 +63,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="Sparks_L_Engine" parent="MeshInstance_L_Engine" instance=ExtResource( 8 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 0, 0 )
+
 [node name="CollisionShape_L_Engine" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, -2, 0, -3.49692e-07 )
 shape = SubResource( 3 )
@@ -81,6 +85,9 @@ material/0 = null
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="Sparks_R_Engine" parent="MeshInstance_R_Engine" instance=ExtResource( 8 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="CollisionShape_R_Engine" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )
