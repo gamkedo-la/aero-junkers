@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=2]
@@ -12,13 +12,17 @@
 [ext_resource path="res://Scenes/UI/GameUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=12]
+[ext_resource path="res://Assets/Materials/cracked_ground_2.png" type="Texture" id=13]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.301961, 0.286275, 0.156863, 1 )
+albedo_texture = ExtResource( 13 )
+uv1_scale = Vector3( 30, 30, 1 )
 
 [sub_resource type="PlaneMesh" id=2]
 material = SubResource( 1 )
 size = Vector2( 100, 100 )
+subdivide_width = 100
+subdivide_depth = 100
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
@@ -105,11 +109,10 @@ transform = Transform( -0.965921, 0.00116977, 0.258818, 0.000747574, 1.19999, -0
 transform = Transform( -0.499996, 0.00124473, 0.866021, 0.000276901, 1.19999, -0.00103788, -0.866022, -0.000334977, -0.499997, 47.8734, -2.13556, -261.022 )
 
 [node name="Ground" type="StaticBody" parent="."]
-transform = Transform( 10, -5.78908e-10, -5.58794e-09, 5.96515e-09, 1, -6.0536e-09, 6.51926e-09, 5.82077e-10, 10, 6, -2, -26 )
+transform = Transform( -6.6, 0.00332924, -1.45775e-06, 0.00332929, 0.999997, -0.00333645, -1.46683e-06, -0.00333651, -6.6, 100.951, -2.08858, -101.049 )
 collision_mask = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
-transform = Transform( 442.26, -0.0193387, -0.203972, -1.9339, 1.00009, 0.0794763, -0.20397, 0.000794777, 18.9001, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
