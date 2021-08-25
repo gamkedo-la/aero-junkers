@@ -11,11 +11,13 @@ var nextCheckpoint
 var previousCheckpoint = null
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
+var prevDirectionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 var currentLap: int = 0
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var max_speed: float = 5000.0 #units/second
+var max_speed: float = 7500.0 #units/second
+var throttle: float = 1 #percent of max_speed
 var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
@@ -72,6 +74,7 @@ func _init_follow_cam() -> void:
 
 func _physics_process(delta):
 	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()
+	prevDirectionToNextCheckpoint2D = directionToNextCheckpoint2D
 	directionToNextCheckpoint2D = vector2DtoTarget(nextCheckpoint)
 	
 	if is_ai_controlled:
@@ -137,13 +140,21 @@ func get_input(_delta):
 		emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
 
-func get_ai_input(_delta):
+func get_ai_input(delta):
+	var degreesToNextCheckpoint = rad2deg(velocity2D.normalized().angle_to(directionToNextCheckpoint2D))
+	var prevDegreesToNextCheckpoint = rad2deg(velocity2D.normalized().angle_to(prevDirectionToNextCheckpoint2D))
+	
 	accelerate()
-	if rad2deg(velocity2D.normalized().angle_to(directionToNextCheckpoint2D)) > 10:
+	
+	if (abs(degreesToNextCheckpoint) > abs(prevDegreesToNextCheckpoint)):
+		throttle *= 0.95
+		
+	if degreesToNextCheckpoint > 1:
 		turn_right()
-	elif rad2deg(velocity2D.normalized().angle_to(directionToNextCheckpoint2D)) < -10:
+	elif degreesToNextCheckpoint < -1:
 		turn_left()
 	else:
+		throttle = 1
 		reset_engine_rotation()
 
 
@@ -203,7 +214,7 @@ func reset_engine_rotation() -> void:
 
 
 func apply_acceleration(delta) -> void:
-	acceleration.z += (((max_speed + calculate_boost())* acceleration_direction) - acceleration.z) * delta
+	acceleration.z += ((((max_speed * throttle) + calculate_boost())* acceleration_direction) - acceleration.z) * delta
 	velocity = acceleration * delta
 
 func apply_gravity(_delta) -> void:
