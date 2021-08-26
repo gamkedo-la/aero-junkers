@@ -137,12 +137,12 @@ material/0 = SubResource( 8 )
 [node name="Engine_L" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3.49692e-07 )
 
-[node name="CollisionShape" parent="Engine_L" index="1"]
+[node name="rocket" parent="Engine_L" index="0"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, 1, 0, 4.37114e-08, 0, 0, 0 )
-shape = SubResource( 12 )
 
-[node name="Sparks" parent="Engine_L" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
+[node name="CollisionShape" parent="Engine_L" index="1"]
+visible = false
+shape = SubResource( 12 )
 
 [node name="Engine_R" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3.49692e-07 )
