@@ -255,7 +255,7 @@ func _player_reached_checkpoint(_checkpoint, aeroJunker) -> void:
 		return
 	if _checkpoint == nextCheckpoint:
 		previousCheckpoint = nextCheckpoint
-		print("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
+		print_debug("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
 		if nextCheckpointIndex >= checkpoints.size() - 1:
 			nextCheckpointIndex = 0
 		else:
@@ -306,14 +306,13 @@ func _on_BoosterTimer_timeout():
 	
 func reset_to_previous_checkpoint():
 	if previousCheckpoint != null:
-		print("WIP: reset_to_previous_checkpoint [", get_instance_id(), "] :")
 		
-		var distance_to_previous_checkpoint := translation.distance_to(previousCheckpoint.global_transform.origin)
-		print('\t', "distance_to_previous_checkpoint [translation] = ", distance_to_previous_checkpoint, " [", get_instance_id(), "]")
-		
-		distance_to_previous_checkpoint = transform.origin.distance_to(previousCheckpoint.transform.origin)
-		print('\t', "distance_to_previous_checkpoint [transform] = ", distance_to_previous_checkpoint, " [", get_instance_id(), "]")
+		var distance_to_previous_checkpoint = transform.origin.distance_to(previousCheckpoint.transform.origin)		
 		if distance_to_previous_checkpoint >= 1.0:
+			print_debug(" [", get_instance_id(), "]", "Reset, distance", distance_to_previous_checkpoint)
 			acceleration = Vector3.ZERO
 			velocity = Vector3.ZERO
 			transform.origin = previousCheckpoint.transform.origin
+			look_at(nextCheckpoint.transform.origin, Vector3.UP)
+		else :
+			print_debug(" [", get_instance_id(), "]", "Too close to reset, distance = ", distance_to_previous_checkpoint)
