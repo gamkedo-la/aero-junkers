@@ -178,38 +178,38 @@ func reverse():
 
 
 func calculate_turn_engines(radians, direction) -> void:
-	if (direction == TURN_DIRECTION.RIGHT && $MeshInstance_R_Engine.rotation_degrees.y > -MAX_ENGINE_ROTATION_ANGLE):
+	if (direction == TURN_DIRECTION.RIGHT && $Engine_R.rotation_degrees.y > -MAX_ENGINE_ROTATION_ANGLE):
 		rotate_engines_y(radians)
-	elif (direction == TURN_DIRECTION.LEFT && $MeshInstance_R_Engine.rotation_degrees.y < MAX_ENGINE_ROTATION_ANGLE):
+	elif (direction == TURN_DIRECTION.LEFT && $Engine_R.rotation_degrees.y < MAX_ENGINE_ROTATION_ANGLE):
 		rotate_engines_y(radians)
 
 
 func rotate_engines_y(radians) -> void:
-	$MeshInstance_L_Engine.rotate_y(radians)
-	$CollisionShape_L_Engine.rotate_y(radians)
-	$MeshInstance_R_Engine.rotate_y(radians)
-	$CollisionShape_R_Engine.rotate_y(radians)
+	$Engine_L.rotate_y(radians)
+	#$CollisionShape_L_Engine.rotate_y(radians)
+	$Engine_R.rotate_y(radians)
+	#$CollisionShape_R_Engine.rotate_y(radians)
 	
-	$MeshInstance_L_Engine.rotate_z(radians * 0.6)
-	$CollisionShape_L_Engine.rotate_z(radians * 0.6)
-	$MeshInstance_R_Engine.rotate_z(radians * 0.6)
-	$CollisionShape_R_Engine.rotate_z(radians * 0.6)
+	$Engine_L.rotate_z(radians * 0.6)
+#	$CollisionShape_L_Engine.rotate_z(radians * 0.6)
+	$Engine_R.rotate_z(radians * 0.6)
+#	$CollisionShape_R_Engine.rotate_z(radians * 0.6)
 	
 	$Cockpit.rotate_z(radians)
 
 
 func reset_engine_rotation() -> void:
-	$MeshInstance_R_Engine.rotation_degrees.y = 0.0
-	$MeshInstance_L_Engine.rotation_degrees.y = 0.0
-	$CollisionShape_R_Engine.rotation_degrees.y = 0.0
-	$CollisionShape_L_Engine.rotation_degrees.y = 0.0
+	$Engine_R.rotation_degrees.y = 0.0
+	$Engine_L.rotation_degrees.y = 0.0
+#	$CollisionShape_R_Engine.rotation_degrees.y = 0.0
+#	$CollisionShape_L_Engine.rotation_degrees.y = 0.0
 	
-	$MeshInstance_R_Engine.rotation_degrees = Vector3.ZERO
-	$MeshInstance_L_Engine.rotation_degrees = Vector3.ZERO
+	$Engine_R.rotation_degrees = Vector3.ZERO
+	$Engine_L.rotation_degrees = Vector3.ZERO
 	$Cockpit.rotation_degrees = Vector3.ZERO
 	
-	$CollisionShape_R_Engine.rotation_degrees = Vector3.ZERO
-	$CollisionShape_L_Engine.rotation_degrees = Vector3.ZERO
+#	$CollisionShape_R_Engine.rotation_degrees = Vector3.ZERO
+#	$CollisionShape_L_Engine.rotation_degrees = Vector3.ZERO
 	$Cockpit.rotation_degrees = Vector3.ZERO
 
 
@@ -233,8 +233,8 @@ func detect_collision(_delta) -> void:
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("environment"):
 			health -= ENVIRONMENT_DAMAGE
-			$MeshInstance_L_Engine/Sparks_L_Engine/SparkParticles.emitting = true
-			$MeshInstance_R_Engine/Sparks_R_Engine/SparkParticles.emitting = true
+			$Engine_L/Sparks/SparkParticles.emitting = true
+			$Engine_R/Sparks/SparkParticles.emitting = true
 
 
 func play_engine_breaking_sound() -> void:

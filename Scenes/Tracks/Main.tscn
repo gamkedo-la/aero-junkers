@@ -39,8 +39,6 @@ shadow_enabled = true
 
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
-collision_layer = 2
-collision_mask = 5
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
 [node name="BoosterTimer" type="Timer" parent="AeroJunker"]
@@ -49,8 +47,6 @@ checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath(
 
 [node name="AeroJunker2" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
-collision_layer = 2
-collision_mask = 5
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
@@ -60,8 +56,6 @@ checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath(
 
 [node name="AeroJunker3" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
-collision_layer = 2
-collision_mask = 5
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
@@ -71,8 +65,6 @@ checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath(
 
 [node name="AeroJunker4" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
-collision_layer = 2
-collision_mask = 5
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
@@ -675,6 +667,10 @@ use_collision = true
 [connection signal="timeout" from="AeroJunker4/BoosterCooldownTimer" to="AeroJunker4" method="_on_BoosterCooldownTimer_timeout"]
 
 [editable path="AeroJunker"]
+[editable path="AeroJunker/Engine_L"]
 [editable path="AeroJunker2"]
+[editable path="AeroJunker2/Engine_L"]
 [editable path="AeroJunker3"]
+[editable path="AeroJunker3/Engine_L"]
 [editable path="AeroJunker4"]
+[editable path="AeroJunker4/Engine_L"]
