@@ -22,6 +22,7 @@ var acceleration: Vector3 = Vector3.ZERO
 var acceleration_direction: int = 0
 var velocity: Vector3 = Vector3.ZERO
 var velocity2D: Vector2 = Vector2.ZERO
+var is_drifting: bool = false
 var target_altitude: Vector3 = Vector3.UP * 3
 var verticle_bob_amplitude: float = 2
 var verticle_bob_period: float = 200.0
@@ -86,7 +87,8 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	
 	#change velocity from global to local orientation
-	velocity = global_transform.basis.orthonormalized().xform(velocity)
+	if not is_drifting:
+		velocity = global_transform.basis.orthonormalized().xform(velocity)
 	
 	velocity2D.x = velocity.x
 	velocity2D.y = velocity.z
@@ -116,6 +118,7 @@ func get_input(_delta):
 	if Input.is_action_pressed("accelerate"): accelerate()
 	if Input.is_action_pressed("reverse"): reverse()
 	if Input.is_action_pressed("boost"): boost()
+	if Input.is_action_pressed("drift"): is_drifting = true
 	
 	if not is_ai_controlled:
 		if Input.is_action_pressed("reset_to_previous_checkpoint"): reset_to_previous_checkpoint()
@@ -131,6 +134,9 @@ func get_input(_delta):
 		reset_engine_rotation()
 	if Input.is_action_just_released("turn_right"):
 		reset_engine_rotation()
+	if Input.is_action_just_released("drift"): 
+		is_drifting = false
+		boost()
 	
 	# Camera Input
 	if Input.is_action_just_pressed("cam_toggle"):
@@ -214,8 +220,10 @@ func reset_engine_rotation() -> void:
 
 
 func apply_acceleration(delta) -> void:
-	acceleration.z += ((((max_speed * throttle) + calculate_boost())* acceleration_direction) - acceleration.z) * delta
-	velocity = acceleration * delta
+	if not is_drifting:
+		acceleration.z += ((((max_speed * throttle) + calculate_boost()) * acceleration_direction) - acceleration.z) * delta
+		velocity = acceleration * delta
+
 
 func apply_gravity(_delta) -> void:
 	if transform.origin.y > $RayCast_L_Engine.get_collision_point().y + target_altitude.y + verticle_bob_amplitude:
