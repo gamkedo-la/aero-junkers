@@ -36,6 +36,10 @@ CheckpointSingleton="*res://Scripts/checkpoint_singleton.gd"
 AeroSingleton="*res://Scripts/Autoload/AeroSingleton.gd"
 DebugOverlay="*res://Scenes/DebugOverlay.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 accelerate={
@@ -101,6 +105,11 @@ debug={
 boost={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+reset_to_last_checkpoint={
+"deadzone": 0.75,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
 reset_to_previous_checkpoint={
