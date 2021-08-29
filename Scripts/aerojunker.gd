@@ -13,6 +13,7 @@ var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 var prevDirectionToNextCheckpoint2D: Vector2 = Vector2.ZERO
 var currentLap: int = 0
+var trackLaps: int = 3
 
 var gravity: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector") * ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -258,25 +259,33 @@ func _toggle_camera_up() -> void:
 	emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
 
-func _player_reached_checkpoint(_checkpoint, aeroJunker) -> void:
+func _player_reached_checkpoint(checkpoint, aeroJunker) -> void:
 	if not self == aeroJunker:
 		return
-	if _checkpoint == nextCheckpoint:
+	if checkpoint == nextCheckpoint:
 		previousCheckpoint = nextCheckpoint
-		print_debug("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
+#		print_debug("WIP: Player ", get_instance_id(), " previousCheckpoint changed to: get_path-", previousCheckpoint.get_path(), " get_instance_id- ", previousCheckpoint.get_instance_id())
 		if nextCheckpointIndex >= checkpoints.size() - 1:
 			nextCheckpointIndex = 0
 		else:
 			nextCheckpointIndex = nextCheckpointIndex + 1
+			
+		if currentLap > trackLaps:
+			endRace()
+			_toggle_camera_up()
 
 
-func _player_reached_finish_line(_checkpoint, aeroJunker) -> void:
+func _player_reached_finish_line(checkpoint, aeroJunker) -> void:
 	if not self == aeroJunker:
 		return
-	currentLap += 1
-	emit_signal("new_lap", currentLap)
-	print_debug("Finish Line Reached")
-	print_debug(currentLap)
+	if checkpoint == nextCheckpoint:
+		currentLap += 1
+		emit_signal("new_lap", currentLap)
+
+
+func endRace() -> void:
+	is_ai_controlled = true
+	#TODO: Trigger results screen overlay to display
 
 
 func vector2DtoTarget(target) -> Vector2:
