@@ -92,7 +92,6 @@ material/0 = null
 
 [node name="Sparks_R_Engine" parent="MeshInstance_R_Engine" instance=ExtResource( 8 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 0, 0 )
-visible = false
 
 [node name="CollisionShape_R_Engine" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, 0, 3.49692e-07 )

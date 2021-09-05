@@ -110,7 +110,13 @@ func _physics_process(delta):
 func _process(_delta):
 	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
-
+	
+	if health < 50:
+		$Engine_L/Fire/FireParticles.emitting = true
+		$Engine_R/Fire/FireParticles.emitting = true
+	else:
+		$Engine_L/Fire/FireParticles.emitting = false
+		$Engine_R/Fire/FireParticles.emitting = false
 
 func get_input(_delta):
 	#Button Pressed
