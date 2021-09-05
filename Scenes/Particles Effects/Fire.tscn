@@ -26,6 +26,7 @@ colors = PoolColorArray( 1, 0.364097, 0, 1, 0.994459, 0.100834, 0.00224847, 1, 0
 
 [node name="FireParticles" type="CPUParticles" parent="."]
 material_override = SubResource( 1 )
+emitting = false
 amount = 64
 lifetime_randomness = 1.0
 local_coords = false

@@ -111,7 +111,7 @@ func _process(_delta):
 	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 	
-	if health < 50:
+	if health < 90:
 		$Engine_L/Fire/FireParticles.emitting = true
 		$Engine_R/Fire/FireParticles.emitting = true
 	else:
