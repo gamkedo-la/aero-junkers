@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lose.mp3-2dbdca554d829994cb29d5b1c3ac79bd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/lose.mp3"
+dest_files=[ "res://.import/lose.mp3-2dbdca554d829994cb29d5b1c3ac79bd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

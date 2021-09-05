@@ -9,4 +9,4 @@ func _on_OptionsButton_pressed():
 
 
 func _on_CreditsButton_pressed():
-	pass
+	get_tree().change_scene("res://Scenes/UI/CreditsScreen.tscn")
