@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Scenes/Tracks/Minimap.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/UI/game_ui.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/EngineHPMeter.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/CockpitHPMeter.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/UI/EndScreen.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -220,3 +221,6 @@ far = 1000.0
 
 [node name="MapTexture" type="TextureRect" parent="MarginContainer/ScreenVB/BotBar/Minimap"]
 margin_right = 326.0
+
+[node name="EndScreen" parent="." instance=ExtResource( 9 )]
+visible = false

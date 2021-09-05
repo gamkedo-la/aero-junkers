@@ -285,7 +285,6 @@ func _player_reached_finish_line(checkpoint, aeroJunker) -> void:
 
 func endRace() -> void:
 	is_ai_controlled = true
-	#TODO: Trigger results screen overlay to display
 
 
 func vector2DtoTarget(target) -> Vector2:
