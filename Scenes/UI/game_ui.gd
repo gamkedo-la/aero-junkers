@@ -7,6 +7,7 @@ func _ready():
 func _on_AeroJunker_new_lap(lap: int):
 	if lap > 3:
 		$EndScreen.visible = true
+		$EndScreen/Menu/ResultsText.bbcode_text = "[center]1st Place: %s[/center]" % CheckpointSingleton.positions[0].pilotName
 		print_debug("show results")
 	else:
 		$MarginContainer/ScreenVB/TopBar/Right/LapCounterLabel.bbcode_text = "[right]Lap %s/3 [/right]" % lap

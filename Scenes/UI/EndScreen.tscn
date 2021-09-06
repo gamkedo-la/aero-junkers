@@ -21,14 +21,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ResultsText" type="Label" parent="Menu"]
-margin_top = 161.0
+[node name="ResultsText" type="RichTextLabel" parent="Menu"]
+margin_top = 160.0
 margin_right = 784.0
 margin_bottom = 175.0
 size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
 text = "(Race Results Here)"
-align = 1
-valign = 3
+fit_content_height = true
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
 margin_top = 340.0

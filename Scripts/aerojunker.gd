@@ -6,6 +6,7 @@ signal new_lap
 
 export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
+export var pilotName = "player"
 var nextCheckpointIndex = 0
 var nextCheckpoint
 var distance_to_next_checkpoint = 0

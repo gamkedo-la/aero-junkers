@@ -72,6 +72,7 @@ shape = SubResource( 1 )
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
+pilotName = "AI1"
 
 [node name="CollisionShape" parent="AeroJunker2/Engine_L" index="1"]
 shape = SubResource( 2 )
@@ -84,6 +85,7 @@ shape = SubResource( 2 )
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
+pilotName = "AI2"
 
 [node name="CollisionShape" parent="AeroJunker3/Engine_L" index="1"]
 shape = SubResource( 3 )
@@ -96,6 +98,7 @@ shape = SubResource( 3 )
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
+pilotName = "AI3"
 
 [node name="CollisionShape" parent="AeroJunker4/Engine_L" index="1"]
 shape = SubResource( 4 )

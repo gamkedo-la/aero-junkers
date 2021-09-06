@@ -37,4 +37,4 @@ static func sort_positions(a, b):
 
 
 static func total_checkpoint_index(aerojunker):
-	return aerojunker.nextCheckpointIndex + ((aerojunker.currentLap - 1) * 9)
+	return aerojunker.nextCheckpointIndex + ((aerojunker.currentLap - 1) * 9) #replace "9" w/ variable for total number of checkpoints
