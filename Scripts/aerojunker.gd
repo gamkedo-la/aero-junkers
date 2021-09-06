@@ -8,6 +8,7 @@ export(bool) var is_ai_controlled: bool = false
 export(Array, NodePath) var checkpoints
 var nextCheckpointIndex = 0
 var nextCheckpoint
+var distance_to_next_checkpoint = 0
 var previousCheckpoint = null
 var directionToNextCheckpoint: Vector3 = Vector3.ZERO
 var directionToNextCheckpoint2D: Vector2 = Vector2.ZERO
@@ -50,6 +51,7 @@ const MAX_ENGINE_ROTATION_ANGLE = 23
 const ENVIRONMENT_DAMAGE = 0.1
 
 func _ready():
+	CheckpointSingleton.positions.push_back(self)
 	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
 	
 	if not CheckpointSingleton.is_connected("checkpoint_reached", self, "_player_reached_checkpoint"):
@@ -65,7 +67,7 @@ func _ready():
 	AeroSingleton.aero_max_speed = 165
 	
 	DebugOverlay.draw.add_vector(self, "directionToNextCheckpoint", 5, 4, Color(0,1,0, 0.5))
-	
+
 
 func _init_follow_cam() -> void:
 	camera_positions = campos_node.get_children()
@@ -109,6 +111,7 @@ func _physics_process(delta):
 
 func _process(_delta):
 	nextCheckpoint = get_node(checkpoints[nextCheckpointIndex])
+	distance_to_next_checkpoint = transform.origin.distance_to(nextCheckpoint.transform.origin)
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 	
 	if health < 90:

@@ -43,15 +43,13 @@ margin_right = 325.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScreenVB/TopBar/Left"]
+[node name="PositionLabel" type="RichTextLabel" parent="MarginContainer/ScreenVB/TopBar/Left"]
 margin_right = 325.0
-margin_bottom = 66.0
+margin_bottom = 33.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "1/20
-"
-text = "1/20
-"
+bbcode_text = "4/8"
+text = "4/8"
 fit_content_height = true
 scroll_active = false
 
