@@ -55,7 +55,7 @@ transform = Transform( -0.924318, 0.120432, 0.362121, 0.348767, -0.118596, 0.929
 shadow_enabled = true
 
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 88.607, 1.86135, -247.374 )
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
 [node name="ChaseCam" parent="AeroJunker" index="0"]
@@ -69,7 +69,7 @@ shape = SubResource( 1 )
 [node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker"]
 
 [node name="AeroJunker2" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999996, -0.000439684, 0.707106, -0.00105922, -0.707106, 131.033, 1.86676, -224.746 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI1"
@@ -82,7 +82,7 @@ shape = SubResource( 2 )
 [node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker2"]
 
 [node name="AeroJunker3" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 111.942, 1.87736, -222.625 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI2"
@@ -95,7 +95,7 @@ shape = SubResource( 3 )
 [node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker3"]
 
 [node name="AeroJunker4" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 84.3644, 1.84823, -261.516 )
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 116.891, 1.85797, -238.889 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI3"
@@ -107,8 +107,28 @@ shape = SubResource( 4 )
 
 [node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker4"]
 
+[node name="AeroJunker5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 99.2136, 1.86945, -235.353 )
+is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
+pilotName = "AI4"
+
+[node name="BoosterTimer" type="Timer" parent="AeroJunker5"]
+
+[node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker5"]
+
+[node name="AeroJunker6" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 104.87, 1.849, -252.324 )
+is_ai_controlled = true
+checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
+pilotName = "fAI5"
+
+[node name="BoosterTimer" type="Timer" parent="AeroJunker6"]
+
+[node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker6"]
+
 [node name="Checkpoint" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.965925, 0.000154261, 0.258819, -9.86957e-05, 1.2, -0.000128338, -0.258819, 0.000118103, 0.965925, 160.912, -1.15042, -182.077 )
+transform = Transform( 0.866024, 0.000154258, 0.5, -6.21165e-05, 1.2, -0.000149508, -0.5, 0.000118103, 0.866024, 159.756, -1.15061, -178.662 )
 is_finish_line = true
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 4 )]
@@ -778,6 +798,10 @@ autoplay = true
 [connection signal="timeout" from="AeroJunker3/BoosterCooldownTimer" to="AeroJunker3" method="_on_BoosterCooldownTimer_timeout"]
 [connection signal="timeout" from="AeroJunker4/BoosterTimer" to="AeroJunker4" method="_on_BoosterTimer_timeout"]
 [connection signal="timeout" from="AeroJunker4/BoosterCooldownTimer" to="AeroJunker4" method="_on_BoosterCooldownTimer_timeout"]
+[connection signal="timeout" from="AeroJunker5/BoosterTimer" to="AeroJunker5" method="_on_BoosterTimer_timeout"]
+[connection signal="timeout" from="AeroJunker5/BoosterCooldownTimer" to="AeroJunker5" method="_on_BoosterCooldownTimer_timeout"]
+[connection signal="timeout" from="AeroJunker6/BoosterTimer" to="AeroJunker6" method="_on_BoosterTimer_timeout"]
+[connection signal="timeout" from="AeroJunker6/BoosterCooldownTimer" to="AeroJunker6" method="_on_BoosterCooldownTimer_timeout"]
 
 [editable path="AeroJunker"]
 [editable path="AeroJunker/Engine_L"]
@@ -787,3 +811,7 @@ autoplay = true
 [editable path="AeroJunker3/Engine_L"]
 [editable path="AeroJunker4"]
 [editable path="AeroJunker4/Engine_L"]
+[editable path="AeroJunker5"]
+[editable path="AeroJunker5/Engine_L"]
+[editable path="AeroJunker6"]
+[editable path="AeroJunker6/Engine_L"]

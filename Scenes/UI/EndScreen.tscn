@@ -22,9 +22,59 @@ __meta__ = {
 }
 
 [node name="ResultsText" type="RichTextLabel" parent="Menu"]
-margin_top = 160.0
+margin_top = 18.0
 margin_right = 784.0
-margin_bottom = 175.0
+margin_bottom = 33.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
+text = "(Race Results Here)"
+fit_content_height = true
+
+[node name="ResultsText2" type="RichTextLabel" parent="Menu"]
+margin_top = 75.0
+margin_right = 784.0
+margin_bottom = 90.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
+text = "(Race Results Here)"
+fit_content_height = true
+
+[node name="ResultsText3" type="RichTextLabel" parent="Menu"]
+margin_top = 132.0
+margin_right = 784.0
+margin_bottom = 147.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
+text = "(Race Results Here)"
+fit_content_height = true
+
+[node name="ResultsText4" type="RichTextLabel" parent="Menu"]
+margin_top = 188.0
+margin_right = 784.0
+margin_bottom = 203.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
+text = "(Race Results Here)"
+fit_content_height = true
+
+[node name="ResultsText5" type="RichTextLabel" parent="Menu"]
+margin_top = 245.0
+margin_right = 784.0
+margin_bottom = 260.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "(Race Results Here)"
+text = "(Race Results Here)"
+fit_content_height = true
+
+[node name="ResultsText6" type="RichTextLabel" parent="Menu"]
+margin_top = 302.0
+margin_right = 784.0
+margin_bottom = 317.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"

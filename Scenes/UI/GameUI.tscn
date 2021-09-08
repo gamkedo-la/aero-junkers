@@ -48,8 +48,8 @@ margin_right = 325.0
 margin_bottom = 33.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "4/8"
-text = "4/8"
+bbcode_text = "6/6"
+text = "6/6"
 fit_content_height = true
 scroll_active = false
 
