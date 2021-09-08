@@ -4,7 +4,7 @@
 	"scale": "expert",
 	"key": "C",
 	"introBars": 0,
-	"loopBars": 1,
+	"loopBars": 6,
 	"beatsPerBar": 8,
 	"ticksPerBeat": 4,
 	"beatsPerMinute": 150,
@@ -146,7 +146,115 @@
 				},
 				{
 					"instrument": 1,
-					"notes": []
+					"notes": [
+						{
+							"pitches": [
+								36,
+								40,
+								43
+							],
+							"points": [
+								{
+									"tick": 0,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 8,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						},
+						{
+							"pitches": [
+								36,
+								39,
+								41,
+								43
+							],
+							"points": [
+								{
+									"tick": 8,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 16,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						},
+						{
+							"pitches": [
+								40
+							],
+							"points": [
+								{
+									"tick": 16,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 20,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						},
+						{
+							"pitches": [
+								36
+							],
+							"points": [
+								{
+									"tick": 20,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 24,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						},
+						{
+							"pitches": [
+								38
+							],
+							"points": [
+								{
+									"tick": 24,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 28,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						},
+						{
+							"pitches": [
+								41
+							],
+							"points": [
+								{
+									"tick": 28,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 32,
+									"pitchBend": 0,
+									"volume": 100
+								}
+							]
+						}
+					]
 				},
 				{
 					"instrument": 1,
@@ -177,11 +285,9 @@
 				1,
 				2,
 				1,
+				2,
 				1,
-				0,
-				0,
-				0,
-				0,
+				2,
 				0,
 				0,
 				0,
@@ -280,10 +386,8 @@
 				1,
 				1,
 				1,
-				0,
-				0,
-				0,
-				0,
+				1,
+				1,
 				0,
 				0,
 				0,
@@ -300,7 +404,7 @@
 			"instruments": [
 				{
 					"type": "FM",
-					"volume": 80,
+					"volume": 40,
 					"pan": 0,
 					"effects": "reverb",
 					"preset": 580,
@@ -480,10 +584,8 @@
 				1,
 				1,
 				1,
-				0,
-				0,
-				0,
-				0,
+				1,
+				1,
 				0,
 				0,
 				0,
@@ -499,48 +601,17 @@
 			"octaveScrollBar": 0,
 			"instruments": [
 				{
-					"type": "spectrum",
-					"volume": 80,
+					"type": "noise",
+					"volume": 20,
 					"pan": 0,
 					"effects": "reverb",
-					"preset": 968,
-					"transition": "hard fade",
+					"preset": 1039,
+					"transition": "slide",
 					"chord": "harmony",
-					"filterCutoffHz": 4000,
-					"filterResonance": 43,
-					"filterEnvelope": "decay 1",
-					"spectrum": [
-						100,
-						86,
-						71,
-						57,
-						43,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29,
-						29
-					]
+					"filterCutoffHz": 2000,
+					"filterResonance": 86,
+					"filterEnvelope": "steady",
+					"wave": "buzz"
 				}
 			],
 			"patterns": [
@@ -654,6 +725,23 @@
 						},
 						{
 							"pitches": [
+								0
+							],
+							"points": [
+								{
+									"tick": 22,
+									"pitchBend": 0,
+									"volume": 100
+								},
+								{
+									"tick": 24,
+									"pitchBend": 0,
+									"volume": 0
+								}
+							]
+						},
+						{
+							"pitches": [
 								2
 							],
 							"points": [
@@ -723,10 +811,8 @@
 				1,
 				1,
 				1,
-				0,
-				0,
-				0,
-				0,
+				1,
+				1,
 				0,
 				0,
 				0,
