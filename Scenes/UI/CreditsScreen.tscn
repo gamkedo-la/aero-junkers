@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/UI/end_screen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 2 )
 
 [node name="CreditsScreen" type="Control"]
 anchor_right = 1.0
@@ -22,28 +27,35 @@ __meta__ = {
 }
 
 [node name="CreditsTitleText" type="Label" parent="Menu"]
-margin_top = 93.0
+margin_top = 48.0
 margin_right = 800.0
-margin_bottom = 107.0
+margin_bottom = 62.0
 size_flags_vertical = 6
 text = "Credits"
 align = 1
 valign = 3
 
 [node name="CreditsText" type="Label" parent="Menu"]
-margin_top = 230.0
+margin_top = 75.0
 margin_right = 800.0
-margin_bottom = 380.0
+margin_bottom = 396.0
 size_flags_vertical = 6
-text = "Credits
+custom_fonts/font = SubResource( 1 )
+text = "Brian J. Boucher: Project lead, core gameplay, AI, checkpoint system, track design, minimap, audio integration, hover movement, models (cockpit, cactus, additional rocks), skybox, menus, lap counter UI, fir and spark effects, rock and ground textures, drifting, results screen
 
-Credits
+Fahad Muntaz: Engine model, collision improvements, environment structures, engine break sound, checkpoint system fixes, boost feature, engine rotation, race music
 
-Credits
+Ashleigh M.: Victory and loss music
 
-Credits
+Kyle Black: Chase cameras, UI layout, speedometer, damage meter, scene change refactor
 
-Credits"
+MrPhil (Philip Ludington): Title music, checkpoint reset functionality 
+
+Justin Davis: Rocks modeling and integration
+
+Andrew Hind: Engine loop and acceleration sound
+
+Chris DeLeon: Compiled credits"
 valign = 3
 autowrap = true
 
@@ -56,5 +68,4 @@ margin_bottom = 430.0
 margin_right = 800.0
 margin_bottom = 20.0
 text = "Return to Title Screen"
-
 [connection signal="pressed" from="Menu/Buttons/CreditsScreenButton" to="." method="_on_TitleScreenButton_pressed"]
