@@ -22,9 +22,9 @@ __meta__ = {
 }
 
 [node name="ResultsText" type="RichTextLabel" parent="Menu"]
-margin_top = 18.0
+margin_top = 16.0
 margin_right = 784.0
-margin_bottom = 33.0
+margin_bottom = 31.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
@@ -32,9 +32,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText2" type="RichTextLabel" parent="Menu"]
-margin_top = 75.0
+margin_top = 68.0
 margin_right = 784.0
-margin_bottom = 90.0
+margin_bottom = 83.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
@@ -42,9 +42,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText3" type="RichTextLabel" parent="Menu"]
-margin_top = 132.0
+margin_top = 120.0
 margin_right = 784.0
-margin_bottom = 147.0
+margin_bottom = 135.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
@@ -52,9 +52,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText4" type="RichTextLabel" parent="Menu"]
-margin_top = 188.0
+margin_top = 172.0
 margin_right = 784.0
-margin_bottom = 203.0
+margin_bottom = 187.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
@@ -62,9 +62,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText5" type="RichTextLabel" parent="Menu"]
-margin_top = 245.0
+margin_top = 224.0
 margin_right = 784.0
-margin_bottom = 260.0
+margin_bottom = 239.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
@@ -72,23 +72,21 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText6" type="RichTextLabel" parent="Menu"]
-margin_top = 302.0
+margin_top = 276.0
 margin_right = 784.0
-margin_bottom = 317.0
+margin_bottom = 291.0
 size_flags_vertical = 6
 bbcode_enabled = true
 bbcode_text = "(Race Results Here)"
 text = "(Race Results Here)"
 fit_content_height = true
 
-[node name="Buttons" type="VBoxContainer" parent="Menu"]
-margin_top = 340.0
+[node name="ResultsText7" type="RichTextLabel" parent="Menu"]
+margin_top = 328.0
 margin_right = 784.0
-margin_bottom = 360.0
-
-[node name="TitleScreenButton" type="Button" parent="Menu/Buttons"]
-margin_right = 784.0
-margin_bottom = 20.0
-text = "Return to Title Screen"
-
-[connection signal="pressed" from="Menu/Buttons/TitleScreenButton" to="." method="_on_TitleScreenButton_pressed"]
+margin_bottom = 343.0
+size_flags_vertical = 6
+bbcode_enabled = true
+bbcode_text = "[center]Press Space to Continue. Press Q to return to Title Screen"
+text = "Press Space to Continue. Press Q to return to Title Screen"
+fit_content_height = true
