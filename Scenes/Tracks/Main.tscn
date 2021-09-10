@@ -463,7 +463,7 @@ use_collision = true
 collision_mask = 2
 
 [node name="rock5" parent="Placeholder Mounds" instance=ExtResource( 7 )]
-transform = Transform( -6.59999, 0.00376729, -1.651e-06, 0.00376735, 1.99999, -0.00377545, -1.66055e-06, -0.00377552, -6.59999, 255.042, -1.07319, 87.8775 )
+transform = Transform( -6.59999, 0.00376729, -1.65077e-06, 0.00376735, 1.99999, -0.00377545, -1.66078e-06, -0.00377552, -6.59999, 255.042, -1.07319, 87.8775 )
 
 [node name="rock6" parent="Placeholder Mounds" instance=ExtResource( 7 )]
 transform = Transform( -6.30684, 7.13074, 0.00277399, -15.298, -1.23875, 0.0105236, 0.0126156, -0.000286873, 5.93998, 259.03, -1.08547, 63.8756 )
