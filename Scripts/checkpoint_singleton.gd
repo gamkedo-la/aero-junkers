@@ -5,6 +5,7 @@ signal checkpoint_reached(_checkpoint, aeroJunker)
 # warning-ignore:unused_signal
 signal finish_line_reached(_checkpoint, aeroJunker)
 signal positions_updated(positions)
+signal race_finished()
 
 var positions = []
 var timer

@@ -291,6 +291,11 @@ func _player_reached_finish_line(checkpoint, aeroJunker) -> void:
 	if checkpoint == nextCheckpoint:
 		currentLap += 1
 		emit_signal("new_lap", currentLap)
+		if currentLap == trackLaps + 1 and not aeroJunker.is_ai_controlled:
+			$EngineRunningSFX.stop()
+			$EngineAcceleratingSFX.stop()
+			$EngineBreakingSFX.stop()
+			CheckpointSingleton.emit_signal("race_finished")
 
 
 func endRace() -> void:
