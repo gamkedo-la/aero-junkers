@@ -11,8 +11,8 @@
 [ext_resource path="res://Scenes/Environment Objects/boulder.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/GameUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=12]
-[ext_resource path="res://Assets/Materials/cracked_ground_2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Materials/Material_001.material" type="Material" id=12]
+[ext_resource path="res://Assets/Materials/cracked_ground.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Music/aero_racing_song.mp3" type="AudioStream" id=14]
 
 [sub_resource type="ConvexPolygonShape" id=1]

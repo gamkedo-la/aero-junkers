@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/Particles Effects/particle-spark.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Materials/particle-spark.png" type="Texture" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
