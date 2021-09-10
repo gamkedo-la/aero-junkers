@@ -115,7 +115,7 @@ func _process(_delta):
 	distance_to_next_checkpoint = transform.origin.distance_to(nextCheckpoint.transform.origin)
 	$EngineRunningSFX.unit_db = min((velocity.length() * 0.5), 15)
 	
-	if health < 90:
+	if health < 30:
 		$Engine_L/Fire/FireParticles.emitting = true
 		$Engine_R/Fire/FireParticles.emitting = true
 	else:
