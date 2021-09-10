@@ -547,7 +547,7 @@ transform = Transform( 24.6, 4.25734e-09, -1.21072e-08, -3.33512e-09, 24.6, 6.51
 transform = Transform( 24.6, 4.25734e-09, -1.21072e-08, -3.33512e-09, 24.6, 6.51926e-09, 1.21072e-08, -1.86265e-09, 24.6, -34.9947, 0.0201664, 11.0169 )
 
 [node name="rock20" parent="Placeholder Mounds" instance=ExtResource( 6 )]
-transform = Transform( 56.5799, -0.0140158, -0.015408, -0.0140161, 24.5999, 6.76606e-06, -0.0154078, 6.74929e-06, 24.6, -20.9986, 2.00964, 1.00926 )
+transform = Transform( 56.5799, -0.0140158, -0.015408, -0.0140161, 24.5999, 6.76699e-06, -0.0154078, 6.74836e-06, 24.6, -20.9986, 2.00964, 1.00926 )
 
 [node name="rock10" parent="Placeholder Mounds" instance=ExtResource( 5 )]
 transform = Transform( -3.0914, 9.26239, -17.0464, -16.1528, 22.6915, 6.46416, -42.6113, -9.25933, -1.19388, 248.972, 8.86277, -64.1237 )
@@ -815,3 +815,4 @@ autoplay = true
 [editable path="AeroJunker5/Engine_L"]
 [editable path="AeroJunker6"]
 [editable path="AeroJunker6/Engine_L"]
+[editable path="Placeholder Mounds/rock27"]
