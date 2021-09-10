@@ -36,6 +36,10 @@ CheckpointSingleton="*res://Scripts/Autoload/checkpoint_singleton.gd"
 AeroSingleton="*res://Scripts/Autoload/AeroSingleton.gd"
 DebugOverlay="*res://Scenes/DebugOverlay.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 accelerate={
