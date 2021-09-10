@@ -32,7 +32,7 @@ var verticle_bob_period: float = 200.0
 var health = 100.0
 var test_max_speed: float = 0
 
-const BOOST_SPEED_INCREMENT: float = 10000.0
+const BOOST_SPEED_INCREMENT: float = 5000.0
 const BOOST_MAX_DURATION: float = 3.5 #seconds
 const BOOST_COOLDOWN_DURATION: float = 10.0 #seconds
 var boost_ready: bool = true
