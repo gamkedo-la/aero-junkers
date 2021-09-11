@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/UI/track_select_screen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Music/The Cockpit Song.mp3" type="AudioStream" id=2]
+
+[node name="TrackSelectScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.18921
+margin_right = -1.18921
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 120.0
+margin_right = 904.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrackSelectText" type="Label" parent="Menu"]
+margin_top = 137.0
+margin_right = 784.0
+margin_bottom = 151.0
+size_flags_vertical = 6
+text = "Track Select"
+align = 1
+valign = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 292.0
+margin_right = 784.0
+margin_bottom = 360.0
+
+[node name="Track1Button" type="Button" parent="Menu/Buttons"]
+margin_right = 784.0
+margin_bottom = 20.0
+text = "Canyon"
+
+[node name="Track2Button" type="Button" parent="Menu/Buttons"]
+margin_top = 24.0
+margin_right = 784.0
+margin_bottom = 44.0
+text = "Track 2"
+
+[node name="Track3Button" type="Button" parent="Menu/Buttons"]
+margin_top = 48.0
+margin_right = 784.0
+margin_bottom = 68.0
+text = "Track 3"
+
+[connection signal="pressed" from="Menu/Buttons/Track1Button" to="." method="_on_Track1Button_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Track2Button" to="." method="_on_Track2Button_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Track3Button" to="." method="_on_Track3Button_pressed"]

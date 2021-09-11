@@ -1,7 +1,7 @@
 extends Control
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/Tracks/canyon_track.tscn")
+	get_tree().change_scene("res://Scenes/UI/TrackSelectScreen.tscn")
 
 
 func _on_OptionsButton_pressed():
