@@ -49,7 +49,7 @@ text = "Canyon"
 margin_top = 24.0
 margin_right = 784.0
 margin_bottom = 44.0
-text = "Track 2"
+text = "Tundra"
 
 [node name="Track3Button" type="Button" parent="Menu/Buttons"]
 margin_top = 48.0
