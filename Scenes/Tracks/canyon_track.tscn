@@ -45,7 +45,7 @@ subdivide_depth = 100
 [sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, -50 )
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.000439007, 0.000481988, 0.000438803, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
@@ -66,9 +66,6 @@ shadow_enabled = true
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 88.607, 1.86135, -247.374 )
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
-
-[node name="ChaseCam" parent="AeroJunker" index="0"]
-current = true
 
 [node name="CollisionShape" parent="AeroJunker/Engine_L" index="1"]
 shape = SubResource( 1 )

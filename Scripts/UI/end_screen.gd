@@ -12,4 +12,9 @@ func _process(delta):
 		
 	if Input.is_action_just_released("next_race") and self.visible:
 		Global.emit_signal("return_to_menu")
-		Global.goto_scene("res://Scenes/Tracks/tundra_track.tscn")
+		if Global.current_level + 1 <= Global.level_list.size() - 1:
+			Global.current_level += 1
+		else:
+			Global.current_level = 0
+		
+		Global.goto_scene(Global.level_list[Global.current_level])

@@ -6,7 +6,9 @@ signal return_to_menu
 var current_scene = null
 var debug_mode = false
 var current_level = 0
-const level_list = ["res://Scenes/Tracks/Track1.tscn"]
+const level_list = ["res://Scenes/Tracks/canyon_track.tscn",
+					"res://Scenes/Tracks/tundra_track.tscn",
+					"res://Scenes/Tracks/canyon_night_track.tscn"]
 
 func _ready():
 	var root = get_tree().get_root()
