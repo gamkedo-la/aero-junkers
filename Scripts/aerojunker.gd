@@ -59,6 +59,8 @@ func _ready():
 		assert(CheckpointSingleton.connect("checkpoint_reached", self, "_player_reached_checkpoint") == OK)
 	if not CheckpointSingleton.is_connected("finish_line_reached", self, "_player_reached_finish_line"):
 		assert(CheckpointSingleton.connect("finish_line_reached", self, "_player_reached_finish_line") == OK)
+	if not Global.is_connected("race_start", self, "_start_racing"):
+		assert(Global.connect("race_start", self, "_start_racing") == OK)
 	_init_follow_cam()
 	
 	# We can likely come up witha better way to pre-calculate *actual* max speed, but for right now, the 
@@ -66,6 +68,7 @@ func _ready():
 	# The max will auto-adjust if the max is exceeded, and the speedometer will update accordingly
 	test_max_speed = 165
 	AeroSingleton.aero_max_speed = 165
+	set_physics_process(false)
 	
 #	DebugOverlay.draw.add_vector(self, "directionToNextCheckpoint", 5, 4, Color(0,1,0, 0.5))
 
@@ -76,6 +79,8 @@ func _init_follow_cam() -> void:
 	assert(followcam.initialize(self) == true)
 	emit_signal("switch_cam", camera_positions[cur_camera_idx], cam_lerps[cur_camera_idx])
 
+func _start_racing() -> void:
+	set_physics_process(true)
 
 func _physics_process(delta):
 	directionToNextCheckpoint = (nextCheckpoint.transform.origin - transform.origin).normalized()

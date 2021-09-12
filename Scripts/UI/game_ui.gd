@@ -5,6 +5,12 @@ func _ready():
 		assert(CheckpointSingleton.connect("positions_updated", self, "_on_Checkpoint_Singleton_positions_updated") == OK)
 	if not CheckpointSingleton.is_connected("race_finished", self, "_on_Checkpoint_Singleton_race_finished"):
 		assert(CheckpointSingleton.connect("race_finished", self, "_on_Checkpoint_Singleton_race_finished") == OK)
+	start_countdown()
+
+
+func start_countdown() -> void:
+	
+	pass
 
 func _on_AeroJunker_new_lap(lap: int):
 	$MarginContainer/ScreenVB/TopBar/Right/LapCounterLabel.bbcode_text = "[right]Lap %s/3 [/right]" % lap
