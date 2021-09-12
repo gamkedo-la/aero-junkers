@@ -34,6 +34,7 @@ __meta__ = {
 }
 
 [node name="CheckpointReset" type="Button" parent="MarginContainer"]
+visible = false
 margin_left = 389.0
 margin_right = 512.0
 margin_bottom = 20.0
