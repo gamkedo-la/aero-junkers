@@ -132,7 +132,7 @@ pilotName = "AI5"
 [node name="BoosterCooldownTimer" type="Timer" parent="AeroJunker6"]
 
 [node name="Checkpoint" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.707105, 0.000333831, 0.707106, -8.34207e-05, 1.2, -0.00031, -0.707106, 0.000192256, 0.707105, 93.7232, -1.15152, -246.63 )
+transform = Transform( 0.707105, 0.000333831, 0.707106, -8.34206e-05, 1.2, -0.00031, -0.707106, 0.000192256, 0.707105, 86.7106, -1.15986, -272.627 )
 is_finish_line = true
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 7 )]
@@ -555,7 +555,7 @@ transform = Transform( 0.279576, 1.70441, 1.18681, -0.267956, 1.25497, -1.45159,
 transform = Transform( 0.278838, 0.5251, 2.14568, -0.267793, 1.47332, -0.773584, -0.97239, -0.172818, 0.250425, 98.9145, -14.8173, -141.993 )
 
 [node name="rock25" parent="Placeholder Mounds" instance=ExtResource( 16 )]
-transform = Transform( 4.82274e-06, 24.5999, 0.00106267, -24.5999, 3.48489e-06, 0.0226514, 0.0226514, -0.00106234, 24.6, 35.881, -0.124161, -247.017 )
+transform = Transform( 4.82274e-06, 24.5999, 0.00106267, -24.5999, 3.48675e-06, 0.0226514, 0.0226514, -0.00106233, 24.6, 35.877, -9.12416, -247.014 )
 
 [node name="rock26" parent="Placeholder Mounds" instance=ExtResource( 16 )]
 transform = Transform( 4.82461e-06, 24.5999, 0.00106267, -24.5999, 3.48582e-06, 0.0226514, 0.0226514, -0.00106235, 24.5999, 59.9091, 4.889, -193.031 )

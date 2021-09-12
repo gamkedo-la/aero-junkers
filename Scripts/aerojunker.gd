@@ -5,6 +5,7 @@ signal switch_cam
 signal new_lap
 
 export(bool) var is_ai_controlled: bool = false
+export var ai_speed_multiplier: float = 1
 export(Array, NodePath) var checkpoints
 export var pilotName = "player"
 var nextCheckpointIndex = 0
@@ -178,6 +179,8 @@ func get_ai_input(delta):
 	else:
 		throttle = 1
 		reset_engine_rotation()
+		
+	throttle *= ai_speed_multiplier 
 
 
 func turn_left():
