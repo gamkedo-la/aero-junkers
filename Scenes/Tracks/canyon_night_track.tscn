@@ -133,6 +133,7 @@ visible = true
 [node name="AeroJunker3" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 111.942, 1.87736, -222.625 )
 is_ai_controlled = true
+ai_speed_multiplier = 0.95
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI2"
 
@@ -155,6 +156,7 @@ visible = true
 [node name="AeroJunker4" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 116.891, 1.85797, -238.889 )
 is_ai_controlled = true
+ai_speed_multiplier = 0.9
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI3"
 
@@ -177,6 +179,7 @@ visible = true
 [node name="AeroJunker5" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 99.2136, 1.86945, -235.353 )
 is_ai_controlled = true
+ai_speed_multiplier = 0.85
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI4"
 
@@ -193,6 +196,7 @@ visible = true
 [node name="AeroJunker6" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 104.87, 1.849, -252.324 )
 is_ai_controlled = true
+ai_speed_multiplier = 0.8
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI5"
 
