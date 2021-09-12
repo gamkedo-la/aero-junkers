@@ -188,7 +188,7 @@ visible = true
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 104.87, 1.849, -252.324 )
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
-pilotName = "fAI5"
+pilotName = "AI5"
 
 [node name="SpotLight" parent="AeroJunker6/Engine_L" index="4"]
 visible = true
