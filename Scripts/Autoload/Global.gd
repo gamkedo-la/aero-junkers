@@ -1,5 +1,7 @@
 extends Node
 
+signal race_start
+
 var current_scene = null
 var debug_mode = false
 var current_level = 0

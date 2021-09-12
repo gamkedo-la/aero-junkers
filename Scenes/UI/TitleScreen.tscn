@@ -5,17 +5,17 @@
 [ext_resource path="res://Assets/Materials/title-bg.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Bangers-Regular.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=4]
-size = 128
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=1]
+size = 128
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
 [node name="TitleScreen" type="Control"]
@@ -49,7 +49,7 @@ margin_right = 1019.0
 margin_bottom = 122.0
 grow_horizontal = 2
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "AeroJunkers"
 align = 1
 valign = 3
@@ -76,7 +76,7 @@ alignment = 1
 [node name="StartButton" type="Button" parent="Menu/Buttons"]
 margin_right = 100.0
 margin_bottom = 24.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="Menu/Buttons"]
@@ -84,14 +84,14 @@ visible = false
 margin_top = 24.0
 margin_right = 784.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="Menu/Buttons"]
 margin_top = 28.0
 margin_right = 100.0
 margin_bottom = 52.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Credits"
 
 [connection signal="pressed" from="Menu/Buttons/StartButton" to="." method="_on_StartButton_pressed"]

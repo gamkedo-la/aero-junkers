@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Scripts/UI/Minimap.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/UI/EngineHPMeter.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/CockpitHPMeter.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/UI/EndScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/UI/Bangers-Regular-Font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Scripts/StartCountdown.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -180,6 +182,7 @@ size = Vector2( 200, 200 )
 [node name="MiniMapCamera" type="Camera" parent="MarginContainer/ScreenVB/BotBar/Minimap/Viewport"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 552, 0 )
 environment = ExtResource( 1 )
+current = true
 fov = 116.6
 size = 5.76
 far = 1000.0
@@ -221,6 +224,29 @@ margin_bottom = 43.0
 value = 100.0
 texture_progress = ExtResource( 8 )
 fill_mode = 3
+
+[node name="StartCountdown" type="Control" parent="MarginContainer"]
+margin_right = 984.0
+margin_bottom = 560.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CDLabel" type="Label" parent="MarginContainer/StartCountdown"]
+anchor_left = 0.4
+anchor_top = 0.428
+anchor_right = 0.558
+anchor_bottom = 0.6
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="EndScreen" parent="." instance=ExtResource( 9 )]
 visible = false

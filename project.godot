@@ -37,6 +37,10 @@ AeroSingleton="*res://Scripts/Autoload/AeroSingleton.gd"
 DebugOverlay="*res://Scenes/DebugOverlay.tscn"
 Global="*res://Scripts/Autoload/Global.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 accelerate={
