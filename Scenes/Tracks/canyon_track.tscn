@@ -56,6 +56,7 @@ shadow_enabled = true
 
 [node name="AeroJunker" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999997, -0.000439684, 0.707106, -0.00105922, -0.707106, 88.607, 1.86135, -247.374 )
+visible = false
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 
 [node name="ChaseCam" parent="AeroJunker" index="0"]
@@ -73,6 +74,9 @@ transform = Transform( -0.707106, 0.000437399, -0.707107, 0.00105825, 0.999996, 
 is_ai_controlled = true
 checkpoints = [ NodePath("../Checkpoint"), NodePath("../Checkpoint2"), NodePath("../Checkpoint3"), NodePath("../Checkpoint4"), NodePath("../Checkpoint5"), NodePath("../Checkpoint6"), NodePath("../Checkpoint7"), NodePath("../Checkpoint8"), NodePath("../Checkpoint9") ]
 pilotName = "AI1"
+
+[node name="CollisionShape_L_Engine" parent="AeroJunker2" index="5"]
+transform = Transform( 0.499999, -0.000604068, 0.00266951, 0.000602732, 0.499999, 0.00404029, -0.000668496, -0.00100927, 1.99999, -2.00002, 0, 7.62939e-06 )
 
 [node name="CollisionShape" parent="AeroJunker2/Engine_L" index="1"]
 shape = SubResource( 2 )
@@ -160,7 +164,7 @@ transform = Transform( -6.6, 0.00332924, -1.45775e-06, 0.00332929, 0.999997, -0.
 collision_mask = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
-transform = Transform( 1, -3.17058e-10, 0, 1.70573e-10, 0.999999, 2.91038e-10, 2.61934e-10, -2.91038e-11, 1, 0.151884, 0.999867, -0.152027 )
+transform = Transform( 1, -3.16987e-10, 0, 1.99719e-10, 0.999999, 2.91038e-10, 2.91038e-10, -5.82077e-11, 1, 0.151884, 0.999867, -0.152027 )
 mesh = SubResource( 6 )
 material/0 = null
 
