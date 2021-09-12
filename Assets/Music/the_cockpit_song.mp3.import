@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the_cockpit_song.mp3-dec02c9bbbbf66830f443ff272d323e3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/the_cockpit_song.mp3"
+dest_files=[ "res://.import/the_cockpit_song.mp3-dec02c9bbbbf66830f443ff272d323e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

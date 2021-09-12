@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/UI/title_screen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Music/The Cockpit Song.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Music/the_cockpit_song.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Materials/title-bg.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Bangers-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scenes/UI/Bangers-Regular-Font.tres" type="DynamicFont" id=5]
@@ -41,13 +41,17 @@ __meta__ = {
 }
 
 [node name="TitleText" type="Label" parent="."]
-margin_left = 512.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
 margin_right = 512.0
+margin_bottom = 100.0
 grow_horizontal = 2
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 5 )
 text = "AeroJunkers"
 align = 1
+valign = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
