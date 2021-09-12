@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Vehicles/AeroJunker.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Materials/Material_001.material" type="Material" id=12]
 [ext_resource path="res://Assets/Materials/cracked_ground.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Music/aero_racing_song.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Environment Objects/TrackBoundryColliders.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 resource_local_to_scene = true
@@ -49,6 +50,14 @@ transform = Transform( 1, -0.000438269, -0.000481802, 0.000438065, 1, -0.0004390
 script = ExtResource( 1 )
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 11 )]
+
+[node name="Track Boundry Colliders" parent="." instance=ExtResource( 15 )]
+
+[node name="CSGBox7" parent="Track Boundry Colliders" index="6"]
+transform = Transform( -0.218193, -0.513075, -109.463, -0.108457, 20.876, -0.0728221, -0.970068, -2.2186, 24.6292, 180.137, 11.6895, 148.426 )
+
+[node name="CSGBox8" parent="Track Boundry Colliders" index="7"]
+transform = Transform( -0.718054, -0.683608, 78.0206, -0.0602174, 20.9592, -1.7316, 0.693668, 1.11184, 80.6131, -0.98355, 8.84811, 100.043 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.924318, 0.120432, 0.362121, 0.348767, -0.118596, 0.929675, 0.154909, 0.985612, 0.0676177, 0, 10, 0 )
@@ -163,7 +172,7 @@ transform = Transform( -6.6, 0.00332924, -1.45775e-06, 0.00332929, 0.999997, -0.
 collision_mask = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
-transform = Transform( 1, -3.16987e-10, 0, 1.99719e-10, 0.999999, 2.91038e-10, 2.91038e-10, -5.82077e-11, 1, 0.151884, 0.999867, -0.152027 )
+transform = Transform( 1, -3.75223e-10, 0, 2.87045e-10, 0.999999, 2.91038e-10, 3.7835e-10, -8.73115e-11, 1, 0.151884, 0.999867, -0.152027 )
 mesh = SubResource( 6 )
 material/0 = null
 
@@ -400,61 +409,61 @@ depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon31" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 9.61137, -0.431971, 2.80028, -0.00179363, 0.504083, 9.58656, -5.55263, -0.747885, 4.84405, 89.8993, 13.0376, 175.437 )
+transform = Transform( 9.61137, -0.500238, 0.0276819, -0.00179136, 0.00470613, 11.0998, -5.55263, -0.865893, 0.0443353, 89.9117, 18.0375, 175.457 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon32" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 11.1, -0.000236748, 0.00154513, -9.42639e-06, 0.503843, 9.58811, -0.00303979, -0.863812, 5.59254, 133.46, 13.0106, 157.546 )
+transform = Transform( 11.1, -0.000273852, 6.13909e-12, 2.58069e-11, -4.36557e-08, 11.0999, -0.00303972, -1.00001, -4.84753e-07, 133.46, 19.0106, 157.546 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon33" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 10.721, -0.223735, 1.45018, -0.00110457, 0.503954, 9.5874, -2.87583, -0.834268, 5.40252, 166.197, 12.9952, 154.954 )
+transform = Transform( 10.721, -0.259084, 0.0141588, -0.00110221, 0.00455332, 11.0998, -2.87583, -0.965859, 0.0485295, 166.202, 16.9952, 154.971 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon34" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 10.721, -0.223735, 1.45018, -0.00110457, 0.503954, 9.58739, -2.87583, -0.834268, 5.40252, 213.522, 12.9688, 142.248 )
+transform = Transform( 10.721, -0.259084, 0.0141588, -0.00110222, 0.00455332, 11.0998, -2.87583, -0.965859, 0.0485294, 213.528, 17.9687, 142.27 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon35" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 10.7209, -0.223735, 1.45018, -0.00110456, 0.503953, 9.58739, -2.87583, -0.834268, 5.40252, 253.119, 12.9469, 131.618 )
+transform = Transform( 10.7209, -0.259086, 0.0141591, -0.00110242, 0.00455331, 11.0998, -2.87583, -0.965858, 0.0485293, 253.124, 16.9469, 131.635 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon41" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 5.55263, 0.747885, -4.84406, 0.00664144, 0.503705, 9.58901, 9.61133, -0.432414, 2.79187, -76.4726, 13.0413, 17.9187 )
+transform = Transform( 5.55267, 0.8659, 4.18755e-07, -9.31323e-10, -4.36994e-08, 11.0999, 9.6113, -0.50025, -2.42144e-07, -76.4726, 19.0413, 17.9187 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon42" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 7.85102, 0.610549, -3.95518, 0.00485991, 0.503687, 9.58913, 7.8467, -0.611197, 3.95141, -43.6039, 13.0451, 59.367 )
+transform = Transform( 7.85106, 0.70692, 3.4187e-07, 0, -4.35975e-08, 11.0999, 7.84666, -0.707316, -3.43192e-07, -43.6039, 20.0451, 59.367 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon43" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 7.85102, 0.610549, -3.95518, 0.00485991, 0.503686, 9.58912, 7.8467, -0.611196, 3.95141, -17.4287, 13.0452, 85.5172 )
+transform = Transform( 7.85106, 0.706919, 3.41404e-07, 4.65661e-10, -4.35393e-08, 11.0999, 7.84666, -0.707316, -3.42261e-07, -17.4287, 19.0452, 85.5172 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon44" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 7.85101, 0.610548, -3.95518, 0.00485991, 0.503686, 9.58912, 7.8467, -0.611196, 3.95141, 17.2366, 13.0451, 120.149 )
+transform = Transform( 7.85105, 0.706919, 3.41868e-07, -2.32831e-10, -4.35684e-08, 11.0999, 7.84665, -0.707315, -3.43192e-07, 15.4919, 17.9048, 120.892 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
 
 [node name="CSGPolygon45" type="CSGPolygon" parent="Placeholder Walls"]
-transform = Transform( 7.85101, 0.610548, -3.95517, 0.00485991, 0.503686, 9.58911, 7.84669, -0.611196, 3.95141, 46.2415, 13.0452, 149.126 )
+transform = Transform( 7.85105, 0.706918, 3.41867e-07, 6.98492e-10, -4.35393e-08, 11.0999, 7.84665, -0.707315, -3.42727e-07, 46.2415, 17.0452, 149.126 )
 polygon = PoolVector2Array( 1, 5, 0, 2, -1, 7, -1, -7, 4, -9, 4, -1, 3, 8, 2, 3 )
 depth = 1.911
 material = ExtResource( 12 )
@@ -901,6 +910,7 @@ autoplay = true
 [connection signal="timeout" from="AeroJunker6/BoosterTimer" to="AeroJunker6" method="_on_BoosterTimer_timeout"]
 [connection signal="timeout" from="AeroJunker6/BoosterCooldownTimer" to="AeroJunker6" method="_on_BoosterCooldownTimer_timeout"]
 
+[editable path="Track Boundry Colliders"]
 [editable path="AeroJunker"]
 [editable path="AeroJunker/Engine_L"]
 [editable path="AeroJunker2"]
