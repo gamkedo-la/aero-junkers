@@ -875,9 +875,11 @@ material = ExtResource( 1 )
 
 [node name="Boulder" parent="Placeholder Mounds" instance=ExtResource( 13 )]
 transform = Transform( 1, -1.71781e-10, -1.74623e-10, 1.71326e-10, 0.999999, -1.74623e-10, 1.74623e-10, 1.74623e-10, 1, 98.9151, -10.1167, -167.043 )
+collision_mask = 2
 
 [node name="stones" parent="Placeholder Mounds" instance=ExtResource( 12 )]
 transform = Transform( -0.866025, 0.00103693, 0.499999, 0.000597936, 0.999998, -0.00103823, -0.5, -0.000600182, -0.866025, 183.892, -2.17762, -221.088 )
+collision_mask = 2
 
 [node name="GameUI" parent="." instance=ExtResource( 15 )]
 
@@ -885,6 +887,56 @@ transform = Transform( -0.866025, 0.00103693, 0.499999, 0.000597936, 0.999998, -
 stream = ExtResource( 10 )
 volume_db = -9.293
 autoplay = true
+
+[node name="Track Boundry Colliders" type="Spatial" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( 0.719587, 2.56247, -96.6631, -0.147886, 20.7645, 2.95281, -0.678772, -1.80746, -103.119, -2.3175, 17.4091, 105.8 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox2" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( 0.9997, 0.136986, -3.48232, -0.00582079, 20.9942, 2.54742, -0.0311827, 0.472757, -112.117, -85.5145, 20.0694, -86.2394 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox3" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( 0.761944, 0.136987, 72.6821, -0.0195561, 20.9941, 1.45026, 0.647662, 0.472758, -85.4633, -6.15085, 23.7108, -270.941 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox4" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( -0.519619, 0.136986, 95.8675, -0.0158514, 20.9941, -1.9375, 0.854489, 0.472758, 58.2617, 168.829, 22.6425, -274.205 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox5" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( -0.971727, 0.136988, 26.5718, 0.00100454, 20.9941, -2.62737, 0.236962, 0.472757, 108.976, 289.167, 22.9666, -102.16 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox6" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( -0.999923, 0.13699, -2.54623, 0.00703239, 20.9941, -2.50868, -0.0225463, 0.472757, 112.143, 294.543, 14.371, 14.7284 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox7" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( -0.301914, -0.703653, -106.9, -0.10841, 20.8761, -0.0697978, -0.947364, -2.16468, 34.0758, 192.144, 11.6908, 163.42 )
+visible = false
+use_collision = true
+collision_mask = 2
+
+[node name="CSGBox8" type="CSGBox" parent="Track Boundry Colliders"]
+transform = Transform( -0.654867, -0.583267, 84.7496, -0.0602188, 20.9592, -1.73767, 0.753609, 1.16795, 73.5064, 2.02175, 8.85162, 111.042 )
+visible = false
+use_collision = true
+collision_mask = 2
 
 [connection signal="new_lap" from="AeroJunker" to="GameUI" method="_on_AeroJunker_new_lap"]
 [connection signal="timeout" from="AeroJunker/BoosterTimer" to="AeroJunker" method="_on_BoosterTimer_timeout"]
