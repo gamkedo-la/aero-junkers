@@ -25,3 +25,11 @@ shape = SubResource( 1 )
 
 [node name="Fire" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.991759, 0.128121, 0, -0.128121, 0.991759, 0, 0, -2.46512 )
+visible = false
+light_energy = 3.0
+spot_range = 50.0
+spot_angle = 20.8
+spot_angle_attenuation = 0.225313

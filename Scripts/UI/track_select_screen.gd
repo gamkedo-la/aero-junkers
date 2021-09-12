@@ -9,4 +9,4 @@ func _on_Track2Button_pressed():
 
 
 func _on_Track3Button_pressed():
-	get_tree().change_scene("res://Scenes/Tracks/track3.tscn")
+	get_tree().change_scene("res://Scenes/Tracks/canyon_night_track.tscn")
