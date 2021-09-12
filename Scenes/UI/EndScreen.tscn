@@ -37,20 +37,16 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-anchor_left = -0.00116134
-anchor_right = -0.00116134
-margin_left = 120.0
-margin_top = 120.0
-margin_right = 904.0
-margin_bottom = 480.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ResultsText" type="RichTextLabel" parent="Menu"]
-margin_top = 14.0
-margin_right = 784.0
-margin_bottom = 33.0
+margin_top = 31.0
+margin_right = 1024.0
+margin_bottom = 50.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
@@ -59,9 +55,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText2" type="RichTextLabel" parent="Menu"]
-margin_top = 66.0
-margin_right = 784.0
-margin_bottom = 85.0
+margin_top = 117.0
+margin_right = 1024.0
+margin_bottom = 136.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
@@ -70,9 +66,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText3" type="RichTextLabel" parent="Menu"]
-margin_top = 118.0
-margin_right = 784.0
-margin_bottom = 137.0
+margin_top = 203.0
+margin_right = 1024.0
+margin_bottom = 222.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
@@ -81,9 +77,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText4" type="RichTextLabel" parent="Menu"]
-margin_top = 170.0
-margin_right = 784.0
-margin_bottom = 189.0
+margin_top = 290.0
+margin_right = 1024.0
+margin_bottom = 309.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
@@ -92,9 +88,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText5" type="RichTextLabel" parent="Menu"]
-margin_top = 222.0
-margin_right = 784.0
-margin_bottom = 241.0
+margin_top = 376.0
+margin_right = 1024.0
+margin_bottom = 395.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
@@ -103,9 +99,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText6" type="RichTextLabel" parent="Menu"]
-margin_top = 274.0
-margin_right = 784.0
-margin_bottom = 293.0
+margin_top = 462.0
+margin_right = 1024.0
+margin_bottom = 481.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
@@ -114,9 +110,9 @@ text = "(Race Results Here)"
 fit_content_height = true
 
 [node name="ResultsText7" type="RichTextLabel" parent="Menu"]
-margin_top = 326.0
-margin_right = 784.0
-margin_bottom = 345.0
+margin_top = 549.0
+margin_right = 1024.0
+margin_bottom = 568.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
