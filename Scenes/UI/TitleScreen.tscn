@@ -34,47 +34,46 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 3 )
 expand = true
-stretch_mode = 7
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleText" type="Label" parent="."]
-margin_top = 2.0
-margin_right = 1019.0
-margin_bottom = 122.0
+anchor_right = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 text = "AeroJunkers"
 align = 1
-valign = 3
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 462.0
-margin_top = 450.0
-margin_right = 562.0
-margin_bottom = 550.0
+anchor_left = 0.45
+anchor_top = 0.75
+anchor_right = 0.55
+anchor_bottom = 0.85
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
-margin_right = 100.0
+margin_right = 102.0
 margin_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="StartButton" type="Button" parent="Menu/Buttons"]
-margin_right = 100.0
+margin_right = 102.0
 margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
 text = "Start"
@@ -89,7 +88,7 @@ text = "Options"
 
 [node name="CreditsButton" type="Button" parent="Menu/Buttons"]
 margin_top = 28.0
-margin_right = 100.0
+margin_right = 102.0
 margin_bottom = 52.0
 custom_fonts/font = SubResource( 4 )
 text = "Credits"
