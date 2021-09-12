@@ -12,12 +12,24 @@ var timer
 
 
 func _ready():
+	if not Global.is_connected("return_to_menu", self, "_disable_timer"):
+		assert(Global.connect("return_to_menu", self, "_disable_timer") == OK)
+	if not Global.is_connected("race_start", self, "_enable_timer"):
+		assert(Global.connect("race_start", self, "_enable_timer") == OK)
+		
 	timer = Timer.new()
 	timer.set_wait_time(0.2)
 	timer.set_one_shot(false)
 	timer.connect("timeout", self, "calculate_positions")
 	add_child(timer)
 	timer.start()
+
+func _enable_timer() -> void:
+	timer.start()
+
+func _disable_timer() -> void:
+	positions.clear()
+	timer.stop()
 
 
 func _process(delta):

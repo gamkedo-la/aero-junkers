@@ -1,6 +1,7 @@
 extends Node
 
 signal race_start
+signal return_to_menu
 
 var current_scene = null
 var debug_mode = false
