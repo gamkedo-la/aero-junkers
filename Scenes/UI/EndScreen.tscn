@@ -120,8 +120,8 @@ margin_bottom = 345.0
 size_flags_vertical = 6
 custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
-bbcode_text = "[center]Reload window to return to title screen"
-text = "Reload window to return to title screen"
+bbcode_text = "[center]Press Space to Restart Race or Q to Return to the Title Screen"
+text = "Press Space to Restart Race or Q to Return to the Title Screen"
 fit_content_height = true
 
 [node name="WinMusic" type="AudioStreamPlayer" parent="."]
