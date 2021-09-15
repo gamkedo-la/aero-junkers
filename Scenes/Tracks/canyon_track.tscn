@@ -473,11 +473,18 @@ material = ExtResource( 12 )
 [node name="Placeholder Mounds" type="CSGCombiner" parent="." groups=[
 "environment",
 ]]
+transform = Transform( 1, -5.53229e-11, -5.82077e-11, 5.49107e-11, 1, -5.82077e-11, 5.82077e-11, 5.82077e-11, 1, 0, 0, 0 )
 use_collision = true
 collision_mask = 2
 
+[node name="Boulder8" parent="Placeholder Mounds" instance=ExtResource( 9 )]
+transform = Transform( 0.999999, 1.28523e-06, -0.000154258, -0.000128548, -9.84719e-05, -1.2, -1.33875e-06, 0.999999, -0.000118147, 183.16, 5.83318, -199.146 )
+
+[node name="Stones6" parent="Placeholder Mounds" instance=ExtResource( 8 )]
+transform = Transform( -1.59099, 1.59099, -9.28179e-08, 0, 9.8662e-08, 2.99999, -1.59098, -1.59099, 9.33651e-08, 147.628, 1.83752, -157.662 )
+
 [node name="rock5" parent="Placeholder Mounds" instance=ExtResource( 7 )]
-transform = Transform( -6.59999, 0.00376729, -1.65077e-06, 0.00376735, 1.99999, -0.00377545, -1.66078e-06, -0.00377552, -6.59999, 255.042, -1.07319, 87.8775 )
+transform = Transform( -6.59999, 0.00376729, -1.65054e-06, 0.00376735, 1.99999, -0.00377545, -1.66101e-06, -0.00377552, -6.59999, 255.042, -1.07319, 87.8775 )
 
 [node name="rock6" parent="Placeholder Mounds" instance=ExtResource( 7 )]
 transform = Transform( -6.30684, 7.13074, 0.00277399, -15.298, -1.23875, 0.0105236, 0.0126156, -0.000286873, 5.93998, 259.03, -1.08547, 63.8756 )
@@ -535,6 +542,15 @@ transform = Transform( 4.49874, 30.2537, -17.4019, -23.7567, 11.4708, 0.0216737,
 
 [node name="rock30" parent="Placeholder Mounds" instance=ExtResource( 6 )]
 transform = Transform( -6.69939, -44.9194, 44.7492, -23.7588, 11.4564, -0.0245173, -11.6121, -77.7752, -25.8118, -27.0315, 2.98199, -67.9881 )
+
+[node name="rock53" parent="Placeholder Mounds" instance=ExtResource( 6 )]
+transform = Transform( -81.3645, -55.7718, -10.3336, -94.5394, 64.0045, -0.20407, 48.067, 31.4788, -17.8934, -51.7471, -5.20797, 8.77955 )
+
+[node name="rock54" parent="Placeholder Mounds" instance=ExtResource( 6 )]
+transform = Transform( 47.984, 31.5349, -17.8936, -94.5815, 63.977, -0.188366, 81.3646, 55.7717, 10.3336, -0.773661, -5.25446, -46.245 )
+
+[node name="rock55" parent="Placeholder Mounds" instance=ExtResource( 6 )]
+transform = Transform( -43.2848, -40.9898, 40.7484, -132.452, 62.3603, -0.321011, -81.2672, -79.8045, -21.1803, -66.8145, 1.73454, -137.216 )
 
 [node name="rock21" parent="Placeholder Mounds" instance=ExtResource( 6 )]
 transform = Transform( 4.82182e-06, 24.6, 0.00106268, -24.6, 3.47465e-06, 0.0226514, 0.0226514, -0.00106235, 24.6, -68.054, -0.0193423, -111.967 )
@@ -866,7 +882,7 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="CSGSphere21" type="CSGSphere" parent="Placeholder Mounds"]
-transform = Transform( -9.98999, 0.0036135, -17.3032, 0.0188065, 15.5999, -0.0036544, 17.3032, -0.0188141, -9.98998, 98.6155, -3.99726, 104.633 )
+transform = Transform( -9.98999, 0.00381042, -17.3032, 0.0188065, 31.1998, -0.00804027, 17.3032, -0.0317105, -9.98998, 98.6155, -3.99726, 104.633 )
 use_collision = true
 material = ExtResource( 3 )
 
@@ -886,10 +902,19 @@ use_collision = true
 material = ExtResource( 3 )
 
 [node name="Boulder" parent="Placeholder Mounds" instance=ExtResource( 9 )]
-transform = Transform( 1, -1.71781e-10, -1.74623e-10, 1.71326e-10, 0.999999, -1.74623e-10, 1.74623e-10, 1.74623e-10, 1, 98.9151, -10.1167, -167.043 )
+transform = Transform( 1, -2.30074e-10, -2.32831e-10, 2.29605e-10, 0.999999, -2.32831e-10, 2.32831e-10, 2.32831e-10, 1, 98.9151, -10.1167, -167.043 )
 
 [node name="stones" parent="Placeholder Mounds" instance=ExtResource( 8 )]
 transform = Transform( -0.866025, 0.00103693, 0.499999, 0.000597936, 0.999998, -0.00103823, -0.5, -0.000600182, -0.866025, 183.892, -2.17762, -221.088 )
+
+[node name="rock50" parent="Placeholder Mounds" instance=ExtResource( 6 )]
+transform = Transform( -3.41641, -1.73281e-08, 55.0809, 4.65661e-10, 28.8, 3.91155e-08, -12.7502, 6.51926e-09, -14.7589, 68.7936, 1.03206, 79.5678 )
+
+[node name="rock51" parent="Placeholder Mounds" instance=ExtResource( 6 )]
+transform = Transform( -7.17447, -4.22524e-08, 69.402, 2.79397e-09, 46.08, 7.17118e-08, -26.7755, 1.30385e-08, -18.5962, 58.0297, 1.03206, 74.1698 )
+
+[node name="rock52" parent="Placeholder Mounds" instance=ExtResource( 7 )]
+transform = Transform( 12.85, -9.61745e-09, 22.2569, 7.45058e-09, 30.84, 4.19095e-09, -22.2569, 6.51926e-09, 12.85, 22, 1.2368e-06, -166 )
 
 [node name="GameUI" parent="." instance=ExtResource( 10 )]
 

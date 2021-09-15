@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Models/checkpoint.glb" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1, 1, 0.5 )
+extents = Vector3( 20, 1, 5 )
 
 [node name="Checkpoint" type="Area"]
 transform = Transform( 1, -1.13545e-10, -1.16415e-10, 1.35742e-10, 1.2, -1.39698e-10, 1.16415e-10, 1.16415e-10, 1, 0, -1, 0 )
@@ -13,7 +13,7 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 5, -1.59595e-16, -8.10222e-17, -3.8851e-16, -2.18557e-08, -5, 1.60982e-15, 0.5, -2.18557e-07, 2.83862e-10, 2.5, -2.91037e-10 )
+transform = Transform( 1, 6.09791e-11, -2.66548e-18, 0, -4.37114e-08, -1, -6.09791e-11, 1, -4.37114e-08, 2.83862e-10, 2.5, -2.91037e-10 )
 shape = SubResource( 1 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 2 )]
