@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/UI/end_screen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Music/win.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Music/lose.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Bangers-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/AudioPlayer.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 4 )
@@ -122,6 +123,8 @@ fit_content_height = true
 
 [node name="WinMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="LoseMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+script = ExtResource( 5 )

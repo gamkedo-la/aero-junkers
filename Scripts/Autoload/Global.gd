@@ -2,6 +2,7 @@ extends Node
 
 signal race_start
 signal return_to_menu
+signal changing_scene
 
 var current_scene = null
 var debug_mode = false
@@ -17,6 +18,7 @@ func _ready():
 func goto_scene(path):
 	# Defer the load until the current scene is done executing code
 	print("Getting to goto_scene...")
+	emit_signal("changing_scene")
 	call_deferred("_deferred_goto_scene", path)
 
 # A function to simplify reparenting nodes, a function that will likely happen a lot as we design things "Modularly"

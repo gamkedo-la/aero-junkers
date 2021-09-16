@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/UI/track_select_screen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Music/the_cockpit_song.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Materials/title-bg.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Bangers-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/AudioPlayer.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -39,6 +40,7 @@ __meta__ = {
 [node name="TitleScreenMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+script = ExtResource( 5 )
 
 [node name="TrackSelectText" type="Label" parent="."]
 anchor_right = 1.0
