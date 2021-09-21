@@ -4,7 +4,7 @@
 	"scale": "expert",
 	"key": "C",
 	"introBars": 0,
-	"loopBars": 6,
+	"loopBars": 2,
 	"beatsPerBar": 8,
 	"ticksPerBeat": 4,
 	"beatsPerMinute": 150,
@@ -284,10 +284,6 @@
 			"sequence": [
 				1,
 				2,
-				1,
-				2,
-				1,
-				2,
 				0,
 				0,
 				0,
@@ -382,10 +378,6 @@
 				}
 			],
 			"sequence": [
-				1,
-				1,
-				1,
-				1,
 				1,
 				1,
 				0,
@@ -580,10 +572,6 @@
 				}
 			],
 			"sequence": [
-				1,
-				1,
-				1,
-				1,
 				1,
 				1,
 				0,
@@ -807,10 +795,6 @@
 				}
 			],
 			"sequence": [
-				1,
-				1,
-				1,
-				1,
 				1,
 				1,
 				0,
